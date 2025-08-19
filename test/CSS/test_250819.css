@@ -17,6 +17,10 @@
     url(../fonts/Pretendard-Regular.woff) format('woff');
 }
 /* body 태그는 모든 태그를 감싸는태그, 글자의 기본스타일을 줘야함, 글자스타일은 상속이 가능 */
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
   font-family: 'Pretendard';
   font-size: 17px;
@@ -33,16 +37,19 @@ body {
   font-weight: 700;
   color: #1d1d1d;
 }
-.env h1{
-    font-size: 40px;
-    font-weight: 700;
-    color: #d91b10;
-}
 .eng .sub_tit {
   font-size: 24px;
   color: #1d1d1d;
 }
+.env {
+    text-align: center;
+}
+.env h1{
+    font-size: 60px;
+    font-weight: 700;
+    color: #d91b10;
+}
 .env .sub_tit {
-  font-size: 24px;
+  font-weight: 700;
   color: #1d1d1d;
 }
