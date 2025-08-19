@@ -28,13 +28,21 @@ body {
   width: 1260px;
   margin: 0 auto; /* 가운데 정렬 */
 }
-h1 {
+.eng h1{
   font-size: 40px;
   font-weight: 700;
   color: #1d1d1d;
 }
-p {
+.env h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #d91b10;
+}
+.eng .sub_tit {
+  font-size: 24px;
   color: #1d1d1d;
-  font-size: 17px;
-  font-weight: 700;
+}
+.env .sub_tit {
+  font-size: 24px;
+  color: #1d1d1d;
 }
