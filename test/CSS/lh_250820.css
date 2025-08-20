@@ -49,52 +49,16 @@ ol,ul,li {
     width: 1260px;
     margin: 0 auto;
 }
-.nature {
-    margin: 108px 0 0 0;
+.visual {
+    background: url(../imges/lh_bg2.jpg) no-repeat center center / cover;
+    height: 626px;
 }
-.nature h1 {
-    margin: 0 0 20px 0;
-}
-.nature strong {
-    font-weight: 700;
-    color: #094174;
-}
-.villa {
-    margin: 74px 0 0 0;
+.visual h1 {
+    font-size: 50px;
+    color: #fff;
     text-align: center;
+    padding : 235px 0 0 0;
 }
-.villa h1 {
-    margin: 0 0 24px 0;
-}
-.villa strong {
+.visual h1 strong {
     font-weight: 700;
-    color: #3c5f3e;
-}
-.cycle {
-    margin: 100px 0 200px 0;
-    text-align: right;
-}
-.cycle h1 {
-    margin: 0 0 20px 0;
-}
-.cycle h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1d1d1d;
-    margin: 94px 0 25px 0;
-}
-.cycle strong {
-    font-weight: 700;
-    color: #0077b9;
-}
-.cycle p strong {
-    font-weight: 700;
-    text-decoration: underline;
-}
-.nature h1,
-.villa h1,
-.cycle h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #1d1d1d;
 }
