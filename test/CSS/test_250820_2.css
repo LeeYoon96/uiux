@@ -23,6 +23,49 @@ body {
     font-weight: 400;
     color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */
 }
+.wrapper {
+    width: 1260px;
+    margin: auto;
+}
+.nature h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 108px 0 20px 0;
+}
+.nature strong {
+    color: #094174;
+}
+.villa h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 74px 0 30px 0;
+}
+.villa strong {
+    color: #3c5f3e;
+}
+.cycle h1 {
+    text-align: right;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 74px 0 30px 0;
+}
+.cycle h2 {
+    text-align: right;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 74px 0 30px 0;
+}
+.cycle p {
+    text-align: right;
+}
+.cycle strong {
+    color: #0077b9;
+}
 /* html 태그의 기본스타일을 리셋 시킴 body에서 선언한 기본 스타일로 적용 */
 h1,h2,h3,h4,h5,h6 {
     font-weight: inherit;
