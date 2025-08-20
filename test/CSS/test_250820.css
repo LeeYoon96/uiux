@@ -1,0 +1,25 @@
+/* 웹폰트를 선언 */
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+/* body에 기본 글자 스타일(본문 스타일) 적용 */
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */
+}
