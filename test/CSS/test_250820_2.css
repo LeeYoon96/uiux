@@ -45,6 +45,7 @@ body {
     margin: 0 0 24px 0;
 }
 .villa strong {
+    font-weight: 700;
     color: #3c5f3e;
 }
 .cycle {
@@ -58,8 +59,10 @@ body {
     font-size: 32px;
     font-weight: 700;
     color: #1d1d1d;
+    margin: 94px 0 25px 0;
 }
 .cycle strong {
+    font-weight: 700;
     color: #0077b9;
 }
 .cycle p strong {
