@@ -23,3 +23,25 @@ body {
     font-weight: 400;
     color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */
 }
+/* html 태그의 기본스타일을 리셋 시킴 body에서 선언한 기본 스타일로 적용 */
+h1,h2,h3,h4,h5,h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal; /* 기울어진 글자 바로 */
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ol,ul,li {
+    list-style: none; /* 문자 앞에 도형, 숫자 없애줌 */
+}
+* {
+    margin: 0;
+    padding: 0;
+}
