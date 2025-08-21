@@ -1,0 +1,58 @@
+@import url(common.css);
+
+.future .tit h1,
+.future .tit p {
+    margin: 20px 0 0 0;
+}
+.future {
+    margin: 115px 0 0 0;
+}
+.future .tit {
+    text-align: center;
+}
+.future .tit strong {
+    font-weight: 700;
+    color: #0067db;
+}
+.future .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.future .list {
+    margin: 55px 0 0 0;
+}
+.future .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.future .list ul li {
+    width: 297px;
+    height: 297px;
+
+    border-radius: 25px;
+    padding: 30px 30px 0 30px;
+    color: #fff;   
+}
+.future .list ul li h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+}
+.future .list ul li.bg1{
+    background-color: #05cb83;
+}
+.future .list ul li.bg2{
+    background-color: #0073e3;
+}
+.future .list ul li.bg3{
+    background-color: #a5cefd;
+}
+.future .list ul li.bg4{
+    background-color: #0057d9;
+}
+/* 
+li.bg1(붙여쓰기) - li태그중에서 bg1이라는 클래스명을 갖은 li
+li .bg1(띄어쓰기) - li태그 안에 bg1이라는 클래스명ㅇ르 같은 다른 요소
+*/
