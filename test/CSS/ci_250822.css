@@ -1,11 +1,50 @@
 @import url(common.css);
 
-.wrapper h1, h2 {
+.color {
+    margin: 110px 0 0 0;
+}
+.color .tit h1 {
     font-size: 40px;
     font-weight: 700;
     color: #1d1d1d;
+    margin: 0 0 8px 0;
 }
-.recruit .wrapper strong {
+.color .list {
+    margin: 45px 0 0 0;
+}
+.color .list ul {
+    display: flex;
+    justify-content : space-between;
+}
+.color .list ul li {
+    width: 297px;
+    height: 370px;
+    color: #fff;
+    border-radius: 15px;
+    padding: 40px 40px 0 40px;
+}
+.color .list ul li.bg1 {
+    background-color: #00AD1D;
+}
+.color .list ul li.bg2 {
+    background-color: #008233;
+}
+.color .list ul li.bg3 {
+    background-color: #003087;
+}
+.color .list ul li.bg4 {
+    background-color: #002554;
+}
+.color .list ul li h2 {
+    font-size: 24px;
     font-weight: 700;
-    color: #1d1d1d;
+    margin: 0 0 110px 0;
+}
+.recruit {
+    margin: 165px 0 0 0;
+}
+.recruit .wrapper {
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
 }
