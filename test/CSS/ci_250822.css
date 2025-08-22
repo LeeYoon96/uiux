@@ -1,0 +1,11 @@
+@import url(common.css);
+
+.wrapper h1, h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.recruit .wrapper strong {
+    font-weight: 700;
+    color: #1d1d1d;
+}
