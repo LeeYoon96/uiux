@@ -22,6 +22,7 @@ body {
     line-height: 1.5;
     font-weight: 400;
     color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */
+    word-break: keep-all;
 }
 /* html 태그의 기본스타일을 리셋 시킴 body에서 선언한 기본 스타일로 적용 */
 h1,h2,h3,h4,h5,h6 {
