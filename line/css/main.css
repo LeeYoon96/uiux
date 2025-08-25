@@ -1,0 +1,20 @@
+@import url(common.css);
+
+.global {
+    margin: 115px 0 0 0;
+}
+.global .wrapper .tit h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 20px 0;
+}
+.global .wrapper .tit strong {
+    font-weight: 700;
+    color: #00b900;
+    margin: 0 0 12px 0;
+}
+.global .wrapper .tit a {
+    color: #00b900;
+    margin: 30px 0 43px 0;
+}
