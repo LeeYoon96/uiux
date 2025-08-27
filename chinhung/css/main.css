@@ -1,1 +1,19 @@
+@import url(default.css);
+@import url(font.css);
 @import url(common.css);
+
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex; /* logo -gnb를 좌우배치 */
+    justify-content: space-between;
+}
+header .gnb ul {
+    display: flex; /* li를 좌우로 배치 */
+}
+header .gnb ul li a {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1D1D1D; 
+}
