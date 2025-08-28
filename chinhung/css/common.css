@@ -13,3 +13,6 @@ body {
     width: 1260px;
     margin: 0 auto; /* 가운데 정렬 */
 }
+#wrap {
+    min-width: 1310px; /* 1260 + 20 + 20 = 1300 */
+}
