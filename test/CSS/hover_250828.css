@@ -1,0 +1,23 @@
+@import url(common.css);
+
+.btn {
+    margin: 50px 0 50px 0; 
+}
+.btn a {
+    padding: 10px 37px 10px 37px;
+    display: inline-block;
+    border-radius: 33px;
+}
+.item1 a {
+    background-color: #ededed;
+}
+.item2 a {
+    border: 1px solid #1d1d1d;
+}
+.item3 a {
+    background-color: #ededed;
+}
+.item4 a {
+    border: 1px solid #6320FF;
+    color: #6320FF;
+}
