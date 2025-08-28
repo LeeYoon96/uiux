@@ -104,7 +104,8 @@ footer .f_nav ul {
     display: flex; /* logo -gnb를 좌우배치 */
     justify-content: space-between;
     align-items: center;
-    padding: 0 350px 0 350px;
+    /* gap: 0 42px; 좌측 정렬에서 간격 띄울때*/
+    padding: 0 370px 10px 370px;
 }
 footer .f_nav ul li strong {
     font-weight: 700;
@@ -115,9 +116,8 @@ footer .f_info strong {
 footer .f_info  {
     display: flex; /* logo -gnb를 좌우배치 */
     justify-content: space-between;
-    padding: 0 300px 0 300px;
+    padding: 0 300px 10px 300px;
 }
-footer .f_info .COPYRIGHT {
+footer .COPYRIGHT {
     text-align: center;
-    display: block;
 }
