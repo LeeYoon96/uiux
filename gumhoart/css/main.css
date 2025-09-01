@@ -43,15 +43,16 @@ header .gnb ul li a{
 .biz .wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 .biz .txt {
-    width: 511px;
+    width: 512px;
 }
 .biz .txt strong {
     line-height: 1.4;
     color: #9A0201;
     display: block; /* strong 태그 같은 인라인 태그는 블럭을 줘야함 */
+    margin: 46px 0 0 0;
 }
 .biz .txt h2 {
     font-size: 40px;
@@ -80,6 +81,11 @@ header .gnb ul li a{
     padding: 11px 29px 10px 30px;
     border-radius: 30px;
 }
+.biz .txt .btn_wrap a:hover {
+    background-color: #9A0201;
+    color: #FBFBFB;
+    /* border는 배경색과 같아서 유지 - 높이가 달라지는 이유도 있음 */
+}
 .biz .photo {
     overflow: hidden;
     width: 600px;
@@ -94,4 +100,124 @@ header .gnb ul li a{
 .biz .art, 
 .biz .sch {
     margin: 52px 0 0 0;
+}
+
+.community {
+    background: url(../images/community_bg.jpg) no-repeat center top / auto 780px;
+    margin: 136px 0 0 0;
+    color: #FBFBFB;
+}
+.community .news {
+    padding: 71px 0 0 0;
+}
+.community .news .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #FBFBFB;
+    margin: 29px 0 9px 0;
+}
+.community .news .tit a {
+    display: inline-block;
+    border: 1px solid #FBFBFB;
+    color: #FBFBFB;
+    padding: 11px 37px 11px 38px;
+    border-radius: 30px;
+    margin: 44px 0 0 0;
+}
+.community .news .tit a:hover {
+    background-color: #FBFBFB;
+    color: #9A0201;
+}
+.community .news .list {
+    width: 725px;
+}
+.community .news .list ul li {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+}
+.community .news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 29px 0 29px 0;
+    align-items: center;
+}
+.community .news .list ul li a h3 {
+    width: 618px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.community .news .list ul li span {
+    color: rgb(255, 255, 255, 0.8);
+}
+.community .media {
+    margin: 126px 0 0 0;
+}
+.community .media .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.community .media .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #FBFBFB;
+}
+.community .media .tit a {
+    display: inline-block;
+    border: 1px solid #FBFBFB;
+    color: #FBFBFB;
+    padding: 11px 37px 11px 38px;
+    border-radius: 30px;
+}
+.community .media .tit a:hover {
+    background-color: #FBFBFB;
+    color: #9A0201;
+}
+.community .media .list {
+    margin: 33px 0 140px 0;
+}
+.community .media .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.community .media .list ul li {
+    width: 404px;
+}
+.community .media .list ul li a {
+    display: block;
+}
+.community .media .list ul li a .photo {
+    overflow: hidden;
+    height: 227px;
+    /* 넓이는 li에서 줌. 그 넓이대로 들어가기 때문에 높이만 주면 됨 */
+    border-radius: 10px;
+    border: 2px solid #9A0201;
+}
+.community .media .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.community .media .list ul li a h3 {
+    color: rgb(0, 0, 0, 0.8);
+    margin: 30px 0 0 0;
+    /* 2줄 제한 - 조건 넓이가 있어야함 */
+    line-height: 1.5;
+    height: 3em; /* 행간 * 줄수 = 단위는 em */
+    overflow: hidden;
+}
+footer {
+    margin: 140px 0 0 0;
+    padding: 25px 0 25px 0;
+    background-color: #000;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
 }
