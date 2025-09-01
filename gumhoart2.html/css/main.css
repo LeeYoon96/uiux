@@ -1,0 +1,95 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    height: 80px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 14px 0 0 0;
+}
+header .gnb ul {
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 80px;
+    font-weight: 700;
+    color: #454B52;
+    padding: 0 20px 0 20px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fbfbfb;
+    height: 800px;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    padding: 276px 0 40px 0;
+}
+.biz {
+    margin: 156px 0 0 0;
+}
+.biz .art,
+.biz .sch {
+    margin: 53px 0 0 0;
+}
+.biz .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .txt {
+    width: 511px;
+    margin: 46px 0 0 0;
+}
+.biz .txt strong {
+    line-height: 1.4;
+    color: #9A0201;
+    display: block;
+}
+.biz .txt h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000;
+    margin: 18px 0 19px 0;
+}
+.biz .txt h2 em {
+    color: #9A0201;
+}
+.biz .txt .sub_tit {
+    color: #1d1d1d;
+    margin: 0 0 19px 0;
+}
+.biz .txt .btn_wrap {
+    margin: 41px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px 19px;
+}
+.biz .txt .btn_wrap a {
+    border: 1px solid #9A0201;
+    border-radius: 30px;
+    color: #9A0201;
+    padding: 11px 24px 10px 25px;
+}
+.biz .photo {
+    overflow: hidden;
+    width: 600px;
+    height: 550px;
+    border-radius: 30px;
+}
+.biz .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
