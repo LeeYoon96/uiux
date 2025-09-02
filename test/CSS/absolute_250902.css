@@ -5,11 +5,22 @@ header {
     position: absolute; /* body를 기준으로 정렬 */
     left: 25px;
     top: 25px;
+    width: calc(100% - 50px);
+    height: 100px;
+    z-index: 100; /*요소를 최상위로 보냄 */
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+    justify-content: space-between;
 }
 .visual {
     background : url(../../test/imges/visual_bg.jpg) no-repeat center center / cover;
     color: #fbfbfb;
-    
 }
 .visual .wrapper {
     position: relative; /* button 정렬의 기준 */
@@ -31,6 +42,153 @@ header {
     position: absolute; /* wrapper를 기준으로 정렬 */
     right: -92px;
     bottom: -92px;
+}
+
+.f_nav {
+    margin: 50px 0 50px 0;
+}
+.f_nav ul {
+    display: flex;
+    gap: 0 44px;
+}
+.f_nav ul li {
+    position: relative; /* before를 li를 기준으로 정렬하고 싶은데 그렇게 하려면 position속성이 선언되어야함.
+                        position 속성중에서 제일 멀쩡한게 (값을 준것과 안준것의 차이가 거의 없음) relative 
+                        그래서 absoulte 정렬의 기준에는 position:relative;를 줌
+                        position 값이 없을 경우에만 추가*/
+}
+.f_nav ul li::before {
+    content: ""; /* before/after 가상선택자는 반드시 content라는 속성이 있어야 나타남 */
+    display: block;
+    width: 1px;
+    height: 10px;
+    background-color: #000;
+    position: absolute; /* li를 기준으로 정렬 */
+    left: -22px;
+    top: 7px;
+}
+/* 첫번쨰 li의 before 숨김처리 */
+.f_nav ul li:first-child::before {
+    display: none; /* html이 아예 없었던것처럼 숨김처림 */
+}
+
+.btn_svg,
+.btn_path,
+.btn_path_ab,
+.btn_bg,
+.btn_ico {
+    margin: 50px 0 50px 0;
+}
+.btn_svg h2, 
+.btn_path h2, 
+.btn_path_ab h2,
+.btn_bg h2,
+.btn_ico h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.btn_svg a {
+    border: 1px solid #000;
+    padding: 9px 69px 8px 24px;
+    display: inline-block;
+    border-radius: 50px;
+    position: relative;
+}
+.btn_svg a::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 9px;
+    background: url(../imges/btn_arrow.svg) no-repeat center center;
+    width: 24px;
+    height: 24px;
+}
+.btn_svg a:hover {
+    border-color: #FF0000;
+    background-color: #FF0000;
+    color: #fbfbfb;
+}
+.btn_svg a:hover::after{
+    background-image: url(../imges/btn_arrow_w.svg);
+}
+
+.btn_path a {
+    border: 1px solid #000;
+    padding: 9px 17px 8px 24px;
+    display: inline-flex;
+    border-radius: 50px;
+    gap: 0 40px;
+    align-items: center;
+}
+.btn_path a:hover {
+    border-color: #FF0000;
+    background-color: #FF0000;
+    color: #fbfbfb;
+}
+.btn_path a:hover svg path {
+    fill: #fbfbfb;
+}
+.btn_path_ab a {
+    border: 1px solid #000;
+    padding: 9px 69px 8px 24px;
+    display: inline-block;
+    border-radius: 50px;
+    position: relative;
+}
+.btn_path_ab a svg {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+}
+.btn_path_ab a:hover {
+    border-color: #FF0000;
+    background-color: #FF0000;
+    color: #fbfbfb;
+}
+.btn_path_ab a:hover svg path {
+    fill: #fbfbfb;
+}
+.btn_bg a {
+    border: 1px solid #000;
+    padding: 9px 69px 8px 24px;
+    display: inline-block;
+    border-radius: 50px;
+    position: relative; /* after 정렬의 기준 */
+}
+.btn_bg a::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    width: 12px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 20L12 10L2 0L0.224999 1.775L8.45 10L0.224999 18.225L2 20Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+}
+.btn_bg a:hover {
+    border-color: #FF0000;
+    background-color: #FF0000;
+    color: #fbfbfb;
+}
+.btn_bg a:hover::after{
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 20L12 10L2 0L0.224999 1.775L8.45 10L0.224999 18.225L2 20Z' fill='%23fbfbfb'/%3E%3C/svg%3E%0A");
+}
+.btn_ico a {
+    border: 1px solid #000;
+    padding: 9px 69px 8px 24px;
+    display: inline-block;
+    border-radius: 50px;
+    position: relative;
+}
+.btn_ico a i {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+}
+.btn_ico a:hover {
+    border-color: #FF0000;
+    background-color: #FF0000;
+    color: #fbfbfb;
 }
 
 body {
