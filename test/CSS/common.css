@@ -42,6 +42,16 @@ a {
 ol,ul,li {
     list-style: none; /* 문자 앞에 도형, 숫자 없애줌 */
 }
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer;
+}
 * { /* 모든 태그 - 여백삭제 */
     margin: 0;
     padding: 0;
