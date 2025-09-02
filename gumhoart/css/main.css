@@ -23,6 +23,9 @@ header .gnb ul li a{
     padding: 0 20px 0 20px;
     /* letter-spacing: -0.02em; */
 }
+header .gnb ul li a:hover {
+    color: #9A0201;
+}
 
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
@@ -80,6 +83,7 @@ header .gnb ul li a{
     color: #9A0201;
     padding: 11px 29px 10px 30px;
     border-radius: 30px;
+    transition: 0.5s;
 }
 .biz .txt .btn_wrap a:hover {
     background-color: #9A0201;
@@ -128,6 +132,7 @@ header .gnb ul li a{
     padding: 11px 37px 11px 38px;
     border-radius: 30px;
     margin: 44px 0 0 0;
+    transition: 0.5s;
 }
 .community .news .tit a:hover {
     background-color: #FBFBFB;
@@ -150,6 +155,9 @@ header .gnb ul li a{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.community .news .list ul li a:hover h3 {
+    font-weight: 700;
 }
 .community .news .list ul li span {
     color: rgb(255, 255, 255, 0.8);
@@ -174,6 +182,7 @@ header .gnb ul li a{
     color: #FBFBFB;
     padding: 11px 37px 11px 38px;
     border-radius: 30px;
+    transition: 0.5s;
 }
 .community .media .tit a:hover {
     background-color: #FBFBFB;
@@ -203,6 +212,10 @@ header .gnb ul li a{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.community .media .list ul li a:hover .photo img{
+    transform: scale3d(1.2, 1.2, 1);
 }
 .community .media .list ul li a h3 {
     color: rgb(0, 0, 0, 0.8);
@@ -216,8 +229,38 @@ footer {
     margin: 140px 0 0 0;
     padding: 25px 0 25px 0;
     background-color: #000;
+    color: rgb(251, 251, 251, 0.8);
 }
 footer .wrapper {
     display: flex;
     justify-content: space-between;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    gap: 0 43px;
+}
+footer .inner .f_nav ul li a{
+    display: block;
+}
+footer .inner .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .inner .f_info {
+    margin: 23px 0 23px 0;
+}
+footer .inner .f_info .group {
+    display: flex;
+    gap: 0 25px;
+}
+footer .inner .copyright {
+    color: rgb(251, 251, 251, 0.8);
+}
+footer .familly_site button {
+    width: 214px;
+    line-height: 43px; /* 높이값을 행간으로 */
+    background-color: #9A0201;
+    color: rgb(251, 251, 251, 0.8);
+    display: block;
+    text-align: left;
+    padding: 0 0 0 15px;
 }
