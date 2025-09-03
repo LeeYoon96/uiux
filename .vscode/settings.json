@@ -1,0 +1,21 @@
+{
+    
+    // 이 프로젝트에서만 hover 기능을 활성화
+    "editor.hover.enabled": true,
+    "css.hover.references": true,
+    "less.hover.references": true,
+    "scss.hover.references": true,
+    "html.hover.references": true,
+    "css.hover.documentation": true,
+    "less.hover.documentation": true,
+    "scss.hover.documentation": true,
+    "html.hover.documentation": true,
+
+    // 아래는 집 설정에서 가져와서 추가하면 더 완벽함
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+}
