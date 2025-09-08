@@ -25,6 +25,66 @@ header .gnb ul li a {
     line-height: 80px;
     padding: 0 22.5px 0 22.5px;
 }
+header .util {
+    display: flex; /* 원래 좌우로 들어갔어도 flex */
+    gap: 0 29px; /* 요소 사이 간격일때, flex사용후에 */
+}
+header .util .weather {
+    position: relative; /* before 정렬의 기준 */
+}
+header .util .weather::before{
+    content: "";
+    position: absolute; /*weather를 기준으로 정렬 */
+    left: 0;
+    top: 4px;
+    width: 29px;
+    height: 18px;
+    background: url(../images/util_weather.svg) no-repeat left center;
+    /* 배경이미지의 사이즈를 안주면 원래 사이즈대로 들어감 */
+}
+header .util .weather strong {
+    display: block; /* 좌우 정렬이던걸 위아래로 나눠줌 */
+    font-weight: 700;
+    line-height: 1;
+}
+header .util .weather span{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 0 0 27px
+}
+header .util .sea {
+    position: relative; /* before 정렬의 기준 */
+    padding: 23px 0 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+}
+header .util .sea::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /* 넓이 높이값이 들어가야 아이콘이 나옴 */
+    height: 23px;
+    background: url(../images/util_sea.svg) no-repeat center center;
+    display: block;
+}
+header .util .flow {
+    position: relative; /* before 정렬의 기준 */
+    padding: 23px 0 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+}
+header .util .flow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /* 넓이 높이값이 들어가야 아이콘이 나옴 */
+    height: 23px;
+    background: url(../images/util_flow.svg) no-repeat center center;
+}
 
 .visual {
     background: url(../images/visual_bg.jpg)no-repeat center center / cover;
@@ -75,6 +135,22 @@ header .gnb ul li a {
 .visual .life:hover::before {
     background: url(../images/life_ico_over.svg) no-repeat center top;
 }
+
+.culture {
+    position: relative; /* before의 정렬 기준 */
+    padding: 150px 0 0 0; /* 백그라운드 색이 있다면 padding으로 줘야함 */
+}
+.culture::before {
+    content: "";
+    position: absolute; /* culture를 기준으로 정렬 */
+    left: 0;
+    top: -200px; /* 라운드 준 만큼 -줘야함 */
+    z-index: -1; /* 바닥으로 내려가야함 */
+    width: 100%;
+    height: calc(100% + 200px);
+    background-color: #f7f7f7; /* 처음에 culture에 줬다가 before로 가져옴 */
+}
+
 footer {
     margin: 1000px 0 0 0;
 }
