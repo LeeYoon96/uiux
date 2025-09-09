@@ -140,6 +140,9 @@ header .util .flow::before {
     position: relative; /* before의 정렬 기준 */
     padding: 150px 0 0 0; /* 백그라운드 색이 있다면 padding으로 줘야함 */
 }
+.culture .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
 .culture::before {
     content: "";
     position: absolute; /* culture를 기준으로 정렬 */
@@ -149,6 +152,76 @@ header .util .flow::before {
     width: 100%;
     height: calc(100% + 200px);
     background-color: #f7f7f7; /* 처음에 culture에 줬다가 before로 가져옴 */
+}
+.culture .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 51px 0;
+}
+.culture .list ul {
+    display: flex; /* li 좌우 배치 */
+    justify-content: space-between;
+}
+.culture .list ul li {
+    /* 감싸고 있는 ul 넓이에 몇개가 정렬 - 3 = 33.33% 
+       100 / 한줄의 li의 갯수 = 100/3 = 33.33% , 한줄의 사이 여백의 합 24 * 2 = 48 / 3 = 16*/
+    width: calc(33.33% - 16px);
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden;
+    height: 261px;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.culture .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 24px 0 16px 0;
+}
+.culture .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 1px;
+    top: 26px;
+}
+.culture .more a {
+    padding: 0 19px 0 0;
+    display: inline-block;
+    position: relative; /* after의 정렬 기준 */
+}
+.culture .more a:hover {
+    font-weight: 700;
+}
+.culture .more a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 0;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background : url(../images/culture_more.svg) no-repeat center center;
+}
+.culture .more a:hover::after {
+    animation-name: more;
+    animation-duration: 0.5s;
+    /* animation-iteration-count: infinite;*/
+    animation-timing-function: ease-in-out; /* 느리게 - 빠르게 - 느리게 */
+}
+
+@keyframes more {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
 
 footer {
