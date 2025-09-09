@@ -298,6 +298,7 @@ header .util .flow::before {
     font-weight: 700;
     line-height: 1.3;
     padding: 189px 0 14px 0;
+    b
 }
 .community .inner {
     display: flex;
@@ -353,8 +354,9 @@ header .util .flow::before {
 .community .inner .notice:hover h3 {
     color: #D9E74C;
 }
-.community .inner .notice ul span:hover,
-.community .inner .notice ul h4:hover {
+/* a 전체에 hover */
+.community .inner .notice ul a:hover h4,
+.community .inner .notice ul a:hover span {
     color: #D9E74C;
 }
 .community .inner .notice:hover .more{
@@ -385,8 +387,175 @@ header .util .flow::before {
     font-weight: 700;
     line-height: 1.3;
     padding: 20px 0 0 20px;
+    position: relative; /* aftrer의 정렬의 기준 */
+}
+.community .inner .service ul li a:hover {
+    background-color: #003087;
+    color: #D9E74C;
+}
+.community .inner .service ul li a::after{
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 15px;
+    bottom: 20px;
+    width: 38px;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.community .inner .service ul li.icon1 a::after {
+    background-image: url(../images/community_service01.svg);
+}
+.community .inner .service ul li.icon1 a:hover::after {
+    background-image: url(../images/community_service01_ov.svg);
+}
+.community .inner .service ul li.icon2 a::after {
+    background-image: url(../images/community_service02.svg);
+}
+.community .inner .service ul li.icon2 a:hover::after {
+    background-image: url(../images/community_service02_ov.svg);
+}
+.community .inner .service ul li.icon3 a::after {
+    background-image: url(../images/community_service03.svg);
+}
+.community .inner .service ul li.icon3 a:hover::after {
+    background-image: url(../images/community_service03_ov.svg);
+}
+.community .inner .service ul li.icon4 a::after {
+    background-image: url(../images/community_service04.svg);
+}
+.community .inner .service ul li.icon4 a:hover::after {
+    background-image: url(../images/community_service04_ov.svg);
 }
 
 footer {
-    margin: 1000px 0 0 0;
+    padding: 67px 0 66px 0;
+    background-color: #000F2A;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .left_area .f_nav ul {
+    display: flex;
+    gap: 0 37px;
+}
+footer .left_area .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .left_area .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -20px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* 마지막 li를 숨김처리 */
+footer .left_area .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .left_area .f_nav ul li.privacy a {
+    font-weight: 700;
+}
+footer .left_area .f_nav ul li a::after {
+    content: "";
+    position: absolute; /*li를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: 0.5s;
+    opacity: 0;
+}
+footer .left_area .f_nav ul li a:hover::after {
+    opacity: 1;
+}
+footer .left_area .f_info {
+    padding: 23px 0 23px 0;
+    display: flex;
+    gap: 0 37px;
+}
+footer .left_area .copyright .no {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 23px 0 0 0;
+}
+/* right area */
+footer .right_area {
+    display: flex;
+    align-items: flex-start;
+    gap: 0 6px;
+}
+footer .right_area .family_site {
+    position: relative; /* family_detail 정렬의 기준 */
+    color: #000F2A;
+}
+footer .right_area .family_site button {
+    width: 169px;
+    height: 42px;
+    background-color: #fff;
+    text-align: left;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .right_area .family_site button::after {
+    content: "";
+    position: absolute; /* button으로 정렬 */
+    right: 20px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .right_area .family_site button.open::after {
+    background-image: url(../images/family_open.svg);
+}
+footer .right_area .family_site button.close::after {
+    background-image: url(../images/family_close.svg);
+}
+footer .right_area .family_site button.close {
+    display: none;
+}
+footer .right_area .family_site .family_detail {
+    position: absolute;
+    left: 0;
+    bottom: 43px;
+    width: 100%; /* family_site 기준 */
+    background-color: #fff;
+    padding: 18px 0 15px 17px;
+    display: none;
+}
+footer .right_area .family_site .family_detail ul li a {
+    display: block;
+    padding: 3px 0 3px 0;
+}
+footer .right_area .family_site .family_detail ul li a:hover {
+    font-weight: 700;
+}
+footer .right_area .family_site .family_detail ul li a span {
+    position: relative;
+}
+footer .right_area .family_site .family_detail ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    width: 13px;
+    height: 13px;
+    background-image: url(../images/family_site_blank.svg);
+}
+/* family_site가 열렸을때 --open 클래스가 추가되었을때 */
+footer .right_area .family_site.open .family_detail {
+    display: block; /* none으로 숨겼다가 나타날때는 아무값이나 줘도됨. block으로 주면 좋음 */
+}
+footer .right_area .family_site.open button.close {
+    display: block;
+}
+footer .right_area .family_site.open button.open {
+    display: none; /* 열렸을때 안보임 */
 }
