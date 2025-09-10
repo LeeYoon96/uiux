@@ -157,6 +157,7 @@ header .util .flow::before {
     font-size: 40px;
     font-weight: 700;
     line-height: 1.3;
+    color: #1d1d1d;
     margin: 0 0 51px 0;
 }
 .culture .list ul {
@@ -188,22 +189,23 @@ header .util .flow::before {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.3;
+    color: #1d1d1d;
     margin: 24px 0 16px 0;
 }
-.culture .more {
+.culture .more,
+.tour .more {
     position: absolute; /* wrapper를 기준으로 정렬 */
     right: 1px;
     top: 26px;
 }
-.culture .more a {
+.culture .more a,
+.tour .more a {
     padding: 0 19px 0 0;
     display: inline-block;
     position: relative; /* after의 정렬 기준 */
 }
-.culture .more a:hover {
-    font-weight: 700;
-}
-.culture .more a::after {
+.culture .more a::after,
+.tour .more a::after {
     content: "";
     position: absolute; /* a를 기준으로 정렬 */
     right: 0;
@@ -212,11 +214,151 @@ header .util .flow::before {
     height: 100%;
     background : url(../images/culture_more.svg) no-repeat center center;
 }
-.culture .more a:hover::after {
+.culture .more a:hover,
+.tour .more a:hover {
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.culture .more a:hover::after,
+.tour .more a:hover::after {
     animation-name: more;
     animation-duration: 0.5s;
     /* animation-iteration-count: infinite;*/
     animation-timing-function: ease-in-out; /* 느리게 - 빠르게 - 느리게 */
+}
+
+.tour {
+    margin: 133px 0 123px 0;
+}
+.tour .wrapper {
+    position: relative; /* more 정렬 기준 */
+}
+.tour .tit h2 {
+font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.tour .list {
+    margin: 51px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 15.63%;
+
+    /* li 한개의 넓이 197px, ul의 넓이가 1260px
+        그럼 li는 ul의 몇프로인가  197 x 100 / 1260 = 15.63% */
+}
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    height: 500px;
+    padding: 0 0 88px 0;
+    /* li가 넓이를 갖고 a가 높이를 가져야함 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color :#fff;
+}
+.tour .list ul li a h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.tour .list ul li a p {
+    display: none;
+}
+.tour .list ul li.on {
+    width: 50.23%;
+}
+
+.tour .list ul li.bg1 a{
+    background-image: url(../images/tour01.jpg);
+}
+.tour .list ul li.on a {
+    align-items: flex-start;
+    padding: 0 0 88px 41px;
+}
+.tour .list ul li a h3 {
+    margin: 0 0 16px 0;
+}
+.tour .list ul li.on a p {
+    display: block;
+}
+.tour .list ul li.bg2 a{
+    background-image: url(../images/tour02.jpg);
+}
+.tour .list ul li.bg3 a{
+    background-image: url(../images/tour03.jpg);
+}
+.tour .list ul li.bg4 a{
+    background-image: url(../images/tour04.jpg);
+}
+
+.community {
+    height: 800px;
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    padding: 189px 0 0 0;
+}
+.community .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2)
+}
+.community .tit p {
+    text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2)
+}
+.community .inner {
+    display: flex;
+    gap: 0 12px;
+}
+.community .inner .notice {
+    position: relative; /*more 정렬의 기준 */
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 518px;
+    height: 404px;
+    border-radius: 10px;
+    padding: 63px 43px 0 44px;
+}
+.community .inner .notice h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.community .inner .notice ul {
+    margin: 18px 0 0 0;
+}
+.community .inner .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 12px 0;
+}
+.community .inner .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .inner .notice .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px
 }
 
 @keyframes more {
