@@ -63,6 +63,9 @@
 .news {
     margin: 100px 0 100px 0;
 }
+.news .wrapper {
+    position: relative; /* btn_wrap 의 정렬 기준 */
+}
 .news .tit h2 {
     font-size: 64px;
     font-weight: 700;
@@ -94,4 +97,57 @@
     font-weight: 700;
     color: #000;
     margin: 24px 0 24px 0;
+
+    /* 2줄 제한 */
+    line-height: 1.5;
+    height: 3em; /* 행간 * 줄수 = 단위em */
+    overflow: hidden;
+
+    /* 여러줄로 제한할때 맨뒤에 ...을 추가하는 코드 (호환성이 떨어짐) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    word-break: break-all; /* 단어를 나눠서 강제 줄바꿈 */
+}
+.news .list .swiper-slide a p {
+    /* 3줄 제한 */
+    line-height: 1.5;
+    height: 4.5em;
+    overflow: hidden;
+
+    /* 여러줄로 제한할때 맨뒤에 ...을 추가하는 코드 (호환성이 떨어짐) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    word-break: break-all; /* 단어를 나눠서 강제 줄바꿈 */
+}
+.news .btn_wrap {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 42px;
+    display: flex;
+    gap: 0 11px;
+}
+.news .btn_wrap button,
+.news .btn_wrap a {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.news .btn_wrap button {
+    background-image: url(../imges/swiper_btn_arrow.svg);
+}
+.news .btn_wrap button.btn_prev {
+    transform: rotate(180deg);
+}
+.news .btn_wrap button.swiper-button-disabled {
+    opacity: 0.5;
+}
+.news .btn_wrap a {
+    background-image: url(../imges/swiper_btn_more.svg);
 }

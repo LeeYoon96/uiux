@@ -54,8 +54,8 @@ $(document).ready(function(){
 
 	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.news .btn_wrap button.btn_next',
+		prevEl: '.news .btn_wrap button.btn_prev',
 	},
 });
 }) //$(document).ready
