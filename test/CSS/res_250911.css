@@ -1,0 +1,17 @@
+@import url(common.css);
+
+.asia {
+    margin: 175px 0 0 0;
+}
+.asia .wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 0 24px;
+}
+.asia .tit h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 7px 0;
+}
