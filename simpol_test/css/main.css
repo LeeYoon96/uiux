@@ -1,0 +1,380 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* logo와 inner를 header 넓이 안에서 좌우 끝으로 배치 */
+    align-items: center;
+    height: 100px;
+    margin: 0 30px; /* 위아래 좌우 */
+}
+header .inner {
+    display: flex; /* gnb shop 을 좌우로 */
+    align-items: center; /* 위아래 가운데 */
+    gap: 34px; /* gnb와 shop 사이의 여백 */
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a {
+    display: block; /* a 필수값 */
+    font-size: 23px;
+    font-weight: 800;
+    color: #1d1d1d;
+    line-height: 100px;
+    /* header의 높이랑 1차메뉴의 a의 높이는 같아야함.. a에 행간을 header의 높이값으로 줌 
+       a에 높이가 생기고 글자는 위아래 가운데 정렬 */
+    padding: 0 32px;
+}
+header .inner .shop {
+    font-size: 18px;
+    font-weight: 800;
+    color: #00AC47;
+    border: 1px solid #00AC47;
+    padding: 6px 38px 6px 49px;
+    border-radius: 21px;
+    position: relative;
+}
+header .inner .shop::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 10px;
+    width: 21px;
+    height: 21px;
+    background: url(../images/shop.svg) no-repeat center center;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 800px;
+    margin: 0 30px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 800;
+    padding: 375px 0 8px 0;
+}
+
+/* product tit */
+.product {
+    margin: 100px 0 0 0;
+}
+.product .wrapper {
+    position: relative; /* after 정렬의 기준 */
+}
+.product .tit h2 {
+    color: #00AC47;
+}
+.product .tit p {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 7px 0 63px 0;
+}
+
+/* product plant_btn */
+.product .plant_btn .succulent {
+    background-color: #00AC47;
+    border: 1px solid #00AC47;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    display: inline-block;
+    padding: 7px 42px 7px 42px;
+}
+.product .plant_btn .cactus {
+    background-color: #fff;
+    border: 1px solid #00AC47;
+    border-radius: 50px;
+    color: #00AC47;
+    font-size: 24px;
+    font-weight: 800;
+    display: inline-block;
+    margin: 0 0 0 23px;
+    padding: 7px 42px 7px 42px;
+}
+
+/* product  sub_tit */
+
+.product .sub_tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end
+}
+.product .sub_tit h2 {
+    margin: 36px 0 0 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1d1d1d;
+}
+.product .sub_tit .more a {
+    margin: 0 32px 0 0;
+}
+.product .sub_tit .more a:hover {
+    font-weight: 800;
+    color: #00AC47;
+} 
+.product .sub_tit .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 264px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/more_icon.svg) no-repeat center center;
+}
+.product .sub_tit .more a:hover::after {
+    animation-name: more;
+    animation-duration: 0.75s;
+    animation-iteration-count: 0.5;
+    animation-timing-function: linear;
+    background: url(../images/more_icon_hover.svg) no-repeat center center;
+}
+
+@keyframes more {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+/* product  list*/
+.product .list {
+    margin: 45px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 24px;
+}
+.product .list ul li a .photo {
+    overflow: hidden;
+    height: 321px;
+    border-radius: 20px;
+}
+.product .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.product .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.product .list ul li a h3 {
+    margin: 13px 0 0 0;
+}
+.product .list ul li a:hover h3 {
+    color: #00AC47;
+    font-weight: 800;
+}
+.product .list ul li a p {
+    margin: 6px 0 0 0;
+}
+.product .list ul li a:hover p {
+    color: #00AC47;
+}
+
+/* network */
+.network {
+    position: relative;
+}
+.network .swiper-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    color: #FFF;
+    text-align: center;
+    padding: 218px 0 0 0;
+}
+.network .swiper-slide.popup1 {
+    background-image: url(../images/request_bg.jpg);
+}
+.network .swiper-slide.popup2 {
+    background-image: url(../images/order_bg.jpg);
+}
+.network .swiper-slide.popup3 {
+    background-image: url(../images/notification_bg.jpg);
+}
+.network .swiper-slide strong {
+    font-weight: 800;
+    padding: 218px 0 0 0;
+}
+.network .swiper-slide h2 {
+    font-size: 64px;
+    font-weight: 800;
+    margin: 60px 0 0 0;
+}
+.network .swiper-slide p {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 6px 0 0 0;
+}
+.network .ctrl_btn {
+    position: absolute; /* visual를 기준으로 정렬 */ /* absolute를 주면 넓이를 상실함 */
+    left: 0;
+    bottom: 40px;
+    z-index: 1;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0 25px;
+}
+.network .ctrl_btn button {
+    width: 60px;
+    height: 60px;
+}
+.network .ctrl_btn .btn_prev,
+.network .ctrl_btn .btn_next {
+    background: url(../images/arrow_icon.svg) no-repeat center center;
+}
+.network .ctrl_btn .btn_next {
+    transform: rotate(180deg);   
+}
+.network .ctrl_btn .paging {
+    width: auto; /* width 100%로 들어간 값을 취소시킴 */
+    font-weight: 700;
+}
+
+.community {
+    margin: 170px 0 0 0;
+}
+.community .tit h2 {
+    color: #00AC47;
+}
+.community .tit p {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 7px 0 0 0;
+}
+.community .list {
+    margin: 35px 0 0 0;
+    display: flex; /* group을 좌우로배치 */
+    justify-content: space-between; /* 양쪽끝에 배치 */
+}
+.community .list .group {
+    width: calc(50% - 6px);
+    /*
+        몇개로 분할 : 2개  = 100/2 = 50%
+        사이 여백의 총합 / 분할하는 갯수로 나눔 = 12 / 2 = 6px
+    */
+}
+.community .list .group ul {
+    display: flex; /* li를 좌우에 배치 */
+    flex-wrap: wrap; /* li가 2줄로 나타나는 걸 허락 */
+    gap: 12px;
+}
+
+.community .list .group ul li.color,
+.community .list .group ul li.gray {
+    width: calc(50% - 6px);
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a {
+    height: 233px;
+}
+.community .list .group ul li.color.bg1 a {
+    background-color: #00AC47;
+    color: #fff;
+}
+.community .list .group ul li.color.bg2 a {
+    background-color: #005EB8;
+    color: #fff;
+}
+.community .list .group ul li.gray a {
+    background-color: #F4F4F4;
+    color: #1d1d1d;
+}
+.community .list .group ul li.review {
+    width: 100%; 
+    /* 나를 감싸는 요소 ul의 넓이의 100%가 들어감 */
+}
+.community .list .group ul li.review a {
+    height: 387px;
+    color: #fff;
+}
+.community .list .group ul li.review.bg1 a {
+    background: url(../images/community_bg1.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li.review.bg2 a {
+    background: url(../images/community_bg2.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li a {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.community .list .group ul li a h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 5px 0 30px 0;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .list .group ul li a .date {
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date {
+    color: rgba(255,255,255,0.8);
+}
+.community .list .group ul li.gray a .date {
+    color: #666;
+}
+.community .list .group ul li a .date span:first-child {
+    position: relative;
+}
+.community .list .group ul li a .date span:first-child::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.6);
+}
+.community .list .group ul li.gray a .date span:first-child::after {
+    background-color: #ccc;
+}
+
+footer {
+    background-color: #2D2D2D;
+    padding: 66px 0 95px 0;
+    color: rgba(255,255,255,0.8);
+    margin: 145px 0 0 0;
+}
+footer .f_nav {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0 0 35px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 33px;
+}
+footer .f_nav ul li.privacy a {
+    font-weight: 800;
+}
+footer .f_info {
+    margin: 34px 0 22px 0;
+}
+footer .f_info .group {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 5px 0;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
