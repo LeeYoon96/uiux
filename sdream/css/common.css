@@ -7,7 +7,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #555;
-  /* word-break: keep-all; */
+  word-break: keep-all;
 }
 .wrapper {
   width: 1260px;
