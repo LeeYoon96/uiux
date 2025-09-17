@@ -8,12 +8,22 @@ body {
   line-height: 1.5;
   color: #555;
   word-break: keep-all;
+  word-wrap: break-word;
 }
 .wrapper {
   width: 1260px;
   margin: 0 auto; /* 가운데 정렬 */
 }
 #wrap {
-  min-width: 1460px; /* 1260 + 100 + 100 = 1460 */
+  min-width: 1292px; /* 1260 + 16 + 16 = 1292 */
   position: relative; /* header 정렬의 기준 */
+}
+/* html문서 구조상 글자를 써줘야 하는데 그 글자를 안보이게 하고 싶을때 blind 클래스를 줌 */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
