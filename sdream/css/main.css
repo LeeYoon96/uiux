@@ -422,15 +422,16 @@
     display: block;
     padding: 4px 8px 2px 7px;
     background-color: #0066CC;
+    border: 1px solid #0066CC;
     border-radius: 5px;
     color: #fff;
-}
-.notice .list ul li.cate_gen a .inner strong {
-    border: 1px solid #000033;
 }
 .notice .list ul li.cate_sch a .inner strong {
     background-color: #161D6F;
     border: 1px solid #161D6F;
+}
+.notice .list ul li.cate_gen a .inner strong {
+    border: 1px solid #0066CC;
 }
 .notice .list ul li a .inner h3 {
     padding: 3px 0 0 0;
@@ -442,6 +443,7 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+
 /* noitice 오버 */
 .notice .list ul li a:hover {
     background-color: #fff;
@@ -451,11 +453,14 @@
 .notice .list ul li a:hover h3 {
     color: #000033;
 }
-.notice .list ul li a:hover .inner strong {
-    background-color: #fff;
-    border: 1px solid #000033;
-    color: #000033;
+.notice .list ul li.cate_gen a:hover .inner strong {
+    border: 1px solid #0066CC;
 }
+.notice .list ul li a:hover .inner strong {
+    border: 1px solid #161D6F;
+    color: #fff;
+}
+
 .notice .list ul li a:hover span {
     color: rgba(0, 0, 51, 0.8)
 }
@@ -533,15 +538,11 @@
         .notice .list ul li a .inner strong {
             display: inline-block;
             padding: 4px 8px 2px 7px;
-            background-color: #000033;
+            background-color: #0066CC;
             border-radius: 5px;
-            color: #fff;
         }
         .notice .list ul li.cate_gen a .inner strong {
-            border: 1px solid #000033;
-        }
-        .notice .list ul li.cate_sch a .inner strong {
-            border: 1px solid #161D6F;
+            border: 1px solid #0066CC;
         }
         .notice .list ul li a .inner h3 {
             padding: 6px 0 0 0;
