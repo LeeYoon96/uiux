@@ -53,6 +53,9 @@ body {
     min-width: 0; /* 최소 넓이 없음 */
     position: relative; /* header 정렬의 기준 */
   }
+  .tit_top {
+    margin: 0 0 10px 0;
+  }
   .tit_gm {
     font-size: 28px;
   }  
