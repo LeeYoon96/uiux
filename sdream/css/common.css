@@ -17,6 +17,7 @@ body {
 #wrap {
   min-width: 1292px; /* 1260 + 16 + 16 = 1292 */
   position: relative; /* header 정렬의 기준 */
+  /* overflow: hidden;  가로스크롤바 생길때 */
 }
 /* html문서 구조상 글자를 써줘야 하는데 그 글자를 안보이게 하고 싶을때 blind 클래스를 줌 */
 .blind {

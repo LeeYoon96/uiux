@@ -211,6 +211,7 @@
 /* biz .tit */
 .biz .tit {
     position: sticky;
+    /* sticky를 감싸는 요소중에서 단한개라도 overflow :hidden; 속성이 있으면 작동이 안됨. */
     top: 10px;
 }
 .biz .tit h2 {
@@ -579,6 +580,124 @@
             display: none;
         }
 }/* @media notice */
+
+/* webzine */
+.webzine {
+    padding: 131px 0 90px 0;
+    overflow: hidden; /* 가로스크롤바를 제거, sticky유지 */
+    position: relative; /* more 정렬의 기준 */
+}
+.webzine .tit h2 {
+    color: #1d1d1d;
+}
+.webzine .list {
+    /* width: calc(50% + 630px);
+    position: relative;
+    left: calc(50% - 630px);
+    margin: 36px 0 0 0;  스타일 차이*/
+    width: 1260px;
+    margin: 36px auto 0 auto;
+
+}
+.webzine .list .swiper {
+    overflow: visible;
+    /* margin: 0 24px 0 0; 스타일 차이*/
+}
+.webzine .list .swiper-slide {
+    width: 404px;
+}
+.webzine .list .swiper-slide a {
+    display: block;
+    background-color: rgba(0, 102, 204, 0.1);
+    box-shadow: 4px 3px 10px 0 rgba(0, 0, 51, 0.1) ;
+    border-radius: 20px;
+    height: 630px;
+    color: #000;
+}
+.webzine .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 275px;
+    border-radius: 20px 20px 0 0;
+}
+.webzine .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.webzine .list .swiper-slide a .txt {
+    margin: 40px 40px 0 40px ;
+}
+.webzine .list .swiper-slide a .txt .cate {
+    color: #000033;
+    display: block;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.webzine .list .swiper-slide a .txt h3 {
+    font-size: 28px;
+    color: #000;
+    margin: 14px 0 27px 0;
+    /* 2줄제한 */
+    line-height: 1.3;
+    height: 2.6em;
+    overflow: hidden;
+    /* 글자끝에 ... 추가 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.webzine .list .swiper-slide a .txt p {
+    margin: 0 0 32px 0;
+    /* 3줄제한 */
+    line-height: 1.5;
+    height: 4.5em;
+    overflow: hidden;
+    /* 글자끝에 ... 추가 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.webzine .more {
+    position: absolute;
+    content: "";
+    right: calc(50% - 630px);
+    top: 190px;
+}
+
+.webzine .more a {
+    display: block;
+    padding: 0 15px 0 0;
+    font-size: 16px;
+    color : #000
+}
+.webzine .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 0%;
+    height: 1px;
+    background-color: #000;
+    transition: 0.5s;
+}
+.webzine .more a::after {
+    content: "";
+    position: absolute; /* more 기준으로 정렬 */
+    right: 0;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    background :url(../images/webzine_more.svg)
+}
+.webzine .more a:hover::before {
+    width: 75%;
+}
+/* webzine */
+@media screen and (max-width:768px){
+    
+}/* @media */
 
 footer {
     margin: 0 0 1500px 0;
