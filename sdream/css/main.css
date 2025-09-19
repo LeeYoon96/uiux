@@ -613,6 +613,7 @@
     border-radius: 20px;
     height: 630px;
     color: #000;
+    transition: 0.5s;
 }
 .webzine .list .swiper-slide a .photo {
     overflow: hidden;
@@ -665,7 +666,6 @@
     right: calc(50% - 630px);
     top: 190px;
 }
-
 .webzine .more a {
     display: block;
     padding: 0 15px 0 0;
@@ -694,11 +694,312 @@
 .webzine .more a:hover::before {
     width: 75%;
 }
+
+/* webzine hover */
+.webzine .list .swiper-slide:hover a {
+    box-shadow: 4px 3px 10px 0 rgba(0, 0, 51, 0.15) ;
+    transform: translate(-20px, -20px);
+}
+
+
+
 /* webzine */
 @media screen and (max-width:768px){
-    
+/* webzine */
+        .webzine {
+            padding: 76px 0 0 0;
+        }
+        .webzine .list {
+            /* width: calc(50% + 630px);
+            position: relative;
+            left: calc(50% - 630px);
+            margin: 36px 0 0 0;  스타일 차이*/
+            width: auto;
+            margin: 36px 16px 0 16px;
+        }
+        .webzine .list .swiper-slide {
+            width: 306px;
+        }
+        .webzine .list .swiper-slide a {
+            height: 573px;
+            transition: 0.5s;
+        }
+        .webzine .list .swiper-slide a .txt {
+            margin: 21px 16px 0 16px ;
+        }
+        .webzine .list .swiper-slide a .txt .cate {
+            color: #000033;
+            display: block;
+            /* 1줄제한 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .webzine .list .swiper-slide a .txt h3 {
+            margin: 20px 0 16px 0;
+            /* 2줄제한 */
+            line-height: 1.3;
+            height: 2.6em;
+            overflow: hidden;
+        }
+        .webzine .list .swiper-slide a .txt p {
+            margin: 0 0 15px 0;
+            /* 3줄제한 */
+            line-height: 1.5;
+            height: 4.5em;
+            overflow: hidden;
+        }
+        .webzine .more {
+            right: 15px;
+            top: 112px;
+        }
+        .webzine .more a {
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #000033 url(../images/notice_more_R.svg) no-repeat center center;
+        }
+        .webzine .more a::after {
+            display: none;
+        }
+        .webzine .more a span {
+            display: none;
+        }
+
+        /* webzine hover */
+        .webzine .list .swiper-slide:hover a {
+            box-shadow: 4px 3px 10px 0 rgba(0, 0, 51, 0.15) ;
+            transform: translate(-20px, -20px);
+        }
 }/* @media */
 
-footer {
-    margin: 0 0 1500px 0;
+/* service */
+.service {
+    margin: 76px 0 0 0;
+    background-color: #161D6F;
 }
+.service .tit {
+    padding: 130px 0 0 0;
+}
+.service .tit strong {
+    color: #fff;
+}
+.service .tit h2 {
+    margin: 14px 0 0 0;
+}
+.service .list {
+    margin: 96px 0 0 0;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 16px);
+    /* 100/ 한줄에 들어가는 li의 갯수 = 100/ 3 = 33.33%
+        한줄여백의 합 / 한줄에 들어가는 li의 갯수 = 48 / 3 = 16 */
+}
+.service .list ul li a {
+    display: block;
+    margin: 0 0 95px 0;
+    padding: 20px 0 20px 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.5s;
+}
+.service .list ul li a::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 31px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: url(../images/service_more_w.svg) no-repeat center center;
+}
+.service .list ul li a strong {
+    color: #fff;
+}
+.service .list ul li a h3 {
+    font-size: 22px;
+    margin: 5px 0 0 0;
+    padding: 0 43px 0 0;
+    /* 1줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* service hover */
+.service .list ul li:hover a {
+    background-color: #fff;
+    transform: translate(-10px, -10px);
+    box-shadow: rgba(0, 0, 0, 0.5);
+}
+.service .list ul li:hover a strong {
+    color: #161D6F;
+}
+.service .list ul li:hover a h3 {
+    font-size: 22px;
+    margin: 5px 0 0 0;
+    color: #161D6F;
+}
+.service .list ul li:hover a::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 31px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #161D6F;
+    background: url(../images/service_more_B.svg) no-repeat center center;
+}
+
+/* service */
+@media screen and (max-width:768px){
+            .service {
+                margin: 49px 0 0 0;
+            }
+            .service .tit {
+                margin: 62px 0 0 0;
+            }
+            .service .list {
+                margin: 24px 0 0 0;
+                padding: 0 0 65px 0;
+            }
+            .service .list ul {
+                flex-direction: column;
+                gap: 16px 0;
+            }
+            .service .list ul li {
+                width: auto;
+            }
+            .service .list ul li a {
+                margin: 0 0 0 0;
+                padding: 16px 0 16px 16px;
+            }
+            .service .list ul li a::after {
+                right: 16px;
+                top: 33px;
+                width: 24px;
+                height: 24px;
+                background-size: 12px;
+            }
+            /* service hover */
+            .service .list ul li:hover a {
+                transform: translate(0, 0);
+            }
+            .service .list ul li:hover a::after {
+                right: 16px;
+                top: 33px;
+                width: 24px;
+                height: 24px;
+                background-size: 12px;
+            }
+}/* @media service */
+
+/* footer */
+footer {
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 77px 0 78px 0;
+}
+footer .wrapper {
+    position: relative; /* top 정렬의 기준 */
+}
+footer .top {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+footer .top::before {
+    content: "";
+    position: absolute; /* top을 기준으로 정렬 */
+    right: 9px;
+    top: 9px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/top_b.svg) no-repeat center center;
+}
+footer .top:hover {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 38px;
+    height: 38px;
+    background-color: #161D6F;
+    border-radius: 50%;
+}
+footer .top:hover::before {
+    content: "";
+    position: absolute; /* top을 기준으로 정렬 */
+    right: 9px;
+    top: 9px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/top_w.svg) no-repeat center center;
+}
+footer .top span {
+    display: none; /* top 글씨 제거 */
+}
+
+/* .f_nav */
+footer .f_nav ul {
+    display: flex;
+    gap: 4px 38px;
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.5s;
+}
+footer .f_nav ul li.edu {
+    font-weight: 700;
+}
+footer .f_nav ul li a {
+    text-decoration: underline;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 4px;
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+footer .f_nav ul li:last-child::after{
+    display: none;
+}
+
+/* f_info */
+footer .f_info {
+    margin: 14px 0 14px 0;
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 허용 */
+    gap: 4px 38px;
+}
+footer .copyright {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* footer */
+@media screen and (max-width:768px){
+            footer {
+                padding: 70px 0 70px 0;
+            }
+            footer .top {
+                top: -53px;
+            }
+            footer .top:hover {
+                top: -53px;
+            }
+} /* @media footer */
