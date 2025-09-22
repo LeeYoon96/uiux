@@ -54,21 +54,22 @@ header .util .lang .lang_open {
 } 
 header .util .mypage {
     background-image: url(../images/util_mypage.svg);
+    transition: 0.3s;
 }
 header .util .lang .lang_open {
     background-image: url(../images/util_lang.svg);
+    transition: 0.3s;
 }
 /* header에 fixed가 클래스 추가 되었을때 */
 header.fixed {
-    position: fixed; /* 무조건 body랑만 고정됨 */
+    position: fixed; /* 무조건 body랑만 정렬됨 */
     background-color: #fff;
     color: #1d1d1d;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.05);
 }
-header.fixed .logo a {
-    background: url(../images/logo_c.svg)
-}
+    header.fixed .logo a {
+        background: url(../images/logo_m_c.svg);
+    }
 header.fixed .util .mypage {
     background-image: url(../images/util_mypage_c.svg);
 }
@@ -84,10 +85,9 @@ header.fixed .util .lang .lang_open {
     header .logo a {
         width: 103px;
         height: 39px;
+        transition: none;
     }
-    header.fixed .logo a {
-        background: url(../images/logo_m_c.svg) no-repeat center center;
-    }
+
     /* .header .gnb */
     header .gnb .gnb_open {
         display: block; /* 모바일에서만 나옴 */
@@ -234,7 +234,7 @@ header.fixed .util .lang .lang_open {
 .biz .tit {
     position: sticky;
     /* sticky를 감싸는 요소중에서 단한개라도 overflow :hidden; 속성이 있으면 작동이 안됨. */
-    top: 10px;
+    top: 100px;
 }
 .biz .tit h2 {
     color: #1d1d1d;
