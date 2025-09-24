@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 라이브러리파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- 내가만든파일 -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>을유문화사</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo"></div>
+            <div class="gnb"></div>
+            <div class="util"></div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide popup1">
+                                <div class="wrapper">
+                                    <h3>출판은<br>
+                                        곧 건국의 길</h3>
+                                    <p>1945년 광복의 감격 속에 창립한 을유문화사는 ‘출판은 건국 사업’이라는 사명으로 한글과<br>민족 정신을 되살리고, 수많은 책을 통해 시대와 겨레의 길을 밝혀왔습니다.</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide popup2">
+                                <div class="wrapper">
+                                    <h3>지성의 산실<br> 
+                                        을유문화사</h3>
+                                    <p>을유문화사는 작가와 독자를 잇는 지성의 산실로서 시대의 사유와 지혜를 담아왔습니다.<br>앞으로도 문화의 등불로서 깊이 있는 성취를 담아내며 사회와 겨레에 공헌하고자 합니다.</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide popup3">
+                                <div class="wrapper">
+                                    <h3>빛으로 남은<br>
+                                        책의 역사</h3>
+                                    <p>을유문화사의 책들은 『청록집』, 『삼대』, 『임꺽정』에서 『세계문학전집』까지 한국 근현대사의 흐름을 비추었습니다.<br>시대의 지성과 예술을 담아내며 출판의 새 길을 열어온 역사는 지금도 이어지고 있습니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--swiper-->
+                    <div class="ctrl_btn">
+                        <div class="btn_left">
+                            <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                            <button class="btn_stop"><span class="blind">일시정지</span></button>
+                            <button class="btn_play"><span class="blind">재생버튼</span></button>
+                        </div>
+                        <div class="btn_right">
+                            <button class="btn_prev"><span class="blind">이전</span></button>
+                            <button class="btn_next"><span class="blind">다음</span></button>
+                        </div>
+                    </div>
+            </section><!--visual-->
+            <section class="book">
+                <div class="bookwrap">
+                    <div class="tit">
+                        <h2>오늘의 책</h2>
+                        <p>책 읽는 즐거움,<br>
+                            책들과 함께하세요</p>
+                    </div>
+                    <div class="list"></div>
+                    <div class="more"></div>
+                </div>
+            </section><!--book-->
+            <section class="interview">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>월간 을터뷰</h2>
+                        <p>문학과 예술의 길 위에서 길을 묻다</p>
+                    </div>
+                </div>
+            </section><!--interview-->
+            <section class="story">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>을유 시리즈</h2>
+                    </div>
+                </div>
+            </section><!--story-->
+        </main><!--container-->
+        <footer></footer>
+    </div>
+</body>
+</html>
