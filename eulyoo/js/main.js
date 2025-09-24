@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    console.log('연결되었구나')
+    // console.log('연결되었구나')
 
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -39,4 +39,30 @@ $('.visual .ctrl_btn .btn_play').on('click', function(){
     $('.visual .ctrl_btn .btn_stop').show()
     // console.log('재생재생')
 })
+
+/* 브라우저가 스크롤 되면 header에 fixed 클래스 추가 
+    1. 조금이라도 스크롤 되면 header에 fixed 클래스 추가
+    2. 다시 맨위로 올라가면 header에 fixed 클래스를 삭제
+    3. 새로고침했을때 만약 브라우저가 스크롤이 되어있다면 header에 fixed 클래스 추가
+    --> 브라우저를 스크롤 할때도 체클해야하고
+        처음에 로딩했을때도 체크해야함
+    ==> 동일한 체크를 두번 실행 ==> 함수로 처리
+    */
+
+    let scrolling
+    function scroll_chk(){ //함수를 정의한다
+        scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
+    }
+    //문서가 로딩됬을때 단 한번 함수 실행
+    scroll_chk()
+    //브라우저가 스크롤 될때마다 한번씩 함수 실행
+    $(window).scroll(function(){
+        scroll_chk()
+    })
 })//맨끝
