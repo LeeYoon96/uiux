@@ -460,6 +460,7 @@ header.fixed .util .search .search_open {
 /* interview */
 .interview {
     background-color: #BDC4D4;
+    margin: 100px 0 0 0;
     padding: 156px 0 105px 0;
 }
 .interview .wrapper {
@@ -518,13 +519,13 @@ header.fixed .util .search .search_open {
     filter: grayscale(0);
 }
 .interview .list ul li a .txt {
-    position: relative; /* a 정렬의 기준 */
+    position: absolute; /* a를 기준으로 정렬 */
     left: 0;
-    bottom: 130px;
+    bottom: -78px;
     z-index: 11;
     width: calc(100% - 78px);
-    color: #F0E4D8;
-    padding: 40px 24px 28px 24px;
+    color: #fff;
+    padding: 40px 24px 28px 29px;
     border-radius: 50px 0 50px 0;
     transition: 0.5s;
 }
@@ -532,12 +533,23 @@ header.fixed .util .search .search_open {
     border-radius: 0 50px 0 50px ;
 }
 .interview .list ul li a .txt::after {
-    opacity: 0;
+    content: "";
+    position: absolute; /* txt를 기준으로 정렬 */
+    right: -53px;
+    bottom: 102px;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.1666 27.3337V14.8337H0.666626V13.167H13.1666V0.666992H14.8333V13.167H27.3333V14.8337H14.8333V27.3337H13.1666Z' fill='%23F0E4D8' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+    background-size: contain;
     transition: 0.5s;
 }
 .interview .list ul li a:hover .txt {
     background-color: #0F1A2C;
-    bottom: 150px;
+    bottom: -60px;
+    padding: 40px 24px 28px 29px;
+    color: #F0E4D8;
 }
 .interview .list ul li a:hover .txt::after {
     content: "";
