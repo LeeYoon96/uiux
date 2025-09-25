@@ -148,6 +148,7 @@ header.fixed .util .search .search_open {
 }
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이에 딱 맞춤 */
+    min-height: 540px; /* 최소 높이 */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -257,8 +258,8 @@ header.fixed .util .search .search_open {
 }
 .visual .ctrl_btn .btn_prev,
 .visual .ctrl_btn .btn_next {
-    width: 41px;
-    height: 41px;
+    width: 40px;
+    height: 40px;
     border: 1px solid #fff;
     border-radius: 50%;
     background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_39_971' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect x='0.666504' y='0.666992' width='26.6667' height='26.6667' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_39_971)'%3E%3Cpath d='M18.6389 15.1116H6.22219C5.90738 15.1116 5.64349 15.0051 5.43053 14.7921C5.21757 14.5792 5.11108 14.3153 5.11108 14.0004C5.11108 13.6856 5.21757 13.4217 5.43053 13.2088C5.64349 12.9958 5.90738 12.8893 6.22219 12.8893H18.6389L13.1944 7.44489C12.9722 7.22267 12.8657 6.96341 12.875 6.66711C12.8842 6.37082 13 6.11156 13.2222 5.88934C13.4444 5.68563 13.7037 5.57915 14 5.56989C14.2963 5.56063 14.5555 5.66711 14.7777 5.88934L22.1111 13.2227C22.2222 13.3338 22.3009 13.4542 22.3472 13.5838C22.3935 13.7134 22.4166 13.8523 22.4166 14.0004C22.4166 14.1486 22.3935 14.2875 22.3472 14.4171C22.3009 14.5467 22.2222 14.6671 22.1111 14.7782L14.7777 22.1116C14.574 22.3153 14.3194 22.4171 14.0139 22.4171C13.7083 22.4171 13.4444 22.3153 13.2222 22.1116C13 21.8893 12.8889 21.6255 12.8889 21.3199C12.8889 21.0143 13 20.7505 13.2222 20.5282L18.6389 15.1116Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -307,24 +308,218 @@ header.fixed .util .search .search_open {
     }
 }/* visual ctrl_btn */
 
+
 .book {
     margin: 156px 0 0 0 ;
 }
+/* book .book_wrap*/
 .book .book_wrap {
     width: calc(50% + 630px);
     /* book넓이의 절반 50% + 1260의 절반 */
-    margin : 0 0 0 calc((100% - 1260px) / 2);
+    margin : 0 0 100px calc((100% - 1260px) / 2);
     display: flex;
     justify-content: space-between;
-}
-.book .book_wrap .tit {
-
+    position: relative; /* ctrl_btn, more 정렬의 기준 */
 }
 .book .book_wrap .list {
-    height: 200px;
-    border: 2px solid red;
-    width: calc(100% - 159px);
+    width: calc(100% - 311px);
+    margin: -10px 0 0 0 ;
 }
+.book .book_wrap .list .swiper {
+    padding: 10px 10px 0 10px;
+}
+.book .book_wrap .list .swiper-wrapper {
+    align-items: flex-end;
+}
+.book .book_wrap .list .swiper-slide {
+    width: 200px;
+}
+.book .book_wrap .list .swiper-slide a {
+    display: block;
+}
+.book .book_wrap .list .swiper-slide a .photo {
+    overflow: hidden;
+    border: 1px solid rgba(15, 26, 44, 0.5);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+.book .book_wrap .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.book .book_wrap .list .swiper-slide a .txt {
+    height: 100px;
+}
+.book .book_wrap .list .swiper-slide a .txt h3 {
+    margin: 22px 0 22px 0;
+    font-size: 20px;
+    color: #1A1713;
+    /* 최대 2줄 */
+    line-height: 1.3;
+    max-height: 2.6em; /* 행간 * 줄수 = 단위 em */
+    overflow: hidden;
+}
+.book .book_wrap .list .swiper-slide a .txt p {
+    /* 무조건 1줄 제한 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.book .book_wrap .ctrl_btn {
+    position: absolute; /* book_wrap을 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 0 3px;
+}
+.book .book_wrap .ctrl_btn button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #1A1713;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_57' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect x='1.16663' y='1.16699' width='25.6667' height='25.6667' fill='%23D9D9D9' stroke='%231A1713'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_57)'%3E%3Cpath d='M14.0008 5.58203C14.2932 5.57299 14.5495 5.67859 14.7693 5.89844L22.1023 13.2314C22.2123 13.3414 22.2901 13.4602 22.3357 13.5879C22.3815 13.7159 22.404 13.8533 22.4041 14C22.4041 14.1468 22.3815 14.2849 22.3357 14.4131C22.2901 14.5407 22.2123 14.6596 22.1023 14.7695L14.7693 22.1025C14.5681 22.3037 14.3159 22.4043 14.0135 22.4043C13.7112 22.4042 13.45 22.304 13.2303 22.1025H13.2312C13.0114 21.8827 12.9013 21.6223 12.9012 21.3203C12.9012 21.0182 13.0113 20.7571 13.2312 20.5371L18.6472 15.1201L18.6687 15.0986H6.22244C5.91078 15.0986 5.64974 14.9937 5.43924 14.7832C5.22881 14.5727 5.12381 14.3116 5.12381 14C5.12391 13.6886 5.22894 13.4281 5.43924 13.2178C5.64974 13.0073 5.91078 12.9014 6.22244 12.9014H18.6687L18.6472 12.8809L13.2029 7.43652C12.9831 7.21669 12.8785 6.9604 12.8875 6.66797C12.8966 6.37508 13.0102 6.11757 13.2303 5.89746C13.4502 5.69593 13.7077 5.59119 14.0008 5.58203Z' fill='%231A1713' stroke='%231A1713' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.book .book_wrap .ctrl_btn button.btn_prev {
+    transform: rotate(180deg);
+}
+.book .book_wrap .ctrl_btn button.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: default; /* opacity가 0.5면 마우스 커서 변경 */
+}
+
+.book .book_wrap .more {
+    position: absolute; /* book_wrap을 기준으로 정렬 */
+    left: 0;
+    bottom: 289px;
+}
+.book .book_wrap .more a {
+    display: block;
+    color: #1A1713;
+}
+.book .book_wrap .more a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    border-bottom: 1px solid #1A1713;
+    transition: 0.3s;
+}
+.book .book_wrap .more a:hover::after {
+    width: 100%;
+}
+/* book .book_wrap*/
+
+/* book .book_wrap*/
+@media screen and (max-width:768px){
+    .book {
+        margin: 62px 0 0 0 ;
+    }
+    /* book .book_wrap*/
+    .book .book_wrap {
+        width: calc(50% + 630px);
+        /* book넓이의 절반 50% + 1260의 절반 */
+        margin : 0 0 100px calc((100% - 1260px) / 2);
+        display: flex;
+        justify-content: space-between;
+        position: relative; /* ctrl_btn, more 정렬의 기준 */
+    }
+    .book .book_wrap .list {
+        width: calc(100% - 311px);
+        margin: -10px 0 0 0 ;
+    }
+    .book .book_wrap .list .swiper {
+        padding: 10px 10px 0 10px;
+    }
+    .book .book_wrap .list .swiper-wrapper {
+        align-items: flex-end;
+    }
+    .book .book_wrap .list .swiper-slide {
+        width: 200px;
+    }
+    .book .book_wrap .list .swiper-slide a {
+        display: block;
+    }
+    .book .book_wrap .list .swiper-slide a .photo {
+        overflow: hidden;
+        border: 1px solid rgba(15, 26, 44, 0.5);
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    }
+    .book .book_wrap .list .swiper-slide a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: top;
+    }
+    .book .book_wrap .list .swiper-slide a .txt {
+        height: 100px;
+    }
+    .book .book_wrap .list .swiper-slide a .txt h3 {
+        margin: 22px 0 22px 0;
+        font-size: 20px;
+        color: #1A1713;
+        /* 최대 2줄 */
+        line-height: 1.3;
+        max-height: 2.6em; /* 행간 * 줄수 = 단위 em */
+        overflow: hidden;
+    }
+    .book .book_wrap .list .swiper-slide a .txt p {
+        /* 무조건 1줄 제한 */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .book .book_wrap .ctrl_btn {
+        position: absolute; /* book_wrap을 기준으로 정렬 */
+        left: 0;
+        bottom: 0;
+        display: flex;
+        gap: 0 3px;
+    }
+    .book .book_wrap .ctrl_btn button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #1A1713;
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_57' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect x='1.16663' y='1.16699' width='25.6667' height='25.6667' fill='%23D9D9D9' stroke='%231A1713'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_57)'%3E%3Cpath d='M14.0008 5.58203C14.2932 5.57299 14.5495 5.67859 14.7693 5.89844L22.1023 13.2314C22.2123 13.3414 22.2901 13.4602 22.3357 13.5879C22.3815 13.7159 22.404 13.8533 22.4041 14C22.4041 14.1468 22.3815 14.2849 22.3357 14.4131C22.2901 14.5407 22.2123 14.6596 22.1023 14.7695L14.7693 22.1025C14.5681 22.3037 14.3159 22.4043 14.0135 22.4043C13.7112 22.4042 13.45 22.304 13.2303 22.1025H13.2312C13.0114 21.8827 12.9013 21.6223 12.9012 21.3203C12.9012 21.0182 13.0113 20.7571 13.2312 20.5371L18.6472 15.1201L18.6687 15.0986H6.22244C5.91078 15.0986 5.64974 14.9937 5.43924 14.7832C5.22881 14.5727 5.12381 14.3116 5.12381 14C5.12391 13.6886 5.22894 13.4281 5.43924 13.2178C5.64974 13.0073 5.91078 12.9014 6.22244 12.9014H18.6687L18.6472 12.8809L13.2029 7.43652C12.9831 7.21669 12.8785 6.9604 12.8875 6.66797C12.8966 6.37508 13.0102 6.11757 13.2303 5.89746C13.4502 5.69593 13.7077 5.59119 14.0008 5.58203Z' fill='%231A1713' stroke='%231A1713' stroke-width='0.025'/%3E%3C/g%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .book .book_wrap .ctrl_btn button.btn_prev {
+        transform: rotate(180deg);
+    }
+    .book .book_wrap .ctrl_btn button.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: default; /* opacity가 0.5면 마우스 커서 변경 */
+    }
+    
+    .book .book_wrap .more {
+        position: absolute; /* book_wrap을 기준으로 정렬 */
+        left: 0;
+        bottom: 289px;
+    }
+    .book .book_wrap .more a {
+        display: block;
+        color: #1A1713;
+    }
+    .book .book_wrap .more a::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 1px;
+        border-bottom: 1px solid #1A1713;
+        transition: 0.3s;
+    }
+    .book .book_wrap .more a:hover::after {
+        width: 100%;
+    }
+}/* book .book_wrap*/
 
 
 footer {
