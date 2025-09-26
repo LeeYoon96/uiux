@@ -28,11 +28,16 @@ body {
     margin: -1px;
     overflow: hidden;
 }
+.photo {
+    overflow: hidden;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-@media screen and (max-width:768px){
-    body {
-        font-size: 16px;
-    }
+@media screen and (max-width:1320px){
     .wrapper {
         width: auto; /* block요소니까 꽉차게 나옴 */
         margin: 0 16px;
@@ -41,3 +46,8 @@ body {
         min-width: 0;   /* 최소 넓이 없음 */
     }
 }/*@media*/
+@media screen and (max-width: 768px){
+    body {
+        font-size: 16px;
+    }
+}
