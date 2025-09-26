@@ -64,6 +64,64 @@
     background : url(../images/add.svg) no-repeat;
 }
 
+@media screen and (max-width:768px){
+    .notice {
+        margin: 97px 0 0 0;
+    }
+    .notice .tit strong {
+        font-size: 16px;
+    }
+    .notice .tit h2 {
+        display: block;
+        margin: 8px 0 0 0;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    /* list */
+    .notice .list ul {
+        display: block;
+    }
+    .notice .list ul li {
+        width: 326px;
+        border-top: 1px solid #ededed ;
+        margin: 17px 0 0 0;
+    }
+    .notice .list ul li:last-child {
+        width: 326px;
+        border-bottom: 1px solid #ededed ;
+        padding: 0 0 17px 0;
+    }
+    .notice .list ul li .photo {
+        display: none;
+    }
+    .notice .list .txt h3 {
+        margin: 17px 0 0 0;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .notice .list .txt p {
+        display: none;
+    }
+
+    /* more */
+    .notice .more a {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .notice .more a::after {
+        position: absolute; /* more를 기준으로 정렬 */
+        content: "";
+        right: -1px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        background : url(../images/add.svg) no-repeat;
+    }
+} /* media */
+        
 /* university */
 .university {
     margin: 96px 0 0 0;
