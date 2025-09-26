@@ -1,0 +1,104 @@
+@import url(default.css);
+@import url(font.css); /* cdn 방식은 외부에서 가져오는 방식이기 때문에 없어지면 연결 안됨 */
+@import url(common.css);
+
+/* notice */
+.notice {
+    margin: 171px 0 0 0;
+}
+.notice .tit strong {
+    color: #004EA2;
+    font-weight: 400;
+}
+.notice .tit h2 {
+    display: block;
+    margin: 13px 0 0 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1D1D1D;
+}
+
+/* list */
+.notice .list {
+    margin: 46px 0 0 0;
+}
+.notice .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.notice .list ul li {
+    width: calc(33.33% - 16px);
+}
+.notice .list .txt h3 {
+    margin: 14px 0 0 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1D1D1D;
+}
+.notice .list .txt p {
+    margin: 5px 0 0 0;
+    color: #2d2d2d;
+}
+
+/* more */
+.notice .wrapper {
+    position: relative; /* more의 정렬 기준 */
+}
+.notice .more {
+    position: absolute;
+    right: 0;
+    top: 108px;
+    padding: 0 20px 0 0 ;
+}
+.notice .more a {
+    display: block;
+    color: #004EA2;
+}
+.notice .more a::after {
+    position: absolute; /* more를 기준으로 정렬 */
+    content: "";
+    right: -1px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background : url(../images/add.svg) no-repeat;
+}
+
+/* university */
+.university {
+    margin: 96px 0 0 0;
+    height: 610px;
+    background : url(../images/university_bg.jpg) center center no-repeat ;
+}
+.university .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 156px 0 0 0;
+}
+.university .tit {
+    color: #fff;
+}
+.university .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 13px 0 0 0;
+}
+.university .list {
+    width: 704px;
+    color: #fff;
+}
+.university .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}
+.university .list ul li {
+    width: 160px;
+}
+.university .list ul li a {
+    display: block;
+    height: 150px;
+    padding: 86px 0 38px 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
