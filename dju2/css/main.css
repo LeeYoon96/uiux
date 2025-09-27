@@ -48,7 +48,7 @@
 .news .more a {
     display: block;
     color: #004EA2;
-    padding: 0 20px 0 0;
+    padding: 0 19px 0 0;
     position: relative;
 }
 .news .more a::after {
@@ -119,12 +119,7 @@
         border-radius: 30px;
     }
     .news .more a::after {
-        content: "";
-        position: absolute;
         right: 18px;
         top: 9px;
-        width: 15px;
-        height: 15px;
-        background: url(../images/news_more.svg) no-repeat center center;
     }
 }

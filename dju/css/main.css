@@ -6,15 +6,17 @@
 .notice {
     margin: 171px 0 0 0;
 }
+.notice .wrapper {
+    position: relative; /* more의 정렬 기준 */
+}
 .notice .tit strong {
     color: #004EA2;
-    font-weight: 400;
 }
 .notice .tit h2 {
-    display: block;
     margin: 13px 0 0 0;
     font-size: 40px;
     font-weight: 700;
+    line-height: 1.2;
     color: #1D1D1D;
 }
 
@@ -29,41 +31,57 @@
 .notice .list ul li {
     width: calc(33.33% - 16px);
 }
-.notice .list .txt h3 {
-    margin: 14px 0 0 0;
+.notice .list ul li a {
+    display: block;
+}
+.notice .list ul li a .photo {
+    height: 250px;
+}
+.notice .list ul li a h3 {
+    margin: 14px 0 5px 0;
     font-size: 22px;
     font-weight: 700;
     color: #1D1D1D;
 }
-.notice .list .txt p {
-    margin: 5px 0 0 0;
+.notice .list ul li a p {
     color: #2d2d2d;
 }
 
 /* more */
-.notice .wrapper {
-    position: relative; /* more의 정렬 기준 */
-}
+
 .notice .more {
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
-    top: 108px;
-    padding: 0 20px 0 0 ;
+    top: 76px;
 }
 .notice .more a {
     display: block;
     color: #004EA2;
+    padding: 0 19px 0 0 ;
+    position: relative; /* after 정렬의 기준 */
 }
 .notice .more a::after {
-    position: absolute; /* more를 기준으로 정렬 */
+    position: absolute;  /* a를 기준으로 정렬 */
     content: "";
-    right: -1px;
-    top: 4px;
-    width: 20px;
-    height: 20px;
-    background : url(../images/add.svg) no-repeat;
+    right: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background : url(../images/notice_more.svg) no-repeat center center;
 }
-
+@media screen and (max-width:1024px){
+    .notice .tit h2 {
+        font-size: 32px;
+    }
+    .notice .list ul li {
+    width: calc(50% - 10px);
+    }
+}
+@media screen and (max-width:1024px) and (min-width:769px){
+    .notice .list ul li:nth-child(3){
+        display: none;
+    }
+}
 @media screen and (max-width:768px){
     .notice {
         margin: 97px 0 0 0;
@@ -72,53 +90,51 @@
         font-size: 16px;
     }
     .notice .tit h2 {
-        display: block;
         margin: 8px 0 0 0;
         font-size: 24px;
-        font-weight: 700;
-        line-height: 1.2;
     }
-
     /* list */
     .notice .list ul {
         display: block;
     }
     .notice .list ul li {
-        width: 326px;
+        width: auto;
         border-top: 1px solid #ededed ;
-        margin: 17px 0 0 0;
     }
     .notice .list ul li:last-child {
-        width: 326px;
         border-bottom: 1px solid #ededed ;
-        padding: 0 0 17px 0;
+    }
+    .notice .list ul li a {
+        padding: 17px 0 17px 0;
     }
     .notice .list ul li .photo {
         display: none;
     }
-    .notice .list .txt h3 {
-        margin: 17px 0 0 0;
+    .notice .list ul li a h3 {
+        margin: 0;
         font-size: 18px;
         font-weight: 400;
     }
-    .notice .list .txt p {
+    .notice .list ul li a p {
         display: none;
     }
-
     /* more */
+    .notice .more {
+        position: relative; /* wrapper를 기준으로 정렬 */
+        right: auto;
+        top: auto;
+        margin: 30px 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
     .notice .more a {
-        position: absolute;
-        left: 0;
-        bottom: 0;
+        padding: 4px 38px 5px 22px ;
+        border: 1px solid #004EA2;
+        border-radius: 30px;
     }
     .notice .more a::after {
-        position: absolute; /* more를 기준으로 정렬 */
-        content: "";
-        right: -1px;
-        top: 4px;
-        width: 20px;
-        height: 20px;
-        background : url(../images/add.svg) no-repeat;
+        right: 18px;
+        top: 9px;
     }
 } /* media */
         
@@ -126,24 +142,23 @@
 .university {
     margin: 96px 0 0 0;
     height: 610px;
-    background : url(../images/university_bg.jpg) center center no-repeat ;
+    background : url(../images/university_bg.jpg) no-repeat center center / cover;
+    color: #fff;
 }
 .university .wrapper {
     display: flex;
     justify-content: space-between;
     padding: 156px 0 0 0;
 }
-.university .tit {
-    color: #fff;
-}
+
 .university .tit h2 {
     font-size: 40px;
     font-weight: 700;
+    line-height: 1.2;
     margin: 13px 0 0 0;
 }
 .university .list {
     width: 704px;
-    color: #fff;
 }
 .university .list ul {
     display: flex;
@@ -151,12 +166,72 @@
     gap: 20px 20px;
 }
 .university .list ul li {
-    width: 160px;
+    width: calc(25% - 15px)
 }
 .university .list ul li a {
     display: block;
+    position: relative; /* after 정렬의 기준 */
     height: 150px;
     padding: 86px 0 38px 0;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1);
+}
+.university .list ul li a::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 58px;
+    top: 40px;
+    width: 45px;
+    height: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.university .list ul li.icon1 a::after {
+    background-image: url(../images/icon_01.svg);
+}
+.university .list ul li.icon2 a::after {
+    background-image: url(../images/icon_02.svg);
+}
+.university .list ul li.icon3 a::after {
+    background-image: url(../images/icon_03.svg);
+}
+.university .list ul li.icon4 a::after {
+    background-image: url(../images/icon_04.svg);
+}
+.university .list ul li.icon5 a::after {
+    background-image: url(../images/icon_05.svg);
+}
+.university .list ul li.icon6 a::after {
+    background-image: url(../images/icon_06.svg);
+}
+.university .list ul li.icon7 a::after {
+    background-image: url(../images/icon_07.svg);
+}
+.university .list ul li.icon8 a::after {
+    background-image: url(../images/icon_08.svg);
+}
+/* university */
+@media screen and (max-width:768px){
+        .university {
+            margin: 77px 0 0 0;
+            height: 966px;
+        }
+        .university .wrapper {
+            display: block;
+            padding: 102px 0 0 0;
+        }
+        .university .tit h2 {
+            font-size: 24px;
+            margin: 8px 0 0 0;
+        }
+        .university .list {
+            width: 326px;
+            margin: 44px 0 0 0;
+        }
+        .university .list ul {
+            gap: 16px 16px;
+        }
+        .university .list ul li {
+            width: calc(50% - 8px)
+        }
 }

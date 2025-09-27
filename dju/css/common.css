@@ -29,10 +29,7 @@ body {
   overflow: hidden;
 }
 
-@media screen and (max-width:768px){
-  body {
-    font-size: 16px;
-  }
+@media screen and (max-width:1292px){
   .wrapper {
     width: auto; /* block 요소니까 꽉차게 나옴 */
     margin: 0 16px; /* 가운데 정렬 */
@@ -41,10 +38,9 @@ body {
     min-width: 0; /* 최소 넓이 없음 */
     position: relative; /* header 정렬의 기준 */
   }
-  .tit_top {
-    margin: 0 0 10px 0;
-  }
-  .tit_gm {
-    font-size: 28px;
-  }  
 }/* @media */
+@media screen and (max-width:768px){
+  body {
+    font-size: 16px;
+  }
+}
