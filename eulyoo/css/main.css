@@ -738,7 +738,6 @@ header.fixed .util .search .search_open {
 .story .list .swiper-slide a .photo {
     overflow: hidden;
     height: 433px;
-    
 }
 .story .list .swiper-slide a:hover .photo img {
     transform: scale3d(1.2, 1.2, 1);
@@ -754,14 +753,15 @@ header.fixed .util .search .search_open {
     overflow: hidden;
     height: 323px;
 }
+.story .list .swiper-slide.long a:hover .photo {
+    transform: scale3d(1.2, 1.2, 1);
+}
 .story .list .swiper-slide.long a .photo img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.3s;
-}
-.story .list .swiper-slide.long a:hover .photo {
-    transform: scale3d(1.2, 1.2, 1);
 }
 .story .list .swiper-slide a .txt h3 {
     font-size: 24px;
@@ -825,7 +825,7 @@ header.fixed .util .search .search_open {
     position: relative; /* after 정렬의 기준 */
 }
 .story .more a::after {
-    position: absolute; //*after를 기준으로 정렬 */
+    position: absolute; /*after를 기준으로 정렬 */
     content: "";
     left: 0;
     bottom: 0;
@@ -887,13 +887,13 @@ header.fixed .util .search .search_open {
         
         /* ctrl_btn */
         .story .ctrl_btn {
-           display: none;
+            display: none;
         }
         .story .ctrl_btn button {
             display: none;
         }
         .story .ctrl_btn button.btn_prev {
-           display: none;
+            display: none;
         }
         .story .more {
             margin: 0;
