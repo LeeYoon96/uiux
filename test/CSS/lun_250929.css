@@ -52,9 +52,6 @@
             width: auto; /* 1260에서 넓이 618  / 1260 * 100*/
             border-radius: 10px;
         }
-        .plus .photo img {
-            vertical-align: top; /* 이미지 하단 여백 삭제 */
-        }
 }
 
 .support {
@@ -77,7 +74,7 @@
     margin: 0 0 21px 0;
 }
 .support .photo {
-    width: calc(100% - 618px); /* 1260에서 넓이 618  / 1260 * 100*/
+    width: calc(100% - 642px); /* 1260에서 넓이 642  / 1260 * 100*/
     border-radius: 20px;
     height: 412px;
 }
@@ -85,13 +82,13 @@
 /* support media */
 @media screen and (max-width:1024px){
     .support .tit {
-        width: 511px; /* 1260에서 넓이 511  / 1260 * 100*/
+        width: 400px; /* 1260에서 넓이 511  / 1260 * 100*/
     }
     .support .tit h2 {
         font-size: 32px;
     }
     .support .photo {
-        width: auto; /* 1260에서 넓이 329  / 1260 * 100*/
+        width: calc(100% - 440px);
     }
 }
 @media screen and (max-width:768px){
@@ -107,7 +104,7 @@
         }
         .support .tit h2 {
             font-size: 24px;
-            margin: 0 0 17px 0;
+            margin: 0 0 21px 0;
         }
         .support .photo {
             width: auto; /* 1260에서 넓이 329  / 1260 * 100*/
