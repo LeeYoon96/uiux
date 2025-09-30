@@ -15,14 +15,11 @@
     url(../fonts/Pretendard-Regular.woff2) format('woff2'), 
     url(../fonts/Pretendard-Regular.woff) format('woff');
 }
-#wrap {
-    /* 최소넓이 없음 */
-    position: relative; /* header 정렬의 기준 */
-}
+
 /* body에 기본 글자 스타일(본문 스타일) 적용 */
-body {
+html, body {
     font-family: 'Pretendard';
-    font-size: 17px;
+    font-size: var(--base-font-size);
     line-height: 1.5;
     font-weight: 400;
     color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */
@@ -62,10 +59,13 @@ button {
     padding: 0;
     box-sizing: border-box;
 }
+#wrap {
+    /* 최소넓이 없음 */
+    position: relative; /* header 정렬의 기준 */
+}
 .wrapper {
     width: 1260px;
     margin: 0 auto;
-
 }/* pc */
 .blind { /* html문서 구조상 써야하지만 디자인에서는 구현이 안되는 글자를 숨길때 사용 */
     position: absolute;
@@ -88,15 +88,45 @@ button {
     좌우 가변을 %로 줄 경우
     1260*0.06 = 75.6 + 1260 = 1336
 */
-@media screen and (max-width:1336px){
+/* 
+    좌우여백 5% -> 1260 * 0.1 + 1260 = 1386
+    좌우여백 3% -> 1260 * 0.06 + 1260 = 1336
+    좌우여백 50px -> 1260 + 100 = 1360
+    좌우여백 30px -> 1024 + 60 = 1084
+*/
+@media screen and (max-width:1360px){
     .wrapper {
         width: auto;
-        margin: 0 3%;
+        margin: 0 50px;
     } /*mobile */
 }
+@media screen and (max-width:1084px){
+    .wrapper {
+        width: auto;
+        margin: 0 30px;
+    } /*mobile */
+}
+
 @media screen and (max-width:768px){
     /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-    body {
-        font-size: 16px;
+    .wrapper {
+        margin: 0 16px;
     }
 }/* @media */
+
+/* css변수 - 값은 media를 이용해서 수치를 변경가능
+    선언한 변수를 css에서 사용하는방법은 font-size: var(--base-font-size); */
+:root {
+    --base-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --tit-line-height: 1.3;
+    --bold-weight: 700;
+}
+@media screen and (max-width:768px){
+    :root {
+        --base-font-size: 16px;
+        --tit-font-size: 24px;
+        --tit-line-height: 1.5;
+    }
+}

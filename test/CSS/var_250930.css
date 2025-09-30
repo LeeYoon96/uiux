@@ -1,0 +1,89 @@
+@import url(common.css);
+
+.test {
+    margin: 50px 0 0 0 ;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+/* ---------------------------------------*/
+
+.news {
+    margin: 203px 0 0 0;
+}
+.news .wrapper {
+    display: flex; /*tit - list 좌우배치 */
+    justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
+}
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    color: var(--tit-color);
+    line-height: var(--line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 8px 0;
+}
+.news .tit h2 span {
+    display: block;
+    /* span태그와 다른글자가 줄바꿈이 발생
+        span태그가 block요소가 되면 다른 캐그나 글자가 옆에 존재할 수 없음
+        자동으로 다음글자가 줄바꿈이 됨. */
+}
+.news .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
+
+
+
+.notice {
+    margin: 104px 0 0 0;
+    padding: 203px 0 104px 0;
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .wrapper {
+    display: flex; /*tit - list 좌우배치 */
+    justify-content: space-between;
+    position: relative; /* more 정렬의 기준 */
+}
+.notice .tit h2 {
+    font-size: var(--tit-font-size);
+    color: #fff;
+    line-height: var(--line-height);
+    font-weight: var(--bold-weight);
+    margin: 0 0 8px 0;
+}
+.notice .tit h2 span {
+    display: block;
+}
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+}
