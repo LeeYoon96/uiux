@@ -58,8 +58,56 @@ header .util .search .search_open i {
     height: 18px;
 }
 
+/* header media */
+@media screen and (min-width:769px){ /* pc버전에서만 적용 */
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* li좌우 배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /* 2차메뉴 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a { /* 1차메뉴만 선택하는 선택자 > */
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: var(--header-h);
+        padding: 0 40px 0 40px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
+        /* 2차메뉴는 absolute로 처리 */
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%; /*li의 넓이 100% */
+        padding: 13px 0 0 0; /* margin으로 주면 오버아웃이 발생함 */
+        display: none; /* 오버했을때 보임 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a {
+        display: block;
+        padding: 5px 0 5px 0;
+        text-align: center;
+        color: #555;
+    }
+    /* 메뉴가 열렸을때  header에 menu_over가 들어갔을때*/
+    header.menu_over {
+        color: #1d1d1d;
+    }
+    header.menu_over .logo a {
+        background: url(../imges/menu_logo.svg);
+    }
+    header.menu_over .util .lang .lang_open i svg path{
+        fill: #1d1d1d;
+    }
+    header.menu_over .util .search .search_open i svg path {
+        fill: #1d1d1d;
+    }
+}
+
 .visual {
     height: 100dvh;
     background: url(../imges/menu_visaul_bg.jpg)no-repeat center center / cover;
 }
-

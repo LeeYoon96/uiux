@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--불러온거-->
+
+    <!--내가-->
+    <script src="js/menu_251001.js"></script>
     <link rel="stylesheet" href="CSS/menu_251001.css">
     <title>pc와 모바일 메뉴구현 (2차메뉴)</title>
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!--
+            pc버전에서 메뉴에 마우스를 오버하면 menu_over
+            mobile버전에서 메뉴를 클릭해서 열리면 menu_open
+        -->
+        <header class="menu_over">
             <h1 class="logo"><a href="#n"><span class="blind">로고</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span>메뉴열기</span></button>
