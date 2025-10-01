@@ -94,13 +94,13 @@ button {
     좌우여백 50px -> 1260 + 100 = 1360
     좌우여백 30px -> 1024 + 60 = 1084
 */
-@media screen and (max-width:1360px){
+@media screen and (max-width:1320px){ /* 1260 + 60 = 1320 */
     .wrapper {
         width: auto;
-        margin: 0 50px;
+        margin: 0 30px;
     } /*mobile */
 }
-@media screen and (max-width:1084px){
+@media screen and (max-width:1084px){ /* 1024 + 60 = 1084*/
     .wrapper {
         width: auto;
         margin: 0 30px;
