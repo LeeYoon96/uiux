@@ -17,17 +17,24 @@
             pc버전에서 메뉴에 마우스를 오버하면 menu_over
             mobile버전에서 메뉴를 클릭해서 열리면 menu_open
         -->
-        <header class="menu_over">
+        <header>
             <h1 class="logo"><a href="#n"><span class="blind">로고</span></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><span>메뉴열기</span></button>
+                <button class="gnb_open">
+                    <span class="blind">메뉴열기</span>
+                    <i>
+                        <svg viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2V0H0V2H18ZM18 14V12H0V14H18ZM18 8V6H0V8H18Z" fill="white"/>
+                        </svg>                            
+                    </i>
+                </button>
                 <div class="gnb_wrap">
                     <ul class="depth1"><!--1차메뉴-->
                         <!-- 
                             pc버전에서 메뉴에 마우스를 오버하면 over라는 클래스 추가
                             모바일버전에서 메뉴를 열면 open이라는 클래스 추가
-                         -->
-                        <li class="over">
+                        -->
+                        <li>
                             <a href="#n"><span>을유문화사</span></a><!--메뉴명 span-->
                             <ul class="depth2">
                                 <li><a href="#n">을유1945</a></li>
@@ -62,7 +69,14 @@
                         </li>
                     </ul>
                 </div><!--gnb_wrap-->
-                <button class="gnb_close"><span>메뉴닫기</span></button>
+                <button class="gnb_close">
+                    <span class="blind">메뉴닫기</span>
+                    <i>
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#1C1B1F"/>
+                        </svg>
+                    </i>
+                </button>
             </nav><!--gnb-->
             <div class="util">
                 <div class="lang">
