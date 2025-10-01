@@ -96,8 +96,52 @@ header .util .search .search_open i {
     header.menu_over {
         color: #1d1d1d;
     }
+    header.menu_over::before {
+        content: "";
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        z-index: -1;
+        /* header 내부요소 중에서 맨 아래, header 밖으로 못나감 */
+        width: 100%;
+        height: 270px;
+        background-color: #FFF;
+    }
+    header.menu_over::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        height: 1px;
+        background-color: rgba(45, 45, 45, 0.2);
+    }
     header.menu_over .logo a {
         background: url(../imges/menu_logo.svg);
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: #FFC62A;
+        transition: 0.3s;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span {
+        position: relative; /* after 정렬의 기준 */
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        z-index: 10;
+        width: 100%;
+        height: 4px;
+        background-color: #FFC62A;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
+        display: block;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
+        text-decoration: underline;
+        color: #FFC62A;
     }
     header.menu_over .util .lang .lang_open i svg path{
         fill: #1d1d1d;
