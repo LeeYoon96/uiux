@@ -136,7 +136,7 @@ header .util .search .search_open i {
         height: 4px;
         background-color: #FFC62A;
     }
-    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
+    header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
         display: block;
     }
     header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
@@ -160,6 +160,9 @@ header .util .search .search_open i {
             height: 24px;
         }
         header .gnb .gnb_open {
+            position: absolute; /* header 기준 정렬 */
+            right: 0; 
+            top: 0;
             width: var(--header-h);
             height: var(--header-h);
 
@@ -238,6 +241,7 @@ header .util .search .search_open i {
         header .util .search .search_open {
             width: 22px;
             height: var(--header-h);
+            margin: 0 56px 0 0;
         }
         header .util .lang .lang_open i {
             width: 20px;

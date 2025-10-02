@@ -97,22 +97,9 @@ button {
 @media screen and (max-width:1320px){ /* 1260 + 60 = 1320 */
     .wrapper {
         width: auto;
-        margin: 0 30px;
+        margin: var(--content-margin);
     } /*mobile */
 }
-@media screen and (max-width:1084px){ /* 1024 + 60 = 1084*/
-    .wrapper {
-        width: auto;
-        margin: 0 30px;
-    } /*mobile */
-}
-
-@media screen and (max-width:768px){
-    /* 브라우저 사이즈 768px 부터 그 이하의 사이즈에서만 적용 */
-    .wrapper {
-        margin: 0 16px;
-    }
-}/* @media */
 
 /* css변수 - 값은 media를 이용해서 수치를 변경가능
     선언한 변수를 css에서 사용하는방법은 font-size: var(--base-font-size);
@@ -125,11 +112,13 @@ button {
     --h3-font-size: 24px;
     --tit-line-height: 1.3;
     --bold-weight: 700;
+    --content-margin: 0 50px;
 }
 @media screen and (max-width:1024px){
     :root {
         --tit-font-size: 32px;
         --base-font-size: 17px;
+        --content-margin: 0 24px;
     }
 }
 @media screen and (max-width:768px){
@@ -137,5 +126,6 @@ button {
         --tit-font-size: 24px;
         --base-font-size: 16px;
         --tit-line-height: 1.5;
+        --content-margin: 0 16px;
     }
 }
