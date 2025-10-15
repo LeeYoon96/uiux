@@ -1,0 +1,63 @@
+/* 모든페이지에서 중복되는 스타일 */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  /* 프리텐다드를 적용하는데 만약 안되면 다음에 맑은고딕 서체를 적용하고 안되면 다음서체 적용
+    sans-serif 다 없으면 고딕체 아무거나 가지고와 / serif는 명조체 */
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #555;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+.wrapper {
+  width: 1260px;
+  margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap {
+  min-width: 1292px; /* 1260 + 16 + 16 = 1292 */
+  position: relative; /* header 정렬의 기준 */
+  /* overflow: hidden;  가로스크롤바 생길때 */
+}
+/* html문서 구조상 글자를 써줘야 하는데 그 글자를 안보이게 하고 싶을때 blind 클래스를 줌 */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+/* 기본 제목 스타일 */
+.tit_top {
+  display: block;
+  color: #000033;
+  margin: 0 0 14px 0;
+}
+.tit_gm {
+  font-family: 'GMarketSans';
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 40px;
+  color: #fff;
+}
+
+@media screen and (max-width:768px){
+  body {
+    font-size: 16px;
+  }
+  .wrapper {
+    width: auto; /* block 요소니까 꽉차게 나옴 */
+    margin: 0 16px; /* 가운데 정렬 */
+  }
+  #wrap {
+    min-width: 0; /* 최소 넓이 없음 */
+    position: relative; /* header 정렬의 기준 */
+  }
+  .tit_top {
+    margin: 0 0 10px 0;
+  }
+  .tit_gm {
+    font-size: 28px;
+  }  
+}/* @media */

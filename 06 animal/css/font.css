@@ -1,0 +1,15 @@
+/* 서체 */
+
+@font-face {
+    font-family: 'TMoneyDungunbaram';
+    src: url('../fonts/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TMoneyDungunbaram';
+    src: url('../fonts/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}

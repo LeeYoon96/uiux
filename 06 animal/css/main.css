@@ -1,0 +1,129 @@
+@import url(default.css);
+@import url(font.css); /* cdn 방식은 외부에서 가져오는 방식이기 때문에 없어지면 연결 안됨 */
+@import url(common.css);
+
+.visual .swiper-slide {
+    height: 100dvh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+
+    display: flex; /* wrapperfmf 하단에 배치하기 위해 */
+    align-items: flex-end;
+}
+.visual .swiper-slide.pop1 {
+    background-image: url(../images/bg1.jpg);
+}
+.visual .swiper-slide.pop2 {
+    background-image: url(../images/bg2.jpg);
+}
+.visual .swiper-slide.pop3 {
+    background-image: url(../images/bg3.jpg);
+}
+.visual .swiper-slide p {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 0 0 calc(15dvh + 53px) 0;
+    /* 글자가 나타나는 효과 */
+    transition: 2s;
+    transform: translate(100px, 0);
+    opacity: 0;
+}
+.visual .swiper .swiper-slide-active p {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual 기준으로 정렬 */
+    left: calc(50% - 630px);
+    bottom: 15%;
+    z-index: 10;
+    display: flex;
+    gap: 0 7px;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 7px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+}
+.visual .ctrl_btn .paging .bar {
+    width: 210px;
+    height: 3px;
+    background-color: var(--color-white3);
+    position: relative;
+}
+.visual .ctrl_btn .paging .bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--bar-width, 0%); /* ← 여기에 CSS 변수 적용 */
+    height: 100%;
+    background-color: var(--color-white);
+    transition: width 0.5s ease; /* 부드럽게 변경 */
+}
+.visual .ctrl_btn .stop,
+.visual .ctrl_btn .play {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-white3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.visual .ctrl_btn .play {
+    display: none;
+}
+.visual .ctrl_btn .stop i {
+    display: block;
+    width: 12px;
+    margin: 2px 0 0 0;
+}
+.visual .ctrl_btn .play i {
+    display: block;
+    width: 10.12px;
+    margin: 2px 0 0 11px;
+}
+@media screen and (max-width:1360px){
+    .visual .ctrl_btn {
+        left: 50px;
+    }
+}
+@media screen and (max-width:1024px){
+    .visual .ctrl_btn {
+        left: 30px;
+    }
+}
+@media screen and (max-width:768px){
+                .visual .ctrl_btn {
+                    left: 16px;
+                }
+    .visual .swiper-slide {
+        height: 591px;
+    }
+    .visual .swiper-slide p {
+        margin: 0 0 102px 0;
+        /* 글자가 나타나는 효과 */
+        transition: 2s;
+        transform: translate(0, 20px);
+    }
+    .visual .ctrl_btn {
+        bottom: 55px;
+    }
+    .visual .ctrl_btn .paging .bar {
+        width: 90px;
+    }
+}
+footer {
+    margin: 150px 0 0 0;
+}
