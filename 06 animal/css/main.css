@@ -2,6 +2,197 @@
 @import url(font.css); /* cdn 방식은 외부에서 가져오는 방식이기 때문에 없어지면 연결 안됨 */
 @import url(common.css);
 
+header {
+    position: fixed; /* 무조건 body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: var(--header-h);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-m);
+}
+header .logo a {
+    display: block;
+    width: 193px;
+    height: 30px;
+    background: url(../images/logo_w.svg)no-repeat center center / contain;
+}
+header .util {
+    display: flex; /* search-mypage 좌우배치 */
+}
+header .util .search .sch_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+}
+header .util .search .sch_open i {
+    display: block;
+    width: 17.58px;
+    margin: 5px 0 0 0 ;
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+}
+header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
+    display: block;
+    width: 20px;
+    margin: 5px 0 0 0 ;
+}
+/*************************************** 시작 : pc버전 메뉴 ***************************************/
+@media screen and (min-width:769px){
+    header .gnb .gnb_open,
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close {
+        display: none; /* 모바일에서만 나옴*/
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* li 좌우배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /*depth2정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: 24px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--header-h);
+        padding: 0 1.5417em;
+        white-space: nowrap;
+        /* 행간이 높아서 2줄이 되면 이상함. 그래서 무조건 1줄로 나오는게 좋음 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--color-main2);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::before {
+        content: "";
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 5px;
+        background-color: var(--color-main2);
+        border-radius: 50%;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a:hover {
+        color: var(--color-main2);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: none; /* hover 했을때만 나옴 */
+        position: absolute;
+        left: 50%; /* li 넓이의 50% */
+        transform: translate(-50%); /* depth2 넓이의 50% */
+        top: var(--header-h);
+        padding: 20px 24px;
+        background-color: #fff;
+        border-radius: 0 0 20px 20px;
+        font-family: var(--font-family-depth);
+        font-size: var(--font-size-basic);
+        font-weight: var(--font-weight-basic);
+        line-height: var(--line-height-depth);
+        color: var(--color-title);
+        border: 1px solid var(--color-gray2);
+        min-width: 100%; /* li의 넓이 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 8px 0 ;
+        white-space: nowrap;
+        text-align: center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        color: var(--color-main2);
+    }
+    /* 메뉴에 오버했을때 */
+    header.menu_pc {
+        background-color: var(--color-white);
+        color: var(--color-title);
+        fill: var(--color-title);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header.menu_pc .logo a {
+        background: url(../images/logo.svg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color : var(--color-title);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: block;
+    }
+}/* @media */
+/* 1024이하는 메뉴가 접힘 1025이상일때 스타일*/
+@media screen and (min-width:1025px) and (max-width:1200px){
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 17px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1024px){
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 12px;
+    }
+}
+/*************************************** 끝 : pc버전 메뉴 ***************************************/
+/*************************************** 시작 : 모바일 ***************************************/
+@media screen and (max-width:1024px){
+            header {
+                padding-right: 0;
+                height: clamp(56px, 10vw, 90px);
+            }
+            header .logo a {
+                /* width: 109.37px;
+                height: 17px; */
+                width: clamp(109.37px, 2vw, 193px);
+                /* 최소, 평소 , 최대*/
+            }
+            header .util {
+                display: none; /* 숨김 */
+            }
+            header .gnb .gnb_open {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: clamp(56px, 10vw, 90px);
+                height: clamp(56px, 10vw, 90px);
+            }
+            header .gnb .gnb_open i {
+                display: block;
+                width: 32.14%;
+            }
+            header .gnb .gnb_wrap {
+                display: none;
+                position: absolute; /* header를 기준으로 정렬 */
+                right: 0;
+                top: 0;
+                width: 100%;
+                height: 100dvh;
+                background-color: var(--color-white);
+                color: var(--color-title);
+                fill: var(--color-title);
+            }
+
+            /* 메뉴가 열렸을때 */
+            header.menu_mo .gnb .gnb_wrap {
+                display: block;
+            }
+}
+header {
+    border-bottom: 1px solid red;
+}
+.visual {
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
 .visual .swiper-slide {
     height: 100dvh;
     background-position: center center;
@@ -9,7 +200,7 @@
     background-size: cover;
     color: var(--color-white);
 
-    display: flex; /* wrapperfmf 하단에 배치하기 위해 */
+    display: flex; /* li 좌우배치 */ /* wrapperfmf 하단에 배치하기 위해 */
     align-items: flex-end;
 }
 .visual .swiper-slide.pop1 {
@@ -34,9 +225,6 @@
 .visual .swiper .swiper-slide-active p {
     transform: translate(0, 0);
     opacity: 1;
-}
-.visual {
-    position: relative; /* ctrl_btn 정렬의 기준 */
 }
 .visual .ctrl_btn {
     position: absolute; /* visual 기준으로 정렬 */
@@ -112,6 +300,9 @@
         height: 591px;
     }
     .visual .swiper-slide p {
+        font-size: clamp(24px, 5vw, 60px);
+        font-weight: var(--font-weight-basic);
+        line-height: var(--line-height-tit);
         margin: 0 0 102px 0;
         /* 글자가 나타나는 효과 */
         transition: 2s;
