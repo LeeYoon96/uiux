@@ -133,4 +133,79 @@ $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
 
 
 /*********************************** 끝 : mobile 버전 1차메뉴 클릭 ********************************** */
+
+/*********************************** 시작 : mobile 버전 메뉴 열기 ********************************** 
+ * 열기를 클릭하면 header에 menu_mo 클래스 추가
+ *  header .gnb .gnb_open
+ * 닫기를 클릭하면 header에 menu_mo 클래스 삭제
+ * header .gnb .gnb_wrap .gnb_close
+*/
+
+$('header .gnb .gnb_open').on('click', function(){
+    $('header').addClass('menu_mo')
+})
+$('header .gnb .gnb_wrap .gnb_close').on('click', function(){
+    $('header').removeClass('menu_mo')
+})
+/*********************************** 끝 : mobile 버전 메뉴 닫기 ********************************** */
+/*********************************** 시작 : 스크롤 시 header에 fixed 추가 *************************** 
+ * pc/mobile 둘다...
+ * 스크롤이 조금만 되도 header에 fixed 클래스 줌
+ * 다시 맨 꼭대기로 올라가면 header에 fixed 클래스 삭제
+*/
+
+let scrolling //스크롤된 값 저장
+
+function scroll_chk(){
+    scrolling = $(window).scrollTop() //스크롤값 입력
+    if(scrolling > 0){
+        $('header').addClass('fixed')
+    }else{
+        $('header').removeClass('fixed')
+    }
+}
+
+scroll_chk() // 문서가 로딩되고 단 1번 실행
+$(window).scroll(function(){
+    scroll_chk() // 스크롤 될때마다 1번씩 실행
+})
+
+
+/*********************************** 끝 : 스크롤 시 header에 fixed 삭제 ***************************** */
+
+/*********************************** 시작 : 찾습니다 swiper ***************************** */
+const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	navigation: {
+		nextEl: '.find .item1 .next',
+		prevEl: '.find .item1 .prev',
+	},
+});
+const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	navigation: {
+		nextEl: '.find .item2 .next',
+		prevEl: '.find .item2 .prev',
+	},
+});
+
+/*********************************** 끝 : 찾습니다 swiper ***************************** */
 });
