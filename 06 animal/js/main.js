@@ -85,11 +85,14 @@ $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         // console.log('오버됨')
         $('header').addClass('menu_pc')
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
         $(this).addClass('over')
+        $(this).find('.depth2').slideDown()
     }
 })
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
     $(this).removeClass('over')
+    $(this).find('.depth2').slideUp()
 })
 $('header').on('mouseleave focusout', function(){
     $(this).removeClass('menu_pc')
@@ -102,4 +105,32 @@ $('header .util .search .sch_open').on('focusin', function(){
 
 
 /*********************************** 끝 : pc버전 메뉴 오버 ********************************** */
+/*********************************** 시작 : mobile 버전 1차메뉴 클릭 ********************************** 
+ * 닫혀있는 메뉴를 클릭하면 기존에 열려있던 메뉴는 닫고 나만 열기 (open클래스 추가)
+ * 열려있는 메뉴를 클릭하면 나 자신을 닫고 끝남 (open클래스 삭제)
+ * 열린 메뉴, 닫힌메뉴를 구분하는 방법 -- open 있으면 열린메뉴, 없으면 닫힌메뉴
+ * 1차메뉴 a의 링크를 삭제 (링크 이동을 못하게 만듬)
+*/
+
+$('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+	if(device_status == 'mobile'){
+        e.preventDefault();		
+        if($(this).parent().hasClass('open') == true){ //열려있는 메뉴는 다시 클릭했을때
+            // colsole.log('열림')
+            $(this).parent().removeClass('open') // li open클래스 삭제
+            $(this).next().slideUp() //2차메뉴를 슬라이드로 닫기
+        }else{ //열려있는 메뉴가 아닌 다른 메뉴를 여는거
+            // colsole.log('닫힘')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') // 모든 li의 open을 삭제
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() //모든 2차메뉴 닫기
+            $(this).parent().addClass('open')
+            $(this).next().slideDown() //2차메뉴를 슬라이드로 열기
+        }
+    }
+})
+
+
+
+
+/*********************************** 끝 : mobile 버전 1차메뉴 클릭 ********************************** */
 });

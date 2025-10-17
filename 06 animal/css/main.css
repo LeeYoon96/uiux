@@ -50,7 +50,7 @@ header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
     margin: 5px 0 0 0 ;
 }
 /*************************************** 시작 : pc버전 메뉴 ***************************************/
-@media screen and (min-width:769px){
+@media screen and (min-width:1025px){
     header .gnb .gnb_open,
     header .gnb .gnb_wrap .gnb_logo,
     header .gnb .gnb_wrap .gnb_close {
@@ -126,10 +126,10 @@ header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
         background: url(../images/logo.svg);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > a {
-        color : var(--color-title);
+        color : var(--color-main2);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
-        display: block;
+        display: block !important;
     }
 }/* @media */
 /* 1024이하는 메뉴가 접힘 1025이상일때 스타일*/
@@ -148,12 +148,12 @@ header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
 @media screen and (max-width:1024px){
             header {
                 padding-right: 0;
-                height: clamp(56px, 10vw, 90px);
+                height: var(--header-var);
             }
             header .logo a {
                 /* width: 109.37px;
                 height: 17px; */
-                width: clamp(109.37px, 2vw, 193px);
+                width: clamp(109.37px, 15vw, 193px);
                 /* 최소, 평소 , 최대*/
             }
             header .util {
@@ -163,8 +163,8 @@ header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: clamp(56px, 10vw, 90px);
-                height: clamp(56px, 10vw, 90px);
+                width: var(--header-var);
+                height: var(--header-var);
             }
             header .gnb .gnb_open i {
                 display: block;
@@ -181,14 +181,83 @@ header .util .mypage i { /* a 태그는 inline-block 안먹힘*/
                 color: var(--color-title);
                 fill: var(--color-title);
             }
+            header .gnb .gnb_wrap ul.depth1 {
+                margin: var(--header-var) 0 0 0;
+                height: calc(100dvh - var(--header-var));
+                overflow-y: auto; 
+                /* 주어진 높이보다 콘텐츠가 짧으면 스크롤바 안생김 
+                주어진 높이보다 콘텐츠가 더 긴 경우에만 스크롤바가 생김 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
+                display: block;
+                font-size: 17px;
+                font-weight: var(--font-weight-bold);
+                padding: 23.5px 57px 23.5px var(--wrapper-m);
+                position: relative; /* after 정렬의 기준 */
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a {
+                color: var(--color-main2);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                content: "";
+                position: absolute; /* a를 기준으로 정렬 */
+                right: var(--wrapper-m);
+                top: 50%;
+                transform: translateY(-50%); /* after 높이의 절반 */
+                width: 16px; /* 소수점이 들어가면 균일하게 안나옴 */
+                height: 8px;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 9' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.90755 6.42742L14.0326 0.302419C14.2409 0.094086 14.4874 -0.00660848 14.7721 0.000335976C15.0569 0.00728043 15.3034 0.114919 15.5117 0.323253C15.7201 0.531586 15.8242 0.778114 15.8242 1.06284C15.8242 1.34756 15.7201 1.59409 15.5117 1.80242L9.09505 8.19825C8.92839 8.36492 8.74089 8.48992 8.53255 8.57325C8.32422 8.65659 8.11589 8.69825 7.90755 8.69825C7.69922 8.69825 7.49089 8.65659 7.28255 8.57325C7.07422 8.48992 6.88672 8.36492 6.72005 8.19825L0.303386 1.78159C0.0950527 1.57325 -0.00564295 1.3302 0.00130172 1.05242C0.00824639 0.774641 0.115886 0.531585 0.324219 0.323252C0.532552 0.114919 0.77908 0.010752 1.0638 0.010752C1.34853 0.0107521 1.59505 0.114919 1.80338 0.323252L7.90755 6.42742Z' /%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                transition: 0.5s;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                transform: translateY(-50%) rotate(180deg);
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 9' fill='%2390BD20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.90755 6.42742L14.0326 0.302419C14.2409 0.094086 14.4874 -0.00660848 14.7721 0.000335976C15.0569 0.00728043 15.3034 0.114919 15.5117 0.323253C15.7201 0.531586 15.8242 0.778114 15.8242 1.06284C15.8242 1.34756 15.7201 1.59409 15.5117 1.80242L9.09505 8.19825C8.92839 8.36492 8.74089 8.48992 8.53255 8.57325C8.32422 8.65659 8.11589 8.69825 7.90755 8.69825C7.69922 8.69825 7.49089 8.65659 7.28255 8.57325C7.07422 8.48992 6.88672 8.36492 6.72005 8.19825L0.303386 1.78159C0.0950527 1.57325 -0.00564295 1.3302 0.00130172 1.05242C0.00824639 0.774641 0.115886 0.531585 0.324219 0.323252C0.532552 0.114919 0.77908 0.010752 1.0638 0.010752C1.34853 0.0107521 1.59505 0.114919 1.80338 0.323252L7.90755 6.42742Z' /%3E%3C/svg%3E%0A");
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                display: none; /* 클릭할때만 나옴 */
+                padding: 20px var(--wrapper-m) 20px calc(var(--wrapper-m) + 18px);
+                background-color: var(--color-gray);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li {
+                padding: 0 0 16px 0 ;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:last-child {
+                padding: 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+            }
+            header .gnb .gnb_wrap .gnb_logo {
+                position: absolute; /* gnb_wrap을 기준으로 정렬 */
+                left: var(--wrapper-m);
+                top: 0;
+                width: clamp(109.37px, 15vw, 193px);
+                height: var(--header-var);
+                background: url(../images/logo.svg) no-repeat center center /contain;
+            }
+            header .gnb .gnb_wrap .gnb_close {
+                position: absolute; /* gnb_wrap을 기준으로 정렬 */
+                right: 0;
+                top: 0;
+                width: var(--header-var);
+                height: var(--header-var);
+                display: flex; /* icon 정렬하려면 감싸는 태그가 해줘야함 */
+                justify-content: center;
+                align-items: center;
+            }
+            header .gnb .gnb_wrap .gnb_close i {
+                display: block;
+                width: 23.48%;
+                
+            }
 
             /* 메뉴가 열렸을때 */
             header.menu_mo .gnb .gnb_wrap {
                 display: block;
             }
-}
-header {
-    border-bottom: 1px solid red;
 }
 .visual {
     position: relative; /* ctrl_btn 정렬의 기준 */

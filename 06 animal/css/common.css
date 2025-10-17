@@ -20,6 +20,7 @@
   --color-gray : #f7f7f7;
   --color-gray2 : rgba(121, 121, 121, 0.5);
   --header-h : 90px;
+  --header-var : clamp(56px, 10vw, 90px);
   --wrapper-m : 50px;
 }
 @media screen and (max-width:1024px){
