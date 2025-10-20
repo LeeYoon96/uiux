@@ -408,9 +408,10 @@ header.fixed .logo a {
     background-color: var(--color-main);
     color: var(--color-white);
     padding: 154px 0 112px 0;
+    /* padding: clamp(72px, 20vw, 154px) 0 clamp(69px, 11vw, 112px); */
 }
 .find h2 {
-    font-size: var(--font-size-tit2);
+    font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     text-align: center;
@@ -421,7 +422,7 @@ header.fixed .logo a {
 .find .tab_list ul {
     display: flex;
     justify-content: center;
-    gap: 0 25px;
+    gap: 0 24px;
 }
 .find .tab_list ul li button {
     display: block;
@@ -430,25 +431,85 @@ header.fixed .logo a {
     color: var(--color-white2);
     font-size: var(--font-size-tit2);
     font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
 }
 .find .tab_list ul li.active button {
     background-color: var(--color-point);
     color: var(--color-title);
 }
 .find .tab_list ul li.item2.active button {
-    background-color: rgba(121, 121, 121, 0.5);
-    color: var(--color-white2);
+    background-color : var(--color-main2);
+    color: var(--color-title);
+    /* background-color: rgba(121, 121, 121, 0.5);
+    color: var(--color-white2); */
 }
 .find .tab_content {
     margin: 45px 0 0 0;
 }
 .find .tab_content .tab_item {
     position: relative; /* ctrl_btn 정렬의 기준 */
+    display: none; /* active 클래스가 있은 요소만 보임 */
+}
+.find .tab_content .tab_item.active {
+    display: block; /* active 클래스가 있는 요소만 */
+}
+.find .tab_content .tab_item .list .swiper-slide {
+    width: 220px;
+}
+.find .tab_content .tab_item .list .swiper-slide a {
+    display: block;
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 500px;
+    border-radius: 20px;
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+    display: flex; /* strong-span 좌우 배치 */
+    gap: 0 10px;
+    align-items: center;
+    margin: 31px 0 0 0;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
+    font-size: var(--font-size-tit2);
+    font-weight : var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+
+    /* 1줄 제한 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul {
+    margin: 21px 0 0 0;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+    display: flex; /* strong-span 좌우 배치 */
+    gap: 0 20px;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+    display: none; /* 모바일에서만 */
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 span {
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-tit);
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li span {
+    /* 1줄 제한 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .find .tab_content .tab_item .ctrl_btn {
     position: absolute; /* tab_item를 기준으로 정렬 */
-    right: 35px;
-    top: -90px;
+    right: 0;
+    top: -100px;
     display: flex;
     gap: 0 15px;
 }
@@ -491,6 +552,95 @@ header.fixed .logo a {
 .find .tab_content .tab_item .ctrl_btn .more i {
     display: flex;
     width: 14px;
+}
+@media screen and (max-width:768px){
+            .find {
+                padding: 72px 0 69px 0;
+                /* padding: clamp(72px, 20vw, 154px) 0 clamp(69px, 11vw, 112px); */
+            }
+            .find .tab_list {
+                margin: 15px 0 0 0;
+            }
+            .find .tab_list ul {
+                gap: 0 7px;
+            }
+            .find .tab_list ul li button {
+                padding: 3px 11px;
+            }
+            .find .tab_content {
+                margin: 18px 0 0 0; /* ??? */
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .photo {
+                height: 261px;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+                gap: 0 5px;
+                margin: 15px 0 0 0;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
+                font-size: var(--font-size-tit2);
+                font-weight : var(--font-weight-bold);
+                line-height: var(--line-height-tit);
+            
+                /* 1줄 제한 */
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul {
+                margin: 21px 0 0 0;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+                display: flex; /* strong-span 좌우 배치 */
+                gap: 0 20px;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+                display: none; /* 모바일에서만 */
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li span {
+                /* 1줄 제한 */
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .find .tab_content .tab_item .ctrl_btn {
+                position: relative; /* tab_item를 기준으로 정렬 */
+                right: calc(100% - );
+                top: auto;
+                display: flex;
+                margin: 36px 0 0 0;
+                gap: 0 15px;
+            }
+            .find .tab_content .tab_item .ctrl_btn .prev,
+            .find .tab_content .tab_item .ctrl_btn .next {
+                display: none;
+            }
+            .find .tab_content .tab_item .ctrl_btn .more {
+                gap: 0 4px;
+                height: 27px;
+                padding: 0 3px 0 9px;
+            }
+            .find .tab_content .tab_item .ctrl_btn .more i {
+                display: flex;
+                width: 10.5px;
+            }
+}/* @media */
+
+.slogan {
+    margin: 370px 0 0 0;
+    text-align: center;
+}
+.slogan h2 {
+    font-size: clamp(28px, 5vw, 60px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-depth);
+    color: var(--color-title);
+}
+.slogan p {
+    margin: 50px 0 0 0;
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+    color: var(--color-title);
 }
 
 footer {

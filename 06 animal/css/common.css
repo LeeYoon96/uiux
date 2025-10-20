@@ -88,6 +88,7 @@ body {
 }
 @media screen and (max-width:768px){
   .wrapper {
+    width: auto;
     margin: 0 var(--wrapper-m); /* 가운데 정렬 */
   }
 }/* @media */
