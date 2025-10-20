@@ -1,0 +1,15 @@
+$(선택자)attr
+data-tab
+find로 찾을때는 .이 붙어야하는데 내가 준 클래스에 .이없을때
+'.' + tab_name) 이런식으로 작성
+
+11:40 clamp
+12:00 .find padding clamp
+
+find mobile 글씨 해결
+더보기 가운데 정렬 calc
+
+vertical-align : 행간을 기준으로 움직임
+16:20 .adopt .list .swiper-slide a .cate
+
+rolling mobile에도 줘야하는가

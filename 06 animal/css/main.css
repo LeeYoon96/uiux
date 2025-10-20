@@ -429,7 +429,7 @@ header.fixed .logo a {
     padding: 13px 35px 12px 35px;
     border-radius: 30px;
     color: var(--color-white2);
-    font-size: var(--font-size-tit2);
+    font-size: var(--font-size-basic);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
 }
@@ -605,9 +605,10 @@ header.fixed .logo a {
             }
             .find .tab_content .tab_item .ctrl_btn {
                 position: relative; /* tab_item를 기준으로 정렬 */
-                right: calc(100% - );
+                right: auto;
                 top: auto;
                 display: flex;
+                justify-content: center;
                 margin: 36px 0 0 0;
                 gap: 0 15px;
             }
@@ -627,7 +628,7 @@ header.fixed .logo a {
 }/* @media */
 
 .slogan {
-    margin: 370px 0 0 0;
+    margin: clamp(159px, 20vw, 370px) 0 clamp(132px, 15vw, 262px);
     text-align: center;
 }
 .slogan h2 {
@@ -636,13 +637,214 @@ header.fixed .logo a {
     line-height: var(--line-height-depth);
     color: var(--color-title);
 }
+.slogan h2 br.mo_only {
+    display: none;
+}
+.slogan h2 br.pc_only {
+    display: block;
+}
+.slogan h2 strong {
+    display: inline-block;
+    position: relative; /* before 정렬의 기준 */
+    vertical-align: middle;
+}
+.slogan h2 strong::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -53%); /* 좌우의 가운데 위아래 가운데 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 85%;
+    height: 3em;
+}
+.slogan h2 strong.place {
+    width: 4em;
+}
+.slogan h2 strong.place::before {
+    background-image: url(../images/slogan_place.png);
+    transform: translate(-50%, -83%); /* 좌우의 가운데 위아래 가운데 */
+}
+.slogan h2 strong.animal {
+    width: 4em;
+}
+.slogan h2 strong.animal::before{
+    background-image: url(../images/slogan_animal.png);
+
+}
+.slogan h2 strong.center {
+    width: 4.1667em;
+}
+.slogan h2 strong.center::before {
+    background-image: url(../images/slogan_center.png);
+
+}
+.slogan h2 strong.call {
+    width: 2.7167em;
+}
+.slogan h2 strong.call::before {
+    background-image: url(../images/slogan_call.png);
+
+}
 .slogan p {
     margin: 50px 0 0 0;
     font-weight: var(--font-weight-basic);
     line-height: var(--line-height-basic);
     color: var(--color-title);
 }
+@media screen and (max-width:768px){
+    .slogan h2 br.mo_only {
+        display: block;
+    }
+    .slogan h2 br.pc_only {
+        display: none;
+    }
+}
+.adopt {
+    background-color: var(--color-main);
+    color: var(--color-white);
+    fill: var(--color-white);
+    padding: clamp(72px, 15vw, 232px) 0 clamp(64px, 15vw, 205px);
+    position: relative; /* rolling 정렬의 기준 */
+    overflow: hidden; /* rolling 가로스크롤바 삭제 */
+}
+.adopt .tit h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    text-align: center;
+}
+.adopt .list {
+    margin: 121px 0 0 0;
+}
+.adopt .list .swiper-slide {
+    width: clamp(280px, 20vw, 320px);
 
+}
+.adopt .list .swiper-slide a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.adopt .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: clamp(280px, 20vw, 320px);
+    border-radius: 50%;
+}
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.adopt .list .swiper-slide a .cate {
+    background-color: #0800FF;
+    border-radius: 50px;
+    padding: 4px 20px 3px 19px;
+    margin-top: -18px;
+}
+.adopt .list .swiper-slide a .cate2 {
+    border-radius: 50px;
+    padding: 4px 20px 3px 19px;
+    margin-top: -18px;
+    background-color: #FF0048;
+}
+.adopt .list .swiper-slide a h3 {
+    font-size: var(--font-size-tit2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--color-white);
+    margin: 17px 0 13px 0;
+}
+.adopt .list .swiper-slide a p {
+    overflow: hidden;
+    line-height: 1.3;
+    height : 2.6em;
+    margin: 0 10% 0 10%;
+}
+.adopt .ctrl_btn {
+    margin: 69px 0 0 0;
+    display: flex;
+    gap: 0 15px;
+    justify-content: center;
+}
+.adopt .ctrl_btn .prev,
+.adopt .ctrl_btn .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(121, 121, 121, 0.5);
+    color: var(--color-white2);
+}
+.adopt .ctrl_btn .prev i,
+.adopt .ctrl_btn .next i {
+    display: block;
+    width: 10.45px;
+    margin: 5px 0 0 0;
+}
+.adopt .ctrl_btn .more a {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    height: 56px;
+    padding: 0 17px 0 29px;
+    border-radius: 50px;
+    background-color: rgba(121, 121, 121, 0.5);
+}
+.adopt .ctrl_btn .more a i {
+    display: block;
+    width: 14px;
+    margin: 2px 0 0 0;
+}
+.adopt .rolling {
+    position: absolute; /*adopt를 기준으로 정렬 */
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    background-color: #FF0048;
+    font-size: 100px;
+    font-weight: var(--font-weight-bold) ;
+    line-height: var(--line-height-tit);
+    color: var(--color-white2);
+    white-space: nowrap;
+}
+.adopt .rolling  p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: adopt_roll 60s linear infinite ;
+    /* 애니메이션 이름 60초동안 실행 가속도x 무한반복 */
+    transform: translateX(-50.1%);
+}
+@keyframes adopt_roll {
+    0% {transform: translateX(0); }
+    100% { transform: translateX(-50.1%);}
+}
+@media screen and (max-width:768px){
+    .adopt .ctrl_btn {
+        margin: 30px 0 0 0;
+        gap: 0;
+        justify-content: center;
+    }
+    .adopt .ctrl_btn .prev,
+    .adopt .ctrl_btn .next {
+    display: none;
+    }
+    .adopt .ctrl_btn .more a {
+        gap: 0 7px;
+        align-items: center;
+        height: 27px;
+        padding: 3px 3px 3px 9px;
+    }
+    .adopt .ctrl_btn .more a i {
+        width: 10.45px;
+    }
+}
 footer {
     margin: 1000px 0 0 0;
 }
