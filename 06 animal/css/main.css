@@ -283,12 +283,12 @@ header.fixed .logo a {
     position: relative; /* ctrl_btn 정렬의 기준 */
 }
 .visual .swiper-slide {
-    height: 100dvh;
+    height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--color-white);
-    display: flex; /* li 좌우배치 */ /* wrapperfmf 하단에 배치하기 위해 */
+    display: flex;  /* wrapperfmf 하단에 배치하기 위해 */
     align-items: flex-end;
 }
 .visual .swiper-slide.pop1 {
@@ -301,16 +301,16 @@ header.fixed .logo a {
     background-image: url(../images/bg3.jpg);
 }
 .visual .swiper-slide p {
-    font-size: var(--font-size-tit);
+    font-size: var(--font-size-visual);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    margin: 0 0 calc(15dvh + 53px) 0;
+    margin: 0 0 calc(15dvh + 59px) 0;
     /* 글자가 나타나는 효과 */
-    transition: 2s;
+    transition: transform 1s, opacity 1s;
     transform: translate(100px, 0);
     opacity: 0;
 }
-.visual .swiper .swiper-slide-active p {
+.visual .swiper-slide.swiper-slide-active p {
     transform: translate(0, 0);
     opacity: 1;
 }
@@ -320,7 +320,7 @@ header.fixed .logo a {
     bottom: 15%;
     z-index: 10;
     display: flex;
-    gap: 0 7px;
+    gap: 0 12px;
 }
 .visual .ctrl_btn .paging {
     display: flex;
@@ -333,42 +333,38 @@ header.fixed .logo a {
     width: 210px;
     height: 3px;
     background-color: var(--color-white3);
-    position: relative;
+    position: relative; /* before 정렬의 기준 */
 }
-.visual .ctrl_btn .paging .bar::before {
-    content: "";
-    position: absolute;
+.visual .ctrl_btn .paging .bar span {
+    position: absolute; /* bar 기준으로 정렬 */
     left: 0;
     top: 0;
-    width: var(--bar-width, 0%); /* ← 여기에 CSS 변수 적용 */
+    width: 50%;
     height: 100%;
     background-color: var(--color-white);
-    transition: width 0.5s ease; /* 부드럽게 변경 */
 }
 .visual .ctrl_btn .stop,
 .visual .ctrl_btn .play {
-    display: block;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     background-color: var(--color-white3);
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 .visual .ctrl_btn .play {
     display: none;
 }
 .visual .ctrl_btn .stop i {
     display: block;
-    width: 12px;
-    margin: 2px 0 0 0;
+    width: 9px;
+    margin: 0 0 0 1px;
 }
 .visual .ctrl_btn .play i {
     display: block;
-    width: 10.12px;
-    margin: 2px 0 0 11px;
+    width: 8px;
+    margin: 0 0 0 1px;
 }
 @media screen and (max-width:1360px){
     .visual .ctrl_btn {
@@ -381,23 +377,20 @@ header.fixed .logo a {
     }
 }
 @media screen and (max-width:768px){
-                .visual .ctrl_btn {
-                    left: 16px;
-                }
     .visual .swiper-slide {
         height: 591px;
     }
     .visual .swiper-slide p {
         font-size: clamp(24px, 5vw, 60px);
-        font-weight: var(--font-weight-basic);
-        line-height: var(--line-height-tit);
         margin: 0 0 102px 0;
         /* 글자가 나타나는 효과 */
         transition: 2s;
         transform: translate(0, 20px);
     }
     .visual .ctrl_btn {
-        bottom: 55px;
+        left: 16px;
+        bottom: 52px;
+        gap: 0 6px;
     }
     .visual .ctrl_btn .paging .bar {
         width: 90px;
@@ -476,7 +469,7 @@ header.fixed .logo a {
     margin: 31px 0 0 0;
 }
 .find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
-    font-size: var(--font-size-tit2);
+    font-size: var(--font-size-tit);
     font-weight : var(--font-weight-bold);
     line-height: var(--line-height-tit);
 
@@ -578,7 +571,7 @@ header.fixed .logo a {
                 margin: 15px 0 0 0;
             }
             .find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
-                font-size: var(--font-size-tit2);
+                font-size: var(--font-size-tit);
                 font-weight : var(--font-weight-bold);
                 line-height: var(--line-height-tit);
             
@@ -752,7 +745,7 @@ header.fixed .logo a {
     background-color: #FF0048;
 }
 .adopt .list .swiper-slide a h3 {
-    font-size: var(--font-size-tit2);
+    font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-white);

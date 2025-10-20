@@ -22,53 +22,63 @@ $(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
 })
 /**************** 끝 : 지금 pc버전인지 모바일인지 체크 (메뉴상태) ******************** */
 
+/***************************** 시작 : visual swiper ******************************* */
+let visual_time = 5000
+const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	autoplay: {  /* 팝업 자동 실행 */
+		delay: visual_time,
+    	disableOnInteraction: true,
+    },
+	// effect: "fade", /* fade 효과 */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+});
 
-    const visual_swiper = new Swiper('.visual .swiper', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+$('.visual .ctrl_btn .stop').on('click', function(){
+    visual_swiper.autoplay.stop();  
+    $(this).hide()
+    $('.visual .ctrl_btn .play').css('display', 'flex')
+    $('.visual .ctrl_btn .paging .bar span').stop() //animate 종료
+    // console.log('정지정지')
+})
+$('.visual .ctrl_btn .play').on('click', function(){
+    visual_swiper.autoplay.start();
+    $(this).hide()
+    $('.visual .ctrl_btn .stop').css('display', 'flex')
+    updateCurrent()
+    // console.log('재생재생')
+})
 
-        on: {
-            init: function() {
-                const totalSlides = this.slides.length - this.loopedSlides * 2;
-                $('.visual .paging .total').text(totalSlides);
-                $('.visual .paging .current').text(this.realIndex + 1);
+//  bar width 조절 함수
+function updateBarWidth(index, total) {
+    const percent = ((index + 1) / total) * 100;
+    $('.visual .paging .bar::before'); // 직접 제어 불가하므로 CSS 변수 활용
+    $('.visual .paging .bar').css('--bar-width', percent + '%');
+}
+//전체 슬라이드 개수 (Loop 상태에서도 실제 슬라이드 개수만)
+const totalSlides = $('.visual .swiper .swiper-slide').not('.swiper-slide-duplicate').length;
+$('.visual .paging .total').text(totalSlides); // 총 개수 표시
 
-                // 첫 시작시 bar width 설정
-                updateBarWidth(this.realIndex, totalSlides);
-            },
-            slideChange: function() {
-                const totalSlides = this.slides.length - this.loopedSlides * 2;
-                const current = this.realIndex + 1;
-                $('.visual .paging .current').text(current);
+// 현재 슬라이드 번호 표시 함수
+function updateCurrent() {
+	let realIndex = visual_swiper.realIndex + 1; // 실제 인덱스 (0부터 시작하므로 +1)
+	$('.visual .paging .current').text(realIndex);
+    //슬라이드가 교체되면 제일 먼저 넓이를 0으로 초기화
+    $('.visual .ctrl_btn .paging .bar span').stop() //animate 종료
+    $('.visual .ctrl_btn .paging .bar span').width(0)
+    $('.visual .ctrl_btn .paging .bar span').animate({
+        width : '100%'
+    }, visual_time)
+}
 
-                // 슬라이드 바 업데이트
-                updateBarWidth(this.realIndex, totalSlides);
-            }
-        }
-    });
+// 처음 로드 시 한번 실행
+updateCurrent();
 
-    $('.visual .ctrl_btn .stop').on('click', function(){
-        visual_swiper.autoplay.stop();  
-        $(this).hide()
-        $('.visual .ctrl_btn .play').show()
-        // console.log('정지정지')
-    })
-    $('.visual .ctrl_btn .play').on('click', function(){
-        visual_swiper.autoplay.start();
-        $(this).hide()
-        $('.visual .ctrl_btn .stop').show()
-        // console.log('재생재생')
-    })
+// 슬라이드 변경될 때마다 실행
+visual_swiper.on('slideChange', function(){
+	updateCurrent();
+});
 
-    // 🔧 bar width 조절 함수
-    function updateBarWidth(index, total) {
-        const percent = ((index + 1) / total) * 100;
-        $('.visual .paging .bar::before'); // 직접 제어 불가하므로 CSS 변수 활용
-        $('.visual .paging .bar').css('--bar-width', percent + '%');
-    }
+/***************************** 끝 : visual swiper ******************************* */
 
 /*********************************** 시작 : pc버전 메뉴 오버 ********************************** 
  * 메뉴에 마우스를 오버했을때 (header .gnb)
