@@ -280,7 +280,20 @@ header.fixed .logo a {
             }
 }
 .visual {
-    position: relative; /* ctrl_btn 정렬의 기준 */
+    position: relative; /* ctrl_btn, scroll 정렬의 기준 */
+    background-color: var(--color-white);
+}
+.visual .scroll {
+    position: absolute;
+    right: 0;
+    bottom: -1%;
+    z-index: 11;
+    animation: scroll 5s linear infinite;
+    /* 애니메이션 이름, 1번 실행하는데 걸리는 시간, 가속도, 무한반복 */
+}
+@keyframes scroll {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이와 동일 */
@@ -377,6 +390,9 @@ header.fixed .logo a {
     }
 }
 @media screen and (max-width:768px){
+    .visual .scroll {
+        display: none;
+    }
     .visual .swiper-slide {
         height: 591px;
     }
@@ -539,7 +555,7 @@ header.fixed .logo a {
     gap: 0 10px;
     height: 56px;
     padding: 0 17px 0 29px;
-    border-radius: 30px;
+    border-radius: 50px;
     background-color: rgba(121, 121, 121, 0.5);
 }
 .find .tab_content .tab_item .ctrl_btn .more i {
