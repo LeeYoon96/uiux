@@ -15,11 +15,13 @@
   /* ----------------------------------- */
   --color-title : #1d1d1d;
   --color-basic : #ccc;
+  --color-basic-80 :rgba(204, 204, 204, 0.8);
   --color-main : #004F4A;
   --color-main2 : #90BD20;
   --color-white : #fff;
   --color-white2 : rgba(255, 255, 255, 0.5);
   --color-white3 : rgba(255, 255, 255, 0.3);
+  --color-white4 : rgba(255, 255, 255, 0.2);
   --color-point : #D7E2B3;
   --color-gray : #f7f7f7;
   --color-gray2 : rgba(121, 121, 121, 0.5);
@@ -61,7 +63,7 @@ body {
 }
 #wrap {
   position: relative; /* header 정렬의 기준 */
-  /* overflow: hidden;  가로스크롤바 생길때 */
+  overflow: hidden;  /* 가로스크롤바 생길때 */
 }
 /* html문서 구조상 글자를 써줘야 하는데 그 글자를 안보이게 하고 싶을때 blind 클래스를 줌 */
 .blind {

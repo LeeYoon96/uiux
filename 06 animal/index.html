@@ -8,6 +8,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
 
     <!-- 내가 만든 파일-->
     <link rel="stylesheet" href="css/main.css">
@@ -113,22 +115,19 @@
                         <li class="swiper-slide pop1">
                             <div class="wrapper">
                                 <p>실종부터 입양까지, <br>
-                                    모든 여정에 함께합니다.
-                                </p>
+                                    모든 여정에 함께합니다.</p>
                             </div>
                         </li>
                         <li class="swiper-slide pop2">
                             <div class="wrapper">
                                 <p>당신의 참여가 유기동물에게 <br> 
-                                    새로운 내일을 선물합니다.
-                                </p>
+                                    새로운 내일을 선물합니다.</p>
                             </div>
                         </li>
                         <li class="swiper-slide pop3">
                             <div class="wrapper">
                                 <p>잃어버린 마음을 찾고, <br> 
-                                    새로운 인연을 이어줍니다.
-                                </p>
+                                    새로운 인연을 이어줍니다.</p>
                             </div>
                         </li>
                     </ul>
@@ -159,8 +158,8 @@
             </section><!--visual-->
             <section class="find">
                 <div class="wrapper">
-                    <h2>찾습니다</h2>
-                    <div class="tab_list">
+                    <h2 data-aos="fade-up">찾습니다</h2>
+                    <div class="tab_list" data-aos="fade-up">
                         <ul>
                             <!-- 선택된 탭에는 active 클래스 추가
                                 버튼안에 span 태그한테 선택됨이라고 글자를 써줌 
@@ -173,7 +172,7 @@
                             <li class="item2" data-tab="item2"><button>주인을 <span class="blind"></span></button></li>
                         </ul>
                     </div><!--tab_list-->
-                    <div class="tab_content">
+                    <div class="tab_content" data-aos="fade-up">
                         <!-- 선택된 tab_item은 active클래스가 추가 title에 선택됨이라고 써줌 -->
                         <div class="tab_item item1 active" title="선택됨">
                             <h3 class="blind">가족을</h3>
@@ -182,7 +181,9 @@
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_01.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_01.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>브리티쉬 숏헤어</strong>
@@ -213,7 +214,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_02.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_02.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>포메라니안</strong>
@@ -246,7 +249,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_03.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_03.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>시바견</strong>
@@ -279,7 +284,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_04.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_04.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>코리안 숏헤어</strong>
@@ -313,7 +320,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_05.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_05.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>시고르자브르</strong>
@@ -345,7 +354,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find01_06.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find01_06.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>포메라니안</strong>
@@ -393,16 +404,14 @@
                                         </svg>
                                     </i>
                                 </button>
-                                <div class="more">
-                                    <a href="#n">
-                                        <span>더보기</span>
-                                        <i>
-                                            <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                <a href="#n" class="more">
+                                    <span class="blind">더보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z" fill="white"/>
-                                            </svg>
-                                        </i>
-                                    </a>
-                                </div>
+                                        </svg>
+                                    </i>
+                                </a>
                             </div>
                         </div><!--tab_item active-->
                         <div class="tab_item item2">
@@ -412,7 +421,9 @@
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_01.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_01.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>노르웨이 숲 고양이</strong>
@@ -440,7 +451,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_02.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_02.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>노바 스코셔 리트리버</strong>
@@ -468,7 +481,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_03.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_03.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>시바견</strong>
@@ -496,7 +511,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_04.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_04.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>코리안 숏헤어</strong>
@@ -524,7 +541,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_05.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_05.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>시고르자브르</strong>
@@ -552,7 +571,9 @@
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="#n">
-                                                <div class="photo"><img src="images/find02_06.jpg" alt=""></div>
+                                                <div class="photo">
+                                                    <img src="images/find02_06.jpg" alt="">
+                                                </div>
                                                 <div class="txt">
                                                     <h4>
                                                         <strong>포메라니안</strong>
@@ -599,10 +620,10 @@
                                     </i>
                                 </button>
                                 <a href="#n" class="more">
-                                    <span>더보기</span>
+                                    <span class="blind">더보기</span>
                                     <i>
                                         <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z" fill="white"/>
+                                            <path d="M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z" fill="white"/>
                                         </svg>
                                     </i>
                                 </a>
@@ -613,18 +634,18 @@
             </section><!--find-->
             <section class="slogan">
                 <div class="wrapper">
-                    <h2>공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는 <br class="mo_only">
+                    <h2 data-aos="fade-up">공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는 <br class="mo_only">
                         동물 <strong class="animal"></strong> 을 발견한 경우 <br class="mo_only">
                         관할 시군구청<br class="mo_only"> 또는 동물보호센터<strong class="center"></strong>에 <br class="mo_only">
                         신고<strong class="call"></strong>하시기 바랍니다.</h2>
-                    <p>소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
+                    <p data-aos="fade-up">소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
                 </div>
             </section><!--slogan-->
             <section class="adopt">
                 <div class="tit">
-                    <div class="wrapper"><h2>가족이 되어주세요</h2></div><!--wrapper-->
+                    <div class="wrapper"><h2 data-aos="fade-up">가족이 되어주세요</h2></div><!--wrapper-->
                 </div><!--tit-->
-                <div class="list">
+                <div class="list" data-aos="fade-up">
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                             <li class="swiper-slide">
@@ -711,7 +732,7 @@
                         </ul>
                     </div>
                 </div>
-                    <div class="ctrl_btn">
+                    <div class="ctrl_btn" data-aos="fade-up">
                         <button class="prev">
                             <span class="blind">이전팝업보기</span>
                             <i>
@@ -720,7 +741,7 @@
                                 </svg>                                    
                             </i>
                         </button>
-                        <button class="next">
+                        <button class="next" data-aos="fade-up">
                             <span class="blind">이전팝업보기</span>
                             <i>
                                 <svg viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
@@ -728,7 +749,7 @@
                                 </svg>                                                                        
                             </i>
                         </button>
-                        <div class="more">
+                        <div class="more" data-aos="fade-up">
                             <a href="#n">
                                 <span>더보기</span>
                                 <i>
@@ -741,13 +762,142 @@
                     </div><!--ctrl_btn-->
                     <!-- 글자를 감싸고 잇는 rolling은 넓이가 브라우저 넓이와 동일 
                         그 안에 글자를 감싸고 있는 p태그는 글자의 넓이를 그대로 인식해야함 (position: absolute;)-->
-                    <div class="rolling">
+                    <div class="rolling" data-aos="fade-up">
                         <p>TINY PAWPRINTS FILL YOUR DAYS WITH LOVE TINY PAWPRINTS FILL YOUR DAYS WITH LOVE TINY PAWPRINTS FILL YOUR DAYS WITH LOVE TINY PAWPRINTS FILL YOUR DAYS WITH LOVE</p>
                     </div><!--rolling-->
             </section><!--adopt-->
-            <section class="review"></section><!--review-->
+            <section class="review">
+                <div class="wrapper">
+                    <h2 data-aos="fade-up">우리의 <span>첫 만남</span> 이야기</h2>
+                    <div class="list" data-aos="fade-up">
+                        <div class="swiper"> 
+                            <ul class="swiper-wrapper"> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review01.jpg" alt=""></div>
+                                        <h3>두부의 엄마에게 - 사랑이 남긴 이야기</h3>
+                                        <p>♡구조된 작은 생명, 두부.그리고 끝내 함께하지 못한 두부의 엄마에게 전하는 가족의 마음입니다.♡♡♡🕊 두부의 엄마에게오늘은 두부가 태어난 지 5개월 되는 날이에요.두부는 생후 2주에 구조되어, 한 달쯤 되었을 때 우리 집으로 왔어요.딸아이가 두부를 품었고,그때부터 두부의 엄마가 늘 마음에 남았습니다.함께 데려오지 못한 게 늘 미안했습니다.</p>
+                                        <div class="date">
+                                            <strong>박**</strong>
+                                            <span>2025-10-12</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review02.jpg" alt=""></div>
+                                        <h3>까망이 근황이에요</h3>
+                                        <p>안녕하세요겁이아주아주많은 까망이 근황입니다 ㅎㅎ아직도 사람을 무서워하긴 하는데 아주많이 좋아졌어요!!집안에서도 같이지내고 앞뒷마당에서도 놀고 자유롭게 저희가족과 많이 친해졌어요이제는 간식 손에 올려놓으면 먹으러 오고 아주 많은 발전을 했답니다여전히 소리에 민감하고 사람도 아직 무서워하긴 하지만 꾸준히 좋아지고 있어서 다행이에요.</p>
+                                        <div class="date">
+                                            <strong>권**</strong>
+                                            <span>2025-10-13</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review03.jpg" alt=""></div>
+                                        <h3>구름이 적응력 최고에요</h3>
+                                        <p>지난달에 무지개 다리를 건넌 저희집 노견 보리가 있었습니다. 슬픔이 가득했고.. 사무치게 그리움이 가득했던 날들.. 정말 이루말할수 없을 정도로 힘들더라구요. 그 친구도 유기견이었고 세살 추정나이에 우리품으로 와서 결혼 출산 육아 지금까지 모든걸 같이 했던 아이라서 더 특별했어요. 그친구가 노견이고 아팠던 아이라 다른 아이 입양은 생각하지도 않았습니다.</p>
+                                        <div class="date">
+                                            <strong>윤**</strong>
+                                            <span>2025-10-12</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review04.jpg" alt=""></div>
+                                        <h3>코바 3주년</h3>
+                                        <p>코바와 함께 한 지 벌써 3년이 되었어요~ 코바와 만날 수 있게 해주신 대전동물보호소에 항상 감사한 마음입니다^^ 입양 간 아이들, 보호소에 아직 남아있는 아이들 모두 좋은 인연으로 더욱 행복해지기를 바랍니다!</p>
+                                        <div class="date">
+                                            <strong>이**</strong>
+                                            <span>2025-10-14</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review05.jpg" alt=""></div>
+                                        <h3>더덕이 근황</h3>
+                                        <p>올해 초에 입양 후 이제 가을을 같이 맞이 하고 있습니다. 홀씨같던 삐죽 털들이 점점 길어져서 화려한 장식털처럼 되어가고 있어요. 몸무게도 벌써 13kg을 향해 가고 있고, 딴딴한 근육 강쥐가 되고 있습니다ㅎㅎ 믹스견 답게 커가면서 생김새가 예측 불가능하게 변하는데, 그게 또 다 귀엽고, 지나고 나면 그 모습도 정말 잠깐이라 소중하고 그렇습니다. 실외배변이라 잔디를 엄청 좋아하고, 길을 걸을 때 지나 가는 사람이나 동물을 꼭 한 번씩 쳐다보면서 자기에게 관심 주기를 기다려요. 성격도 정말 착합니다!</p>
+                                        <div class="date">
+                                            <strong>류**</strong>
+                                            <span>2025-09-30</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review06.jpg" alt=""></div>
+                                        <h3>구름이 드뎌 일주년 됬습니다</h3>
+                                        <p>오늘 입양한지 1년된 날입니다!!!그날을 구름이 생일로 지정했어여ㅎㅎ사실 첨 데려온 날 이게 맞나 ? 이러기도 했고 1주2주 지나면서 사고치고 난리치니까 왜 데려왔지 라는 생각도 했던건 사실입니다..ㅠㅠ 구름이에겐 미안한 생각이지만..ㅠㅠ여튼 그렇게 한달 두달 지나면서 우리집에 적응하고 저와도 적응하면서 산책도 많이 해주고 주말마다 놀러다니고 이러다보니 구름이랑 추억이 쌓이면서 이젠 구름이 없인 못살거 같아요.</p>
+                                        <div class="date">
+                                            <strong>박**</strong>
+                                            <span>2025-10-14</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div><!-- list -->
+                    <button class="prev" data-aos="fade-up">
+                        <i>
+                            <svg viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.54922 9.99962L10.8992 17.3496C11.1492 17.5996 11.2701 17.8913 11.2617 18.2246C11.2534 18.558 11.1242 18.8496 10.8742 19.0996C10.6242 19.3496 10.3326 19.4746 9.99922 19.4746C9.66589 19.4746 9.37422 19.3496 9.12422 19.0996L1.42422 11.4246C1.22422 11.2246 1.07422 10.9996 0.974219 10.7496C0.874219 10.4996 0.824219 10.2496 0.824219 9.99962C0.824219 9.74962 0.874219 9.49962 0.974219 9.24962C1.07422 8.99962 1.22422 8.77462 1.42422 8.57462L9.12422 0.874622C9.37422 0.624622 9.67005 0.503789 10.0117 0.512122C10.3534 0.520455 10.6492 0.649622 10.8992 0.899622C11.1492 1.14962 11.2742 1.44129 11.2742 1.77462C11.2742 2.10796 11.1492 2.39962 10.8992 2.64962L3.54922 9.99962Z" />
+                            </svg>                                    
+                        </i>
+                    </button>
+                    <button class="next" data-aos="fade-up">
+                        <i>
+                            <svg viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.45078 9.99962L1.10078 17.3496C0.850781 17.5996 0.729948 17.8913 0.738281 18.2246C0.746614 18.558 0.875781 18.8496 1.12578 19.0996C1.37578 19.3496 1.66745 19.4746 2.00078 19.4746C2.33411 19.4746 2.62578 19.3496 2.87578 19.0996L10.5758 11.4246C10.7758 11.2246 10.9258 10.9996 11.0258 10.7496C11.1258 10.4996 11.1758 10.2496 11.1758 9.99962C11.1758 9.74962 11.1258 9.49962 11.0258 9.24962C10.9258 8.99962 10.7758 8.77462 10.5758 8.57462L2.87578 0.874622C2.62578 0.624622 2.32995 0.503789 1.98828 0.512122C1.64662 0.520455 1.35078 0.649622 1.10078 0.899622C0.850781 1.14962 0.725781 1.44129 0.725781 1.77462C0.725781 2.10796 0.850781 2.39962 1.10078 2.64962L8.45078 9.99962Z" />
+                            </svg>                                    
+                        </i>
+                    </button>
+                    <div class="more" data-aos="fade-up">
+                        <a href="#n">
+                            <strong>3,823</strong>
+                            <span>건의 후기</span>
+                            <i>
+                                <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.5 12.5H2C1.575 12.5 1.21875 12.3562 0.93125 12.0688C0.64375 11.7812 0.5 11.425 0.5 11C0.5 10.575 0.64375 10.2188 0.93125 9.93125C1.21875 9.64375 1.575 9.5 2 9.5H9.5V2C9.5 1.575 9.64375 1.21875 9.93125 0.93125C10.2188 0.64375 10.575 0.5 11 0.5C11.425 0.5 11.7812 0.64375 12.0688 0.93125C12.3562 1.21875 12.5 1.575 12.5 2V9.5H20C20.425 9.5 20.7812 9.64375 21.0688 9.93125C21.3563 10.2188 21.5 10.575 21.5 11C21.5 11.425 21.3563 11.7812 21.0688 12.0688C20.7812 12.3562 20.425 12.5 20 12.5H12.5V20C12.5 20.425 12.3562 20.7812 12.0688 21.0688C11.7812 21.3563 11.425 21.5 11 21.5C10.575 21.5 10.2188 21.3563 9.93125 21.0688C9.64375 20.7812 9.5 20.425 9.5 20V12.5Z" />
+                                </svg>                                    
+                            </i>
+                        </a>
+                    </div><!--more-->
+                </div><!--wrapper-->
+            </section><!--review-->
         </div>
-        <footer></footer>
+        <footer>
+            <div class="wrapper">
+                <button class="top">
+                    <i>
+                        <svg viewBox="0 0 20 12" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.99962 3.5502L17.3496 10.9002C17.5996 11.1502 17.8913 11.271 18.2246 11.2627C18.558 11.2544 18.8496 11.1252 19.0996 10.8752C19.3496 10.6252 19.4746 10.3335 19.4746 10.0002C19.4746 9.66686 19.3496 9.3752 19.0996 9.1252L11.4246 1.4252C11.2246 1.2252 10.9996 1.0752 10.7496 0.975196C10.4996 0.875196 10.2496 0.825196 9.99962 0.825196C9.74962 0.825196 9.49962 0.875196 9.24962 0.975196C8.99962 1.0752 8.77462 1.2252 8.57462 1.4252L0.874622 9.1252C0.624622 9.3752 0.503788 9.67103 0.512122 10.0127C0.520455 10.3544 0.649622 10.6502 0.899622 10.9002C1.14962 11.1502 1.44129 11.2752 1.77462 11.2752C2.10795 11.2752 2.39962 11.1502 2.64962 10.9002L9.99962 3.5502Z"/>
+                        </svg>                            
+                    </i>
+                    <span>TOP</span>
+                </button>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">회원가입</a></li>
+                        <li><a href="#n">로그인</a></li>
+                        <li><a href="#n">이용약관</a></li>
+                    </ul>
+                </div><!--f_nav-->
+                <div class="f_info">
+                    <span>(주)상상유니버스 유기견보호센터</span><br>
+                    <address>주소 : 서울특별시 마포구 독막로28길 10</address>
+                    <span>대표자 : 정민수</span>
+                    <span>사업자번호 : 898-87-00897</span><br>
+                    <span>통신판매업 등록번호 제2020-서울마포-0181호</span>
+                    <span>E-mail: master@zooseyo.com</span>
+                </div>
+                <div class="copyright">ⓒ종합유기견보호센터 All Rights Reserved</div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
