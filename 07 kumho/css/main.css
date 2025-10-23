@@ -19,11 +19,7 @@
 }
 .visual .popup .slide {
     height: 100dvh;
-    position: relative; /* photo 정렬의 기준 */
-    /* txt를 slide의 하단에 배치 - 넓이가 100% */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: relative; /* photo , txt 정렬의 기준 */
 }
 .visual .popup .slide .photo {
     position: absolute;
@@ -39,14 +35,26 @@
     height: 100%;
     object-fit: cover;
     transform: scale3d(1.2, 1.2, 1);
-    transition: 2s;
+    transition: 1.5s;
+}
+@media screen and (min-width:769px){
+    .visual .popup .slide .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+    transition: transform 1.5s;
 }
 .visual .popup .slide.slick-active .photo img {
     transform: scale3d(1, 1, 1);
 }
+}
 .visual .popup .slide .txt {
+    position: absolute; /* slide를 기준으로 정렬 */
+    left: 50%;
+    bottom: 274px; /* 질문 */
+    transform: translateX(-50%);
+    text-align: center;
     color: var(--color-white);
-    margin-bottom: 322px;
+    width: 90%;  /* 가로의 90%를 안준다면 어떤이유로 줄바꿈이 무너지는지 */
+    max-width: 1200px; /* 너무 넓은 화면에서는 폭제한을 왜 주는지? */
 }
 .visual .popup .slide .txt h2 {
     font-size: 6rem;
@@ -61,7 +69,7 @@
 .visual .popup .slide .txt .line span {
     display: block;
     transform: translateY(100%);
-    transition: 1s;
+    transition: transform 1s;
     transition-delay: 0.3s;
 }
 .visual .popup .slide.slick-active .txt .line span { /* 현재보이는팝업에는 */
@@ -69,7 +77,8 @@
 }
 .visual .scroll {
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 68px;
     color: var(--color-white);
     font-size: 1.5rem;
@@ -77,20 +86,25 @@
 .visual .scroll::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 29px;
+    bottom: -20px;
     width: 16px;
     height: 16px;
     border-width: 1px 1px 0 0;
     border-style: solid;
     border-color: var(--color-white);
     transform: rotate(135deg);
-    animation: scroll 3s linear infinite;
+    animation: scroll 1.5s linear infinite;
 }
-@keyframes scroll {
-    0% { right: -15px; }
-    50% { right: -50px; }
-    100% { right: -15px; }
+@keyframes scroll { 
+    0% { bottom: -20px; }
+    50% { bottom: -40px; }
+    100% { bottom: -20px; }
+}
+@media screen and (max-width:1024px){
+    .visual .popup .slide .txt h2 {
+        font-size: 4.4rem;
+    }
 }
 
 @media screen and (max-width:768px){
@@ -98,17 +112,17 @@
         height: 800px;
     }
     .visual .popup .slide .txt {
-        margin-bottom: 90px;
+        bottom: 90px; 
     }
-    .visual .popup .slick .txt h2 {
+    .visual .popup .slide .txt h2 {
         font-size: 2.8rem;
         margin: 0 0 14px 0;
     }
-    .visual .popup .slick .txt h2,
-    .visual .popup .slick .txt p {
+    .visual .popup .slide .txt h2,
+    .visual .popup .slide .txt p {
         transform: translateY(50%);
         opacity: 0;
-        transition: transform 1s, opacity 1s;
+        transition: transform 1.5s, opacity 1s;
         transition-delay: 0.3s;
     }
     .visual .popup .slide.slick-active .txt h2,
