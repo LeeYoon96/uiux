@@ -18,6 +18,7 @@
   --color-black : #1d1d1d;
   --color-black2 : rgba(0, 0, 0, 0.5);
   --color-black3 : rgba(0, 0, 0, 0.2);
+  --color-black4 :rgba(0, 0, 0, 0.1);
   --color-basic : #555555;
   --color-main : #941D19;
   --color-white : #fff;
@@ -33,6 +34,11 @@
   --wrapper-m : 30px;
   }
 
+@media screen and (max-width:1024px){
+  :root {
+    --header-h: 70px;
+  }
+}
 @media screen and (max-width:768px){
   :root {
     --font-size-visual : 28px;

@@ -36,4 +36,59 @@ $(document).ready(function(){
     $('header .util .lang').on('focusin', function(){
         $('header').removeClass('menu_pc')
     })
-})
+/********************************a 태그 링크 작동 x************************************* */
+let gnb_open    
+$('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            gnb_open = $(this).parent().hasClass('open')
+            //console.log(gnb_open)
+            if(gnb_open == true){ //열려있다면
+                $(this).parent().removeClass('open')
+                $(this).next().slideUp()
+            }else{
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+                $(this).parent().addClass('open')
+                $(this).next().slideDown()
+            }
+        }
+    });
+    // header .gnb .gnb_wrap .gnb_close
+    // header .gnb .gnb_open
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_mo');
+    })
+
+    $('header .gnb .gnb_wrap .gnb_close, header .gnb .gnb_bg').on('click', function(){   
+        $('header').removeClass('menu_mo');
+    })
+
+
+    //스크롤을 내리면 header에 fixed 클래스 추가
+    let scrolling = $(window).scrollTop()
+    let prev_scroll //이전에 스크롤된값
+    let diff_scroll //차이 값
+    function scroll_chk(){
+        prev_scroll = scrolling
+        scrolling = $(window).scrollTop()
+        diff_scroll = prev_scroll - scrolling
+        //console.log(diff_scroll)
+        if(diff_scroll < 0){ //위로 올라간다는 뜻
+            $('header').addClass('up')
+            //console.log('if')
+        }else{//아래로 내려간다는 뜻
+            $('header').removeClass('up')
+            //console.log('else')
+        }
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{ //0이거나 0보다 작은경우
+            $('header').removeClass('fixed')
+        }
+    }
+    scroll_chk() //문서로딩되고 단한번
+    $(window).scroll(function(){
+        scroll_chk() // 스크롤 할때 마다 실행
+    })
+}) //맨끝

@@ -31,3 +31,24 @@ footer : f_nav랑 top 겹칠때 안밀리는 현상 해결
 
 15:30 : scroll 소이정처럼 
 
+-------------------------------------------------------------------------
+251024
+
+default-reset.css : 태그의 초기화
+common.css : 기본 글자스타일, root(변수) wrapper 모든페이지에 영향
+layout.css : header/footer
+main.css : 메인에 있는 스타일만 (visual~service)
+sub.css : 서브의 공통구조에 필요한 스타일
+	
+
+
+
+
+2차메뉴 간격을 margin이 아닌 padding으로 줘야하는 이유
+
+header에 absolute를 줬다가 fixed로 변경해도 괜찮은 이유
+
+logo 모바일 버전으로 갈때 가변으로 변경
+
+모바일 스크롤내리면 gnb_open 색상 변경
+클릭하면 메뉴열리게 작동 지금 작동안함
