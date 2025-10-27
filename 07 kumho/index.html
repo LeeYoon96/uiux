@@ -7,6 +7,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <link rel="stylesheet" href="css/slick.css">
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
     <!-- 내가 만든 파일-->
     <link rel="stylesheet" href="css/main.css">
@@ -139,9 +141,144 @@
                 </div><!--popup-->
                 <div class="scroll">scroll down</div>
             </section><!--visual-->
-            <section class="biz">Build Beyond</section><!--biz-->
-            <section class="news">NewsRoom</section><!--news-->
-            <section class="service"></section><!--service-->
+            <section class="biz">
+                <div class="tit">
+                    <div class="wrapper">
+                        <strong>더 나은 세상을 짓다</strong>
+                        <h2>Build Beyond</h2>
+                    </div>
+                </div><!--tit-->
+                <!-- 마우스를 li에 오버하면 오버한 li에는 active 클래스 
+                        li를 감싸고 있는 요소 .list에도 class(over) 추가-->
+                <div class="list">
+                    <ul>
+                        <li class="biz01">
+                            <div class="txt">
+                                <h3>Architecture</h3>
+                                <p>빌딩 개발에서 도시개발로 이어지는 <br> 금호건설의 건축사업</p>
+                                <a href="#n"><span>more</span></a> <!-- more는 모바일에서 안보이게 하려고 span태그 줌-->
+                            </div>
+                        </li>
+                        <li class="biz02">
+                            <div class="txt">
+                                <h3>Civil</h3>
+                                <p>도시와 국토를 잇는 공간 예술, <br> 금호건설의 토목사업</p>
+                                <a href="#n"><span>more</span></a>
+                            </div>
+                        </li>
+                        <li class="biz03">
+                            <div class="txt">
+                                <h3>Housing</h3>
+                                <p>전국 곳곳에서 신주거단지 조성으로 <br> 고객의 높은 신뢰를 얻어온 금호</p>
+                                <a href="#n"><span>more</span></a>
+                            </div>
+                        </li>
+                        <li class="biz04">
+                            <div class="txt">
+                                <h3>Plant environment</h3>
+                                <p>산업발전의 기틀을 다지는 환경경영을 <br> 실천하는 환경/플랜트산업</p>
+                                <a href="#n"><span>more</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--list-->
+            </section><!--biz-->
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <strong>이야기로 전하는 소식</strong>
+                        <h2>NewsRoom</h2>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.25</span>
+                                        <h2>금호건설, 'JUST WALK 시즌4' <br>
+                                            챌린지 성료</h2>
+                                        <p>JUST WALK는 2022년부터 매년 진행해 온 금호건설 대표 사회 공헌 프로그램으로, 일정 기간 매일 1만(萬)보 걷기 미션을 달성하면 기부로 이어지는 방식의 챌린지다. 해당 챌린지는 임직원의 건강한 걷기 습관을 장려하는 동시에 탄소중립과 나눔을 실천하는 것이 특징이다.</p>
+                                        <div class="photo"><img src="images/main/news01.jpg" alt=""></div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.02</span>
+                                        <h2>금호건설, 강남서도 분양 흥행 <br>
+                                            아테라 파워 입증</h2>
+                                        <p>금호건설은 '강남 첫 아테라'인 도곡 아테라의 청약 흥행으로 '아테라(ARTERA)' 브랜드의 주택 분양시장 내 입지를 공고히 하게 됐다. 아테라 브랜드는 경기 일산 '고양 장항 아테라'와 충북 청주 '청주테크노폴리스 아테라 1∙2차'의 조기 완판을 통해 빠른 성장세를 입증한 바 있다.</p>
+                                        <div class="photo"><img src="images/main/news02.jpg" alt=""></div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.01</span>
+                                        <h2>금호건설, 3개 분기 연속 흑자…공공주택 <br>
+                                            수주 성과에 하반기도 청신호</h2>
+                                        <p>건설업 불황 속에서도 금호건설(002990)이 지난해 말부터 개선된 실적을 기록하며 본격적인 성장 궤도에 올랐다. 지난해에 선보인 신규 주거브랜드 ‘아테라(ARTERA)’의 인지도 상승을 기반으로 주택 부문에서 안정적인 수익을 확보하고 있는데다 건축 부문은 원가율 개선, 토목 부문은 실적 회복세를 이어가며 전 사업 부문에서 고른 성과를 거두고 있기 때문이다. 여기에 정부의 공공주택 공급 확대 정책에 발맞춰 대규모 민간참여 공공주택사업을 잇달아 수주하면서 향후 실적 개선세도 더욱 뚜렷해질 것으로 전망된다.</p>
+                                        <div class="photo"><img src="images/main/news03.jpg" alt=""></div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.09.01</span>
+                                        <h2>금호건설, '금호영아티스트'와 협업…아테라 단지에 '예술' 더해</h2>
+                                        <p>금호건설은 금호미술관이 발굴한 '금호영아티스트'와 협업해 '아트 인 리빙'(ART in Living)을 전국 아테라 단지에 선택적으로 적용해 나갈 계획이라고 1일 밝혔다. 아트 인 리빙으로 금호영아티스트 출신 작가들이 아테라 단지에 예술적 감각을 최대한 끌어올려 단순 주거 공간을 넘어 예술이 묻어나는 공간으로 탈바꿈시켜 나간다는 계획이다.</p>
+                                        <div class="photo"><img src="images/main/news04.jpg" alt=""></div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="date">2025.08.20</span>
+                                        <h2>금호건설, 베트남 ‘년짝대교’ 개통</h2>
+                                        <p>금호건설이 베트남 남부 경제 중심지 호찌민과 동나이성을 연결하는 대형 인프라 사업을 마무리했다. 금호건설은 현지 시각으로 지난 19일 ‘년짝대교(Nhon Trach Bridge)’ 개통식을 열고 교량을 전면 개방했다고 20일 밝혔다.</p>
+                                        <div class="photo"><img src="images/main/news05.png" alt=""></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!--swiper-->
+                    </div><!--list-->
+                    <div class="ctrl_wrap">
+                        <div class="scrollbar"></div>
+                        <div class="more"><a href="#n"><span>more</span></a></div>
+                    </div>
+                </div>
+            </section><!--news-->
+            <section class="service">
+                <div class="tit">
+                    <div class="wrapper">
+                        <strong>금호와 함께</strong>
+                        <h2>Kumho People & Story </h2>
+                    </div>
+                </div>
+                <h2 class="blind">금호 서비스 바로가기</h2>
+                <!-- 오버한 li의 data-bg값을 list에 class로 추가 -->
+                <div class="list" data-bg="">
+                    <ul>
+                        <li data-bg="service01">
+                            <a href="#n">
+                                <strong>Kumho E&C TV</strong>
+                                <h3>금호건설의 비전과 이야기를 <br> 영상으로 만나보세요.</h3>
+                                <div class="more"><span>more</span></div>
+                            </a>
+                        </li>
+                        <li data-bg="service02">
+                            <a href="#n">
+                                <strong>Live Brighter</strong>
+                                <h3>아테라 스타일과 편안한 가치를 <br> 담은 새로운 주거의 기준</h3>
+                                <div class="more"><span>more</span></div>
+                            </a>
+                        </li>
+                        <li data-bg="service03">
+                            <a href="#n">
+                                <strong>Join the Future</strong>
+                                <h3>열정이 꿈이 되고, <br> 함께 성장하는 곳.</h3>
+                                <div class="more"><span>more</span></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section><!--service-->
         </div><!--container-->
         <footer></footer>
     </div>
