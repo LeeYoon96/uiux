@@ -221,17 +221,27 @@ section .tit h2 {
     margin: 19px 0 0 0;
     opacity: 0;
 }
+.biz .list ul li a::before {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 2px;
+    display: block;
+    background-color: var(--color-white);
+}
 .biz .list ul li a::after {
     content: "";
     position: absolute;
-    right: 17px;
-    top: 11px;
-    width: 8px;
+    right: 18px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 2px;
     height: 8px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 8V4.25H0V3.75H3.75V0H4.25V3.75H8V4.25H4.25V8H3.75Z' /%3E%3C/svg%3E%0A");
+    display: block;
+    background-color: var(--color-white);
 }
 @media screen and (min-width:1025px){ /* 1025 이상 - pc버전일때 */
     .biz .list ul li.active {
@@ -260,8 +270,11 @@ section .tit h2 {
         background-color: var(--color-white);
         color: var(--color-black);
     }
+    .biz .list ul li.active a:hover::before {
+        background-color: var(--color-black);
+    }
     .biz .list ul li.active a:hover::after {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 8V4.25H0V3.75H3.75V0H4.25V3.75H8V4.25H4.25V8H3.75Z' /%3E%3C/svg%3E%0A");
+        background-color: var(--color-black);
     }
     .biz .list.over ul li:not(.active) {
         /* li중에서 active가 없는 li 전부 다 */
@@ -453,25 +466,38 @@ section .tit h2 {
     position: relative; /* after 정렬의 기준 */
     color: var(--color-black);
 }
+.news .ctrl_wrap .more a::before {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 2px;
+    display: block;
+    background-color: var(--color-black);
+}
 .news .ctrl_wrap .more a::after {
     content: "";
     position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 8px;
+    right: 18px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 2px;
     height: 8px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 8V4.25H0V3.75H3.75V0H4.25V3.75H8V4.25H4.25V8H3.75Z' /%3E%3C/svg%3E%0A");
+    display: block;
+    background-color: var(--color-black);
 }
 .news .ctrl_wrap .more a:hover {
     border: 1px solid var(--color-main);
     background-color: var(--color-main);
     color: var(--color-white);
 }
+.news .ctrl_wrap .more a:hover::before {
+    background-color: var(--color-white);
+}
 .news .ctrl_wrap .more a:hover::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 8V4.25H0V3.75H3.75V0H4.25V3.75H8V4.25H4.25V8H3.75Z' /%3E%3C/svg%3E%0A");
+    background-color: var(--color-white);
 }
 @media screen and (max-width:1024px){
     .news .list .swiper-slide a .date {
@@ -586,17 +612,27 @@ section .tit h2 {
 .service .list ul li:hover a .more {
     opacity: 1;
 }
+.service .list ul li a .more::before {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 2px;
+    display: block;
+    background-color: var(--color-white);
+}
 .service .list ul li a .more::after {
     content: "";
     position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 8px;
+    right: 18px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    width: 2px;
     height: 8px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 8V4.25H0V3.75H3.75V0H4.25V3.75H8V4.25H4.25V8H3.75Z' /%3E%3C/svg%3E%0A");
+    display: block;
+    background-color: var(--color-white);
 }
 @media screen and (max-width:1024px){
     
