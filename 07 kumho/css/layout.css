@@ -382,23 +382,162 @@ footer .f_util .family_site {
     width: 152px;
     /* 관련사이트는 여는 버튼, 바로가기 사이트 등의 넓이가 같음
     그래서 감싸고 있는 .family_site에 넓이를 주고 내부요소는 그에 100% 꽉차게줌 */
+    position: relative; /* family_wrap 정렬의 기준 */
 }
-footer .f_util .family_site .open {
+footer .f_util .family_site .family_open,
+footer .f_util .family_site .family_close {
     display: block;
     width: 100%;
-    height: 37px;
+    height: 2.1765em;
     background-color: var(--color-basic);
     text-align: left;
-    padding: 5px 0 0 15px;
+    padding: 0.2941em 0 0 0.8824em;
+    position: relative; /* 정렬의 기준 */
+}
+footer .f_util .family_site .family_open::after,
+footer .f_util .family_site .family_close::after {
+    content: "";
+    position: absolute;
+    right: 0.7059em;
+    top: 0.8824em;
+    width: 0.4435em;
+    height: 0.2629em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 5' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.76917 1.405L0.7025 4.47167L0 3.76917L3.76917 0L7.53833 3.76917L6.83583 4.47167L3.76917 1.405Z' /%3E%3C/svg%3E%0A");
 }
 footer .f_util .family_site .family_wrap {
     display: none;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2.2353em; /* 하단에 버튼을 포함한 높이 */
+    width: 100%;
+    background-color: var(--color-basic);
+    padding: 1.2941em 0.8824em 1.2941em 0.8824em;
 }
-footer .f_util .family_site .close {
+footer .f_util .family_site .family_wrap ul li a {
+    display: block;
+    padding: 0.1765em 0;
+}
+footer .f_util .family_site .family_wrap ul li a span {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_util .family_site .family_wrap ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -0.7059em;
+    top: 0.3529em;
+    width: 0.4706em;
+    height: 0.4706em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.459 7.859L0 7.4L6.7205 0.666667H0.525667V0H7.859V7.33333H7.19233V1.1385L0.459 7.859Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_close {
     display: none;
 }
+
+/* 열렸을때 */
+footer .f_util .family_site.open .family_open {
+    display: none;
+}
+footer .f_util .family_site.open .family_close {
+    display: block;
+}
+footer .f_util .family_site .family_close::after {
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+
 footer .f_util .top {
-    height: 37px;
-    padding: 5px 2px 0 2px;
+    height: 2.1765em;
+    padding: 0.3529em 0.2941em 0 0.3529em;
     background-color: var(--color-main);
+}
+footer .inner {
+    margin: 13px 0 0 0;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.3529em;
+}
+footer .inner .f_info {
+    margin: 26px 0;
+}
+@media screen and (max-width: 1280px){
+    footer .inner .f_nav ul {
+        gap: 0 1.7647em;
+    }
+}
+@media screen and (max-width: 1024px){
+    footer .wrapper {
+        flex-direction: column;
+        gap: 0 32px;
+    }
+    footer .f_util {
+        margin: 15px 0 0 0;
+    }
+}
+@media screen and (max-width: 768px){
+    footer {
+        padding: 20px 0 52px 0;
+    }
+    footer .wrapper {
+        display: block; /* f_logo - inner 좌우배치 */
+    }
+    footer .f_logo {
+        width: 96px;
+        height: 23.8px;
+    }
+    footer .f_util {
+        position: relative; /* wrapper를 기준으로 정렬 */
+        right: auto;
+        top: auto;
+        gap: 0 14px;
+        margin: 14px 0 52px 0;
+    }
+    footer .f_util .family_site {
+        width: calc(100% - 85px);
+        max-width: 470px;
+        /* 관련사이트는 여는 버튼, 바로가기 사이트 등의 넓이가 같음
+        그래서 감싸고 있는 .family_site에 넓이를 주고 내부요소는 그에 100% 꽉차게줌 */
+        position: relative; /* family_wrap 정렬의 기준 */
+    }
+    footer .f_util .top {
+        height: 2.1765em;
+        padding: 0.3529em 0.2941em 0 0.3529em;
+        background-color: var(--color-main);
+    }
+    footer .inner {
+        margin: 13px 0 0 0;
+    }
+    footer .inner .f_nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 2.3529em;
+    }
+    footer .inner .f_info {
+        margin: 26px 0;
+    }
+}
+  /* 열렸을때 */
+footer .f_util .family_site.open .family_open {
+    display: none;
+}
+footer .f_util .family_site.open .family_close {
+    display: block;
+}
+footer .f_util .family_site .family_close::after {
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
 }
