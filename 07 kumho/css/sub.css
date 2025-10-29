@@ -13,6 +13,132 @@
 @import url(layout.css);
 @import url(contents.css);
 
-footer {
-    margin: 1500px 0 0 0;
+.sub_visual {
+    height: 365px;
+    background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+    color: var(--color-white);
+    display: flex; /* wrapper를 바닥으로 배치하기위해 */
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative; /* snb정렬의 기준 */
+}
+.sub_visual .breadcrumb ol {
+    display: flex;
+    gap: 0 2.1176em;
+    align-items: center;
+    justify-content: center;
+}
+.sub_visual .breadcrumb ol li {
+    position: relative; /* after 정렬의 기준 */
+    height: 1.5em;
+}
+.sub_visual .breadcrumb ol li::after {
+    content: "";
+    position: absolute;
+    right: -1.3529em;
+    top: 2px;
+    width: 0.5294em;
+    height: 0.9412em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.88612 15.5129L8.64258 7.75646L0.88612 0L-0.000130748 0.88625L6.87008 7.75646L-0.000130748 14.6267L0.88612 15.5129Z'/%3E%3C/svg%3E ");
+}
+.sub_visual .breadcrumb ol li:last-child::after {
+    display: none;
+}
+.sub_visual .breadcrumb ol li.home a {
+    display: block;
+    width: 0.8824em;
+    height: 0.9935em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 17' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 15.3943H4.84625V9.452H10.1538V15.3943H13.5V6.39425L7.5 1.875L1.5 6.39425V15.3943ZM0 16.8943V5.64425L7.5 0L15 5.64425V16.8943H8.65375V10.952H6.34625V16.8943H0Z' /%3E%3C/svg%3E%0A");
+}
+.sub_visual .sub_tit {
+    margin: 21px 0 108px 0;
+    font-size: var(--font-size-visual);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    text-align: center;
+}
+.sub_visual .snb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 69px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+}
+.snb {
+    height: 69px;
+    color: var(--color-white);
+}
+.snb ul {
+    display: flex;
+    justify-content: center;
+}
+.snb ul li a {
+    display: block;
+    line-height: 69px;
+    padding: 2px 23px;
+}
+.snb ul li a span {
+    position: relative; /* after 정렬의 기준 */
+}
+.snb ul li.active a span::after {
+    content:"";
+    position: absolute;
+    left: -7px;
+    bottom: -20px;
+    width: calc(100% + 14px);
+    height: 5px;
+    background-color: var(--color-main);
+}
+.contents {
+    min-height: 300px;
+}
+.contents .page_tit {
+    margin: 60px 0 ;
+}
+.contents .page_tit h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--color-black);
+    text-align: center;
+}
+@media screen and (max-width:768px){
+    .sub_visual {
+    height: 331px;
+    }
+.sub_visual .sub_tit {
+    margin: 10px 0 121px 0;
+    }
+.sub_visual .snb {
+    height: 64px;
+    }
+.snb {
+    height: 64px;
+    }
+.snb ul {
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;  /* Firefox */
+    }
+.snb ul::-webkit-scrollbar {
+    display: none;
+}
+.snb ul li a {
+    line-height: 64px;
+    }
+.snb ul li.active a span::after {
+    bottom: -18px;
+    }
+.contents .page_tit {
+    margin: 54px 0 ;
+    }
 }
