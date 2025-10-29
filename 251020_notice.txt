@@ -86,3 +86,8 @@ right, top auto로
 251029
 
 section은 서브페이지에서 사용하지않음
+
+:has() 괄호안에 클래스가 있으면 스타일 적용
+
+17:30 layout.css header 서브에 선택되어있는 부분부터
+active , :has()

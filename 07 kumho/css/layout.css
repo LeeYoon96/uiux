@@ -82,7 +82,7 @@ header.up:not(.menu_pc, .menu_mo) {
         display: block;
         font-size: 2rem;
         font-weight: var(--font-weight-bold);
-        line-height: calc(var(--header-h) -60px);
+        line-height: calc(var(--header-h)-60px);
         padding: 30px 2.2955em; 
         /* 
             전체 높이가 90px
@@ -354,6 +354,26 @@ header.up:not(.menu_pc, .menu_mo) {
         background-size: 12px;
     }
 }/* @media */
+
+/******************* 서브에서 이미 선택되있는 메뉴 디자인하기 ***********************/
+header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a {
+    color: var(--color-main);
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
+    background-color: var(--color-main);
+}
+
+/******************* 서브에서 이미 선택되있는 메뉴 디자인하기 ***********************/
 
 footer {
     background-color: var(--color-black);
