@@ -14,13 +14,25 @@
 @import url(contents.css);
 
 .sub_visual {
-    height: 365px;
+    height: 434px;
     background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
     color: var(--color-white);
     display: flex; /* wrapper를 바닥으로 배치하기위해 */
     flex-direction: column;
     justify-content: flex-end;
     position: relative; /* snb정렬의 기준 */
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual05.jpg);
 }
 .sub_visual .breadcrumb ol {
     display: flex;

@@ -5,3 +5,99 @@
 * 설  명 : 연혁, 인사말 등의 각 페이지에만 들어가는 스타일들을 모두 모음
            이 파일에 있는 css를 수정하면 그 페이지 한개에만 영향을 끼침
 **********************************************************/
+
+/* 회사소개 - CEO인사말 */
+.ctn_ceo .ceo_head {
+    height: 200dvh;
+    position: relative; /* photo 정렬의 기준 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: yellowgreen;
+}
+.ctn_ceo .ceo_head::before {
+    content: "123456789123456789123";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 20px;
+    height: 100%;
+    font-size: 60px;
+    color: red;
+}
+.ctn_ceo .ceo_head .ceo_photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    border: 5px solid red;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
+    position: fixed;
+}
+.ctn_ceo .ceo_head .ceo_photo .ceo_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background : url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
+}
+.ctn_ceo .ceo_head .ceo_photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+}
+.ctn_ceo .ceo_head .ceo_txt {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ctn_ceo .ceo_head .ceo_txt p {
+    color: var(--color-white);
+    font-size: 4rem;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 90px 0 0 0 ;
+}
+.ctn_ceo .ceo_cont {
+    margin: 75px 0 182px 0;
+    color: var(--color-black);
+}
+.ctn_ceo .ceo_cont h3 {
+    font-size: 2.4rem;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+.ctn_ceo .ceo_cont p {
+    margin: 39px 0 0 0;
+}
+.ctn_ceo .ceo_cont .sign {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 34px 0;
+    margin: 16px 0 0 0;
+}
+.ctn_ceo .ceo_cont .sign strong {
+    font-weight: var(--font-weight-bold);
+}
+.ctn_ceo .ceo_cont .sign .sign_img {
+    display: block;
+    width: 161px;
+    height: 77px;
+    background: url(../images/contents/ceo_sign.jpg) no-repeat center center / contain;
+}
