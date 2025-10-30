@@ -47,7 +47,7 @@
     width: 50%;
     height: 50%;
     background : url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
-    transition: width 0.5s height 0.5s;
+    transition: width 0.5s, height 0.5s;
 }
 .ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
     position: absolute;
