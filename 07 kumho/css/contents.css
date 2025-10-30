@@ -13,26 +13,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: yellowgreen;
-}
-.ctn_ceo .ceo_head::before {
-    content: "123456789123456789123";
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    width: 20px;
-    height: 100%;
-    font-size: 60px;
-    color: red;
 }
 .ctn_ceo .ceo_head .ceo_photo {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     width: 100%;
     height: 100dvh;
-    border: 5px solid red;
 }
 .ctn_ceo .ceo_head .ceo_photo[data-status="end"] {
     top: auto;
@@ -40,6 +28,16 @@
 }
 .ctn_ceo .ceo_head .ceo_photo[data-status="ing"] {
     position: fixed;
+}
+.ctn_ceo .ceo_head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 20px;
+    height: 100%;
+    font-size: 60px;
 }
 .ctn_ceo .ceo_head .ceo_photo .ceo_img {
     position: absolute;
@@ -49,12 +47,13 @@
     width: 50%;
     height: 50%;
     background : url(../images/contents/ceo_img01.jpg) no-repeat center center / cover;
+    transition: width 0.5s height 0.5s;
 }
-.ctn_ceo .ceo_head .ceo_photo::before {
-    content: "";
+.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 10;
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -100,4 +99,33 @@
     width: 161px;
     height: 77px;
     background: url(../images/contents/ceo_sign.jpg) no-repeat center center / contain;
+}
+@media screen and (max-width:1024px){
+    .ctn_ceo .ceo_head .ceo_txt p {
+        font-size: 2.6rem;
+        margin: 54px 0 0 0 ;
+    }
+    .ctn_ceo .ceo_cont {
+        margin: 78px 0 78px 0;
+        color: var(--color-black);
+    }
+    .ctn_ceo .ceo_cont .wrapper {
+        display: block;
+    }
+    .ctn_ceo .ceo_cont h3 {
+        font-size: 1.6rem;
+    }
+    .ctn_ceo .ceo_cont p {
+        margin: 78px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont .sign {
+        flex-direction: row;
+        align-items: center;
+        gap: 0 14px;
+        margin: 25px 0 0 0;
+    }
+    .ctn_ceo .ceo_cont .sign .sign_img {
+        width: 121px;
+        height: 69px;
+    }
 }

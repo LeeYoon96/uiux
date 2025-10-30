@@ -23,6 +23,14 @@ $(document).ready(function(){
         let ceo_scroll = $(window).scrollTop() // 현재 스크롤 된값
         let ceo_area_name = $('.ctn_ceo .ceo_head') // 선택자
         let ceo_obj_wrap = $('.ctn_ceo .ceo_head .ceo_photo') // 애니메이션 대상
+        let ceo_obj =$('.ctn_ceo .ceo_head .ceo_photo .ceo_img') // 넓이가 조정되는 요소
+        let ceo_obj_start = 50
+        let ceo_obj_end = 100
+        let ceo_obj_bg = $('.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg') // 배경을 어둡게
+        let ceo_obj_bg_start = 0
+        let ceo_obj_bg_end = 0.3
+        let ceo_obj_bg_count //현재 opaacity 값
+        let ceo_obj_count // 현재 계산한 넓이값
         let ceo_area_start = ceo_area_name.offset().top // 시작위치 (맨위부터 계산한)
         let ceo_area_end = ceo_area_start + ceo_area_name.height() - ceo_win_h// 끝위치
         let ceo_total = ceo_area_end - ceo_area_start // 전체 스크롤 값
@@ -34,26 +42,47 @@ $(document).ready(function(){
         /* 
             진행중일때 몇% 스크롤 했는지 계산 해야함
             (1000px 동안 인터랙티브를 할건데 100px 스크롤 함 10%)
-            현재스크롤값 x 100 / 전체값
+            현재스크롤값 x 100 / 전체값(ceo_total)
+
+            처음의 넓이값 - 종료 넓이값
+            진행율이 50% === 75
+            (100 - 50) * 50/100 + 50 = 75
+            (종료값 - 처음값) * 진행율/100 + 처음값
          */
 
         // console.log('시작', ceo_area_start, '종료', ceo_area_end, '스크롤', ceo_scroll)
         if(ceo_scroll > ceo_area_end){
             //console.log('종료')
             ceo_obj_wrap.attr('data-status', 'end')
-            ceo_per = 100
+            ceo_obj.width(ceo_obj_end + "%")
+            ceo_obj.height(ceo_obj_end + "%")
+            ceo_obj_bg.css('opacity', ceo_obj_bg_end)
         }else if(ceo_scroll < ceo_area_start){
             //console.log('시작전')
             ceo_obj_wrap.attr('data-status', 'start')
-            ceo_per = 0
+            ceo_obj.width(ceo_obj_start + "%")
+            ceo_obj.height(ceo_obj_start + "%")
+            ceo_obj_bg.css('opacity', ceo_obj_bg_start)
         }else {
             //console.log('진행중')
             ceo_obj_wrap.attr('data-status', 'ing')
             ceo_diff = ceo_scroll - ceo_area_start
             ceo_per = ceo_diff * 100 / ceo_total
             //console.log(ceo_diff, ceo_total, ceo_per)
+            ceo_obj_count = ceo_obj_start + (ceo_obj_end - ceo_obj_start) * (ceo_per / 100)
+            ceo_obj_count = ceo_obj_count * 1.2
+            if(ceo_obj_count > 100){ //100보다 크면 다시 100으로 만듬
+                ceo_obj_count = ceo_obj_end
+            }
+            ceo_obj.width(ceo_obj_count + "%")
+            ceo_obj.height(ceo_obj_count + "%")
+            ceo_obj_bg_count = ceo_obj_bg_start + (ceo_obj_bg_end - ceo_obj_bg_start) * (ceo_per / 100)
+            ceo_obj_bg_count = ceo_obj_bg_count * 1.2
+            if(ceo_obj_bg_count > ceo_obj_bg_end){
+                ceo_obj_bg_count = ceo_obj_bg_end
+            }
+            ceo_obj_bg.css('opacity', ceo_obj_bg_count)
         }
-        console.log(ceo_per)
     }
     if(ceo_length > 0){
         ceo_ani() // 브라우저가 로딩되었을때 단 한번
