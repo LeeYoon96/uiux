@@ -28,7 +28,7 @@ $(document).ready(function(){
         let ceo_obj_end = 100
         let ceo_obj_bg = $('.ctn_ceo .ceo_head .ceo_photo .ceo_img .bg') // 배경을 어둡게
         let ceo_obj_bg_start = 0
-        let ceo_obj_bg_end = 0.3
+        let ceo_obj_bg_end = 0.5
         let ceo_obj_bg_count //현재 opaacity 값
         let ceo_obj_count // 현재 계산한 넓이값
         let ceo_area_start = ceo_area_name.offset().top // 시작위치 (맨위부터 계산한)
