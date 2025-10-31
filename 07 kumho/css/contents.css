@@ -160,10 +160,10 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 50%;
+    width: 0;
     overflow: hidden;
     color: var(--color-white);
-
+    transition: width 0.5s;
 }
 .ctn_history .his_cont {
     margin: 130px 0 239px 0;
@@ -258,6 +258,9 @@
 .ctn_history .his_cont .his_year .year_list {
     position: relative; /*after 정렬의 기준 */
 }
+.ctn_history .his_cont .his_year .year_list dl {
+    margin: 0 0 0 11px;
+}
 .ctn_history .his_cont .his_year .year_list dl dt {
     font-family: 'Pretendard';
     color: var(--color-black);
@@ -283,8 +286,52 @@
 .ctn_history .his_cont .his_year .year_list dl dd {
     margin: 0 0 22px 87px;
 }
+.ctn_history .his_cont.tit_right .his_year .year_list dl {
+    margin: 0 11px 0 0 ;
+}
 .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
     margin: 0 87px 22px 0;
+}
+.ctn_history .his_bar {
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    z-index: 99; /* header 바로아래 */
+    background-image: linear-gradient(90deg, #941D19, #2E0908);
+    color: var(--color-white);
+    border-radius: 50px;
+    padding: 10px 15px 10px 15px;
+    max-width: 95%;
+    overflow: hidden;
+    transition: bottom 0.5s;
+}
+.ctn_history .his_bar.hide {
+    bottom: -100px;
+}
+.ctn_history .his_bar ul {
+    display: flex;
+    gap: 0 100px;
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE, Edge */
+    scrollbar-width: none;  /* Firefox */
+    }
+.ctn_history .his_bar ul::-webkit-scrollbar {
+    display: none;
+}
+.ctn_history .his_bar ul li a {
+    display: block;
+    padding: 0.375em 1.375em 0.4167em 1.375em;
+    font-size: 2.4rem;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    border-radius: 50px;
+    white-space: nowrap;
+    font-family: 'Pretendard';
+}
+.ctn_history .his_bar ul li.active a {
+    background-color: var(--color-black);
 }
 @media screen and (max-width:1024px){
     .ctn_history .his_cont {
@@ -346,35 +393,53 @@
         left: -29px;
         right: auto;
     }
-    .ctn_history .his_cont .his_year .year_list dl dt {
-        font-family: 'Pretendard';
-        color: var(--color-black);
-        float: left;
-    }
     .ctn_history .his_cont .his_year .year_list:last-child::after {
-        content: "";
-        position: absolute;
-        left: -21px;
-        top: -36px;
-        width: 1px;
-        height: calc(100% + 60px);
-        border-radius: 50%;
-        background-color: var(--color-white);
+        left: -29px;
+        top: -42px;
     }
     .ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
-        left: auto;
-        right: -21px;
+        left: -29px;
+        top: -41px;
+    }.ctn_history .his_cont.tit_right .his_year .year_list dl {
+        margin: 0 0 0 11px ;
     }
     .ctn_history .his_cont.tit_right .his_year .year_list dl dt {
-        float: right;
+        float: left;
     }
     .ctn_history .his_cont .his_year .year_list dl dd {
-        margin: 0 0 22px 87px;
+        margin: 0 0 24px 93px;
+        white-space: nowrap;
     }
     .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
-        margin: 0 87px 22px 0;
+        margin: 0 0 24px 93px;
+        white-space: nowrap;
+    }
+    .ctn_history .his_bar ul {
+        display: flex;
+        gap: 0 100px;
+        overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+        overflow-x: auto;
+        -ms-overflow-style: none;  /* IE, Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+    .ctn_history .his_bar ul::-webkit-scrollbar {
+        display: none;
+    }
+    .ctn_history .his_bar ul li a {
+        padding: 0.4118em 0.4706em 0.4118em 0.4706em;
+        font-size: 1.7rem;
+        font-weight: var(--font-weight-basic);
+        line-height: var(--line-height-basic);
+    }
+    .ctn_history .his_bar ul li.active a {
+        background-color: var(--color-black);
     }
 }/*@media*/
 @media screen and (max-width:768px){
-
+    .ctn_history .his_cont .his_year .year_list dl dd {
+        white-space: nowrap;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+        white-space: nowrap;
+    }
 }/*@media*/
