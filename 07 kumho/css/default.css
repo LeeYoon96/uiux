@@ -40,10 +40,20 @@ fieldset {
 legend {
     display: none;
 }
-input {
+input, select, textarea {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
     color: inherit;
+}
+input[type="submit"] {
+    cursor: pointer; /* 마우스 오버시 손모양*/
+}
+
+table caption {
+    display: none; /* 설명글 숨김 */
+}
+table th {
+    font-weight: inherit; /* 글자 두께 기본으로*/
 }

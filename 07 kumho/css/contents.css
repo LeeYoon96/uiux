@@ -552,8 +552,8 @@
 .ctn_pr05 .search .sch_wrap {
     border: 2px solid var(--color-main);
     border-radius: 50px;
-    height: 81px;
-    padding: 0 40px 0 40px;
+    height: 60px;
+    padding: 0 20px 0 40px;
     display: flex; /*검색어 입력 - 버튼 좌우배치 */
     justify-content: space-between;
     align-items: center;
@@ -585,14 +585,14 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 27 27' fill='%23941D19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.9 27L15.45 17.55C14.7 18.15 13.8375 18.625 12.8625 18.975C11.8875 19.325 10.85 19.5 9.75 19.5C7.025 19.5 4.71875 18.5563 2.83125 16.6688C0.94375 14.7813 0 12.475 0 9.75C0 7.025 0.94375 4.71875 2.83125 2.83125C4.71875 0.94375 7.025 0 9.75 0C12.475 0 14.7813 0.94375 16.6688 2.83125C18.5563 4.71875 19.5 7.025 19.5 9.75C19.5 10.85 19.325 11.8875 18.975 12.8625C18.625 13.8375 18.15 14.7 17.55 15.45L27 24.9L24.9 27ZM9.75 16.5C11.625 16.5 13.2188 15.8438 14.5312 14.5312C15.8438 13.2188 16.5 11.625 16.5 9.75C16.5 7.875 15.8438 6.28125 14.5312 4.96875C13.2188 3.65625 11.625 3 9.75 3C7.875 3 6.28125 3.65625 4.96875 4.96875C3.65625 6.28125 3 7.875 3 9.75C3 11.625 3.65625 13.2188 4.96875 14.5312C6.28125 15.8438 7.875 16.5 9.75 16.5Z' /%3E%3C/svg%3E%0A");
 }
 .ctn_pr05 .join {
-    margin: 91px 0 100px 0;
+    margin: 0 0 100px 0;
 }
 .ctn_pr05 .join h3 {
     font-size: 2.4rem;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-black);
-    margin: 0 0 19px 0;
+    margin: 91px 0 19px 0;
 }
 .ctn_pr05 .join .agree .agree_box {
     border: 2px solid #ccc;
@@ -602,5 +602,141 @@
     overflow-y: auto;
 }
 .ctn_pr05 .join .agree .agree_box p {
-    white-space: pre; /* 엔터 띄어쓰기 그대로 입력*/
+    white-space: pre-line; /* 엔터 띄어쓰기 그대로 입력*/
+}
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar {
+    width: 20px
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-thumb {
+    height: 42px;
+    background: #999;
+    border-radius: 10px;
+    border: 6px solid #fff
+}
+
+.ctn_pr05 .join .agree .agree_box::-webkit-scrollbar-track {
+    border-radius: 0 6px 6px 0;
+    background-color: transparent
+}
+.ctn_pr05 .join .agree .agree_btn {
+    margin: 27px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 79px;
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"] {
+    display: none; /* input은 스타일을 주기 힘듬 그래서 숨기고 대신 label에 스타일을 줌*/
+}
+.ctn_pr05 .join .agree .agree_btn label {
+    padding: 0 0 0 41px; /* 앞에 체크가 들어갈 만큼 여백 */
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer; /* 마우스 오버하면 손바닥 */
+}
+.ctn_pr05 .join .agree .agree_btn label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16.3px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 13' fill='%23CCCCCC' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z' /%3E%3C/svg%3E%0A");
+}
+/*
+    <input type="radio" name="agree" id="yes"> <label for="yes">동의함</label>
+    input 뒤에 label 왔을때 input + label
+    이때 input이 체크되면 :checked 상태
+*/
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label {
+    color: var(--color-main);
+}
+.ctn_pr05 .join .agree .agree_btn input[type="radio"]:checked + label::before {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 17 13' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.7 12.025L0 6.325L1.425 4.9L5.7 9.175L14.875 0L16.3 1.425L5.7 12.025Z' /%3E%3C/svg%3E%0A");
+}
+.ctn_pr05 .join .join_info {
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+    padding: 11px 0 11px 0;
+}
+.ctn_pr05 .join .join_info .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 0;
+}
+.ctn_pr05 .join .join_info .item label {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    padding: 10px 0 0 0;
+}
+.ctn_pr05 .join .join_info .item select,
+.ctn_pr05 .join .join_info .item input[type="text"],
+.ctn_pr05 .join .join_info .item textarea {
+    width: calc(100% - 178px);
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 13px 0 13px;
+    outline: 0;
+    color: var(--color-black);
+}
+.ctn_pr05 .join .join_info .item textarea {
+    height: 383px;
+    resize: none;
+    padding: 10px;
+}
+.ctn_pr05 .join .join_btn {
+    margin: 18px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 18px;
+}
+.ctn_pr05 .join .join_btn input,
+.ctn_pr05 .join .join_btn a,
+.ctn_pr05 .join .join_btn button {
+    display: block;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    width: 107px;
+    height: 44px;
+    line-height: 39px; /* 행간 + padding = 높이와 같음 */
+    text-align: center;
+    border-radius: 50px;
+    background-color: var(--color-black);
+    border: none;
+    padding-top: 5px;
+}
+.ctn_pr05 .join .join_btn input.ok,
+.ctn_pr05 .join .join_btn a.ok,
+.ctn_pr05 .join .join_btn button.ok {
+    background-color: var(--color-main);
+}
+@media screen and (max-width:768px){
+    .ctn_pr05 .join .join_info .item {
+        flex-direction: column;
+        gap: 5px 0;
+    }
+    .ctn_pr05 .join .join_info .item select,
+    .ctn_pr05 .join .join_info .item input[type="text"],
+    .ctn_pr05 .join .join_info .item textarea {
+        width: 100%;
+    }
+}
+
+.ctn_ir3 {
+    padding: 0 0 100px 0;
+}
+@media screen and (max-width:768px){
+    /* 모바일에서 몇칸 날리기 */
+    .ctn_ir3 .table_wrap.money table col:last-child,
+    .ctn_ir3 .table_wrap.money table th:last-child,
+    .ctn_ir3 .table_wrap.money table td:last-child {
+        display: none;
+    }
 }
