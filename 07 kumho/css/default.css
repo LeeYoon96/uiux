@@ -34,3 +34,16 @@ button {
     margin: 0;
     box-sizing: border-box; /* padding과 width/height를 같이주면 사이즈가 늘어나는 현상 막기 */
 }
+fieldset {
+    border: none;
+}
+legend {
+    display: none;
+}
+input {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
