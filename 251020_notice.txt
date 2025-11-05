@@ -136,3 +136,33 @@ a태그에 history01 준거 앞에 #을 줘야 링크가 적용됨
 
 구글지도
 위치검색-공유-지도퍼가기
+-------------------------------------------------------------------------
+251105
+
+(원본버전)
+afterLoad: function(origin, destination, direction, trigger){
+			if((destination.index == 1)){ /* index가 1면 슬라이드는 두번째 슬라이드입니다. index 수는 0/1/2/3 */
+				// console.log('2번째 슬라이드가 로딩 되었을때');
+                $('header').addClass('dark')
+			}else if(destination.index == 3){ /* index가 3면 슬라이드는 네번째 슬라이드입니다. index 수는 0/1/2/3 */
+                //console.log('4번째 슬라이드가 로딩 되었을때');
+                $('header').addClass('dark')
+            }else if(destination.index == 4){ /* index가 3면 슬라이드는 네번째 슬라이드입니다. index 수는 0/1/2/3 */
+                //console.log('4번째 슬라이드가 로딩 되었을때');
+                $('header').addClass('dark')
+            }
+            else{
+                $('header').removeClass('dark')
+            }
+		},
+
+(간소화버전)
+afterLoad: function(origin, destination, direction, trigger){
+			if((destination.index == 1) || (destination.index == 3) || (destination.index == 4)){ /* index가 1면 슬라이드는 두번째 슬라이드입니다. index 수는 0/1/2/3 */
+				// console.log('2번째 슬라이드가 로딩 되었을때');
+                $('header').addClass('dark')
+			}else{
+                $('header').removeClass('dark')
+            }
+		},
+
