@@ -172,3 +172,7 @@ afterLoad: function(origin, destination, direction, trigger){
 251106
 
 쇼핑몰 사이트는 포폴로 적합X
+
+라이브러리파일은 가져오면 내파일에 맞게 css를 깨부셔야함
+
+body #fp-nav ul li a.active + .fp-tooltip {} -> 인접형제 선택자
