@@ -173,6 +173,9 @@ afterLoad: function(origin, destination, direction, trigger){
 
 쇼핑몰 사이트는 포폴로 적합X
 
+부트스트랩이란? 개발자가 퍼블리셔 없이 코딩할수있게 만든 모듈
+-css가 짜져있음
+
 라이브러리파일은 가져오면 내파일에 맞게 css를 깨부셔야함
 
-body #fp-nav ul li a.active + .fp-tooltip {} -> 인접형제 선택자
+body #fp-nav ul li a.active + .fp-tooltip {} ->  + 인접형제 선택자

@@ -30,10 +30,10 @@ $(document).ready(function(){
 					$('#fp-nav').removeClass('hide')
 					$('header').addClass('dark')
 					$('#fp-nav').addClass('dark')
+					$('.tree .tit h2 strong').counterUp();
 				}else if(destination.index == 4){
 					// console.log('여기는 footer')
 					$('#fp-nav').addClass('hide')
-					$('.tree .tit h2 strong').counterUp();
 				}else{
 					$('#fp-nav').removeClass('hide')
 					$('header').removeClass('dark')
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			},
 
 			responsiveWidth: 769, /* fullpage를 적용시키지 않을 모바일 사이즈 */
-			responsiveWidth: 500
+			responsiveHeight: 500
 		});//fullpage
 
 		let visual_name = ['2025 생명의숲 후원의달','2022 울진산불 이후의 변화','고목나무 속 전설 이야기','FOREST STORY 후원자 인터뷰']
@@ -53,7 +53,7 @@ $(document).ready(function(){
 			disableOnInteraction: true,
 		},
 
-		//effect: "fade", /* fade 효과 */
+		effect: "fade", /* fade 효과 */
 
 		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
@@ -79,9 +79,11 @@ $(document).ready(function(){
 		$('aside.quick').addClass('open')
 		$('aside.quick .quick_wrap').slideDown()
 	})
-	$('aside.quick .quick_open').on('click', function(){
+	$('aside.quick .quick_close').on('click', function(){
 		$('aside.quick').removeClass('open')
-		$('aside.quick .quick_wrap').slideup()
+		$('aside.quick .quick_wrap').slideUp()
 	})
+
+	// $('.tree .tit h2 strong').counterUp();
 
 }) //맨끝
