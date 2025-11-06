@@ -139,6 +139,8 @@ a태그에 history01 준거 앞에 #을 줘야 링크가 적용됨
 -------------------------------------------------------------------------
 251105
 
+풀페이지.js
+
 (원본버전)
 afterLoad: function(origin, destination, direction, trigger){
 			if((destination.index == 1)){ /* index가 1면 슬라이드는 두번째 슬라이드입니다. index 수는 0/1/2/3 */
@@ -166,3 +168,7 @@ afterLoad: function(origin, destination, direction, trigger){
             }
 		},
 
+-------------------------------------------------------------------------
+251106
+
+쇼핑몰 사이트는 포폴로 적합X

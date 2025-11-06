@@ -22,21 +22,31 @@
     </li>
 */
 
+#fp-nav.fp-left {
+    left: 30px;
+}
 #fp-nav ul li {
     width: auto;
     height: auto;
     margin: 10px 0 10px 0;
 }
+body #fp-nav ul li:last-child {
+    display: none;
+}
 #fp-nav ul li a {
     position: absolute;
     left: 0;
     top: 0;
-    border: 1px solid red;
 }
 #fp-nav ul li a span {
     display: none;
 }
-#fp-nav ul li .fp-tooltip {
+/* 라이브러리를 쓸때 : 라이브러리에서 준 스타일과 내가 준 스타일이 충돌될때
+    내 스타일을 우선시 하려면?
+    1. !important를 줘서 내꺼를 무조건 적용하게함.
+    2. 선택자를 조정 - 선택자 맨 앞에 body를 붙이면 우선순위가 높아짐
+                    - 선택자를 좀 더 디테일하게 선언 */
+body #fp-nav ul li .fp-tooltip { /* 선택자 조정 body */
     position: relative;
     left: auto;
     top: auto;
@@ -47,6 +57,52 @@
     overflow: visible;
     opacity: 1;
     width: auto;
+    padding: 1px 15px 1px 18px;
+    /* padding: 4px 3px 4px 3px;
+    border-radius: 5px;
+    background-color: green; */
+}
+body #fp-nav ul li .fp-tooltip::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+/* active 되었을때
+    a.active 클래스가 있는 밑에 있는 tooltip을 선택하는 방법 */
+body #fp-nav ul li a.active + .fp-tooltip {
+    border: 1px solid var(--color-white);
+    border-radius: 50px;
+    padding: 1px 15px 1px 18px;
+}
+body #fp-nav ul li a.active + .fp-tooltip::before {
+    background-color:  var(--color-white);
+}
+/* #fp-nav에 dark 클래스가 추가 되었을때 */
+body #fp-nav.dark ul li .fp-tooltip {
+    color: var(--color-black);
+}
+body #fp-nav.dark ul li a.active + .fp-tooltip {
+    border: 1px solid var(--color-black);
+    border-radius: 50px;
+    padding: 1px 15px 1px 18px;
+}
+body #fp-nav.dark ul li a.active + .fp-tooltip::before {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+/* dark 종료*/
+
+body #fp-nav.hide {
+    display: none;
+}
+body #fp-nav ul li .fp-tooltip.fp-left { /* 선택자 조정 body */
+    left: auto;
 }
 
 h2 {
@@ -54,21 +110,130 @@ h2 {
     text-align: center;
 }
 
-.visual {
-    background-color: brown;
+.visual .swiper {
+    width: 100%; /* visual의 넓이를 따라가게 */
+    height: 100%; /* visual의 높이를 따라가고 싶어서 */
+}
+.visual .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .swiper-slide .photo,
+.visual .swiper-slide .video {
+    position: absolute; /*swiper-slide 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .photo img,
+.visual .swiper-slide .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .photo img {
+    transition: transform 5s;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .swiper-slide.swiper-slide-active .photo img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .swiper-slide .txt {
     color: var(--color-white);
+    text-align: center;
+    margin: calc(var(--header-h) + 20px) 0 40px 0;
+}
+.visual .swiper-slide .txt strong,
+.visual .swiper-slide .txt h3,
+.visual .swiper-slide .txt a {
+    transition: transform 3s, opacity 3s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.visual .swiper-slide .txt strong {
+    font-size: var(--font-size-sub);
+    display: block;
+    transition-delay: 0.3s;
+}
+.visual .swiper-slide .txt h3 {
+    font-size: var(--font-size-visual);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 30px 0 59px 0;
+    transition-delay: 0.8s;
+}
+.visual .swiper-slide .txt a {
+    display: inline-block;
+    border: 2px solid var(--color-white);
+    border-radius: 50px;
+    padding: 0.5882em 2.7647em 0.5882em 2.8235em;
+    transition-delay: 1.2s;
+}
+.visual .swiper-slide.swiper-slide-active .txt strong,
+.visual .swiper-slide.swiper-slide-active .txt h3,
+.visual .swiper-slide.swiper-slide-active .txt a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .paging {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    color: var(--color-white);
+    font-size: var(--font-size-sub);
+}
+.visual .paging ul {
+    display: flex;
+}
+@media screen and (max-width:1440px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 44px;
+        margin: 30px 0 59px 0;
+    }
+}
+@media screen and (max-width:1120px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 36px;
+        margin: 30px 0 59px 0;
+    }
+}
+@media screen and (max-width:990px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 30px;
+        margin: 30px 0 59px 0;
+    }
+}
+@media screen and (max-width:850px){
+    .visual .swiper-slide .txt h3 {
+        font-size: 30px;
+        margin: 30px 0 59px 0;
+    }
+}
+@media screen and (max-width:768px){
+    .visual .swiper-slide {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: var(--font-size-tit);
+        margin: 30px 0 59px 0;
+    }
 }
 .tree {
 
 }
 .work {
-    background-color: blue;
+    background-color: var(--color-main);
     color: var(--color-white);
 }
 .news {
 
 }
 footer {
-    background-color: black;
+    background-color: var(--color-black);
     color: var(--color-white);
 }
