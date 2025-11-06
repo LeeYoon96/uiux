@@ -9,6 +9,7 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
 
     <!-- 내가 만든 파일-->
     <link rel="stylesheet" href="css/main.css">
@@ -103,24 +104,28 @@
         </div><!--swiper-->
         <div class="paging">
             <ul>
-                <li>
-                    <button><span>2025 생명의숲 후원의달</span></button>
-                </li>
-                <li>
-                    <button><span>2022 울진산불 이후의 변화</span></button>
-                </li>
-                <li>
-                    <button><span>고목나무 속 전설 이야기</span></button>
-                </li>
-                <li>
-                    <button><span>FOREST STORY 후원자 인터뷰</span></button>
-                </li>
+                <!-- <li><span></span></li> -->
             </ul>
         </div>
 	</section><!--visual-->
     <section class="tree section fp-auto-height-responsive">
-        <h2>tree</h2>
-	</section>
+        <div class="wrapper">
+            <div class="tit">
+                <h2>
+                    <strong data-start="0" data-end="102302">102,302</strong>
+                    <span>그루</span>
+                </h2>
+                <p>2024년, 생명의 숲은 전국 곳곳에 102,302그루의 나무를 <br> 심으며 더 푸른 미래를 향한 한 해의 발자취를 남겼습니다.</p>
+            </div>
+            <div class="photo">
+                <img src="images/main/tree 1.png" alt="나무" class="tree_img">
+                <img src="images/main/cloud 1.png" alt="구름" class="cloud01">
+                <img src="images/main/cloud 2.png" alt="구름" class="cloud02">
+                <img src="images/main/cloud 3.png" alt="구름" class="cloud03">
+                <img src="images/main/sun 1.png" alt="태양" class="sun">
+            </div>
+        </div><!--wrapper-->
+    </section>
     <section class="work section fp-auto-height-responsive">
         <h2>work</h2>
 	</section>
@@ -131,5 +136,17 @@
         <h2>footer</h2>
     </footer><!-- fullpage -->
 </div>
+<aside class="quick">
+    <button class="quick_open"><span class="blind">퀵메뉴 열기</span></button>
+    <div class="quick_wrap">
+        <ul>
+            <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+            <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+            <li class="green"><a href="#n"><span>그린짐</span></a></li>
+            <li class="top"><a href="#Main"><span>TOP</span></a></li>
+        </ul>
+    </div>
+    <button class="quick_close"><span class="blind">퀵메뉴 닫기</span></button>
+</aside>
 </body>
 </html>
