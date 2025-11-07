@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <!--jquery 라이브러리를 반드시 먼저 추가-->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -16,7 +18,7 @@
                 <h1 class="logo"><img src="images/logo.svg" alt="완도군 청산도"></h1>
                 <nav class="gnb">
                     <ul>
-                        <li><a href="#n">청산도 소개</a></li>
+                        <li><a href="#n">청산도소개</a></li>
                         <li><a href="#n">관광안내</a></li>
                         <li><a href="#n">추천여행</a></li>
                         <li><a href="#n">커뮤니티</a></li>
@@ -42,25 +44,25 @@
             <section class="culture">
                 <div class="wrapper">
                     <div class="tit">
-                        <h2>살아있는 유산, 청산의 풍습</h2>
+                        <h2 data-aos="fade-up">살아있는 유산, 청산의 풍습</h2>
                     </div>
                     <div class="list">
                         <ul>
-                            <li>
+                            <li data-aos="fade-up">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture01.jpg" alt="청산도 꽃상여"></div>
                                     <h3>청산도 꽃상여</h3>
                                     <p>청산도의 꽃상여는 섬마을 공동체가 함께 지켜온 전통 장례문화로, 하얀 꽃과 노래 속에 고인을 기리며 삶과 죽음을 잇는 소중한 풍습입니다.</p>
                                 </a>
                             </li>
-                            <li>
+                            <li data-aos="fade-up"  data-aos-delay="300">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture02.jpg" alt="당리 당제"></div>
                                     <h3>당리 당제</h3>
                                     <p>당리 당제는 매년 정월 초사흘 새벽, 당집에서 마을 원로가 목욕재계 후 정성을 다해 올리는 전통 제의로, 마을의 안녕과 풍요를 기원하는 신성한 의식입니다.</p>
                                 </a>
                             </li>
-                            <li>
+                            <li data-aos="fade-up"  data-aos-delay="600">
                                 <a href="#n">
                                     <div class="photo"><img src="images/culture03.jpg" alt="당리 정월굿(파지굿)"></div>
                                     <h3>당리 정월굿(파지굿)</h3>
@@ -77,7 +79,7 @@
                     <div class="tit">
                         <h2>청산팔경 이야기</h2>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up">
                         <ul>
                             <!-- 열려있는 li에 on클래스를 추가해줌 (단 1개의 li에만 on 클래스 추가)-->
                             <li class="bg1 on">
@@ -111,12 +113,12 @@
             </section><!--tour-->
             <section class="community">
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up" data-aos-delay="300">
                         <h2>슬로시티 청산도</h2>
                         <p>느리게 걷고 깊게 파고들수록<br>아름다운 길</p>
                     </div>
                     <div class="inner">
-                        <div class="notice">
+                        <div class="notice" data-aos="fade-left" data-aos-delay="300">
                             <h3>공지사항</h3>
                             <ul>
                                 <li>
@@ -153,7 +155,7 @@
                             <!-- 마우스 오버할때 이미지가 변경되어야 하는 경우 이미지는 background 처리해야함 -->
                             <a href="" class="more"><span></span></a>
                         </div><!--notice-->
-                        <div class="service">
+                        <div class="service" data-aos="fade-left" data-aos-delay="600">
                             <ul>
                                 <li class="icon1"><a href="#n">교통</a></li>
                                 <li class="icon2"><a href="#n">음식</a></li>
