@@ -179,3 +179,12 @@ afterLoad: function(origin, destination, direction, trigger){
 라이브러리파일은 가져오면 내파일에 맞게 css를 깨부셔야함
 
 body #fp-nav ul li a.active + .fp-tooltip {} ->  + 인접형제 선택자
+
+-------------------------------------------------------------------------
+251107
+
+피터패트 사이트 참고할만함
+
+포폴첫번째꺼 쉽고 간단한거
+
+시청, 대학 (마지막 포폴)
