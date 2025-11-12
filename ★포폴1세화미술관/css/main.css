@@ -1,0 +1,123 @@
+/* *******************************************************
+* 파일명 : main.css
+* 작성자 : 이윤
+* 작성일 : 25-11-12
+* 설  명 : index파일 (메인페이지에서만 호출하는 css
+           메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer)
+           default.css (태그의 초기화 - 브라우저 스타일 제거)
+           common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 - 변수도 여기서 선언)
+           - 변수도 여기서 선언, 변수가 너무 많으면 var이라는 파일을 분리하기도 함
+           layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+**********************************************************/
+
+@import url(default.css);
+@import url(font.css); /* cdn 방식은 외부에서 가져오는 방식이기 때문에 없어지면 연결 안됨 */
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visual h2 {
+    font-size: var(--font-size-visual);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    text-align: center;
+    color: #000;
+}
+.visual h2 strong {
+    color: var(--color-point);
+}
+.visual h2 .row {
+    display: flex;
+    justify-content: center;
+}
+.visual h2 .photo_wrap .photo {
+    position: relative;
+    display: block;
+    width: 214px;
+    height: 67px;
+    margin: 0 10px;
+    z-index: 2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.visual h2 .photo_wrap .photo img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+  
+    .visual h2 strong {
+        color: var(--color-point);
+    }
+    .visual h2 .row {
+        display: flex;
+        justify-content: center;
+    }
+    .visual h2 .photo_wrap .photo {
+        position: relative;
+        display: block;
+        width: 214px;
+        height: 67px;
+        margin: 0 10px;
+        z-index: 2;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .visual h2 .photo_wrap .photo img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+    }
+}
+.intro {
+    height: 1800px;
+    background: var(--color-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+}
+.intro .wrapper {
+    position: relative;
+    height: 100%;
+}
+.intro .photo_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 0 75px;
+}
+.intro .photo_wrap .photo_01 img {
+   margin: 221px 0 0 0;
+}
+.intro .photo_wrap .photo_02 img {
+    margin: 90px 0 0 0;
+}
+.intro .photo_wrap .photo_03 {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 34%;
+    transform: translate(-50%, -50%);
+}
+.intro h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    margin: 319px 0 0 0;
+}
+.intro h2 strong {
+    color: var(--color-point2);
+}
