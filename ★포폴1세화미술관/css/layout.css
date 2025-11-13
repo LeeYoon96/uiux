@@ -52,6 +52,7 @@ header .util .apply a {
     padding: 11px 52px 11px 52px;
     background-color: var(--color-basic);
     border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 header .util .apply a:hover {
     background-color: var(--color-point);
@@ -103,9 +104,52 @@ header .util .lang {
     }
 }
 
-
-
-
 footer {
-    margin: 1000px 0 0 0;
+    height: 298px;
+    background-color: var(--color-black);
+    color: rgba(255, 255, 255, 0.8);
+    border: 3px solid red;
+    position: relative;
+}
+footer .f_tit ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 49px 0 0 0;
+    border: 3px solid red;
+}
+footer .f_tit ul li {
+    width: 404px;
+    border: 3px solid red;
+}
+footer .f_tit ul li h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+footer .f_tit ul li p {
+    font-size: var(--font-size-sub);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+}
+footer .f_tit ul li .sns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+footer .f_tit ul li .sns span {
+    display: block;
+    text-align: center;
+    padding: 3px 54px 3px 67px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+
+}
+footer .f_logo a {
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    display: block;
+    width: 237px;
+    height: 46px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
