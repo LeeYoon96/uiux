@@ -27,15 +27,15 @@
         <div class="util">
             <div class="apply"><a href="#n">Apply</a></div>
             <button class="lang"><span class="blind">언어선택</span></button>
+            <!--모바일에서만 나옴-->
+            <div class="menu_open"><span class="blind">메뉴열기</span></div>
+            <div class="menu_close"><span class="blind">메뉴닫기</span></div>
         </div>
-        <div class="menu_open"><span class="blind">메뉴열기</span></div>
-        <!--모바일에서만 나옴-->
-        <div class="menu_close"><span class="blind">메뉴닫기</span></div>
     </header>
     <section class="visual">
         <div class="wrapper">
             <h2>
-                <div class="row">A <span>New Wave</span>
+                <div class="row">A <strong>New Wave</strong>
                     <div class="photo_wrap"><!-- 안움직임 position:relative; 주기 -->
                         <div class="photo_move"><!-- 이게 실제 움직음 position:absolute -->
                             <div class="photo_bg"></div><!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
@@ -68,21 +68,27 @@
                 <ul>
                     <li>
                         <a href="#n" class="img_popup1">
-                            <span class="img_open"><img src="images/magnifier.jpg" alt=""></span>
+                            <div class="img_open">
+                                <img src="images/find.jpg" alt="">
+                            </div>
                             <h3>신진작가 발굴</h3>
                             <p>새로운 시각과 가능성을 지닌 신진작가를 발굴하고 예술의 미래를 제시합니다.</p>
                         </a>
                     </li>
                     <li>
                         <a href="#n" class="img_popup2">
-                            <span class="img_open"><img src="images/magnifier.jpg" alt=""></span>
+                            <div class="img_open">
+                                <img src="images/place.jpg" alt="">
+                            </div>
                             <h3>예술과의 소통</h3>
                             <p>누구나 예술을 가까이에서 경험하며 공감할 수 있는 열린 공간을 만듭니다.</p>
                         </a>
                     </li>
                     <li>
                         <a href="#n" class="img_popup3">
-                            <span class="img_open"><img src="images/magnifier.jpg" alt=""></span>
+                            <div class="img_open">
+                                <img src="images/expand.jpg" alt="">
+                            </div>
                             <h3>문화의 확장</h3>
                             <p>전시와 교육을 통해 예술의 다양성을 넓히고, 문화적 가치를 사회로 확산합니다.</p>
                         </a>
@@ -97,44 +103,72 @@
             <div class="list">
                 <ul>
                     <li>
-                        <div class="photo"><img src="images/artwork01.jpg" alt="guidepost to the new world"></div>
-                        <div class="txt">
-                            <div class="tit_wrap">
-                                <h3>세화 컬렉션: 새로운 세계를 향한 이정표</h3>
-                                <span>현재전시</span>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork01.jpg" alt="guidepost to the new world">
+                                <div class="overlay">
+                                    <p>태광그룹 세화미술관은 《세화 컬렉션: 새로운 세계를 향한 이정표》 전시를 개최합니다. 이번 컬렉션 전시는 야요이 쿠사마의 설치 작업을 만날 수 있는 특별한 기회를 선사합니다.</p>
+                                </div>
                             </div>
-                            <p>2025. 08. 30. —</p>
-                        </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>세화 컬렉션: 새로운 세계를 향한 이정표</h3>
+                                    <span>현재전시</span>
+                                </div>
+                                <p>2025. 08. 30. —</p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <div class="photo"><img src="images/artwork03.jpg" alt="스티커를 들고있는 손"></div>
-                        <div class="txt">
-                            <div class="tit_wrap">
-                                <h3>전시 감상 프로그램: 기억 조각 채집</h3>
-                                <span>프로그램</span>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork03.jpg" alt="스티커를 들고있는 손">
+                                <div class="overlay">
+                                    <p>《노노탁 NONOTAK》과 연계한 전시 감상 프로그램을 운영합니다. 노노탁 스튜디오는 빛이 다양한 매체와 만나, 반사되고 투과하며 만들어내는 새로운 감각에 주목합니다. 강렬한 빛의 세계를 감상한 후, 기억에 남는 이미지를 여러 가지 재료로 표현해 보세요.</p>
+                                </div>
                             </div>
-                            <p>2025. 11. 7. ~ 12. 31.</p>
-                        </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>전시 감상 프로그램: 기억 조각 채집</h3>
+                                    <span>프로그램</span>
+                                </div>
+                                <p>2025. 11. 7. ~ 12. 31.</p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <div class="photo"><img src="images/artwork02.jpg" alt="nonotak"></div>
-                        <div class="txt">
-                            <div class="tit_wrap">
-                                <h3>노노탁 : NONOTAK</h3>
-                                <span>현재전시</span>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork02.jpg" alt="스티커를 들고있는 손">
+                                <div class="overlay">
+                                    <p>태광그룹 세화예술문화재단 세화미술관은 ‘도심 속 열린 미술관’이라는 슬로건 아래 광화문의 랜드마크 〈해머링 맨〉을 비롯한 소장품 해설 프로그램을 기획 및 운영하고 있습니다.</p>
+                                </div>
                             </div>
-                            <p>2025. 08. 30. — 12. 31.</p>
-                        </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>노노탁 : NONOTAK</h3>
+                                    <span>현재전시</span>
+                                </div>
+                                <p>2025. 08. 30. — 12. 31.</p>
+                            </div>
+                        </a>
                     </li>
                     <li>
-                        <div class="photo"><img src="images/artwork04.jpg" alt="작품을 감상하는 사람들s"></div>
-                        <div class="txt">
-                            <div class="tit_wrap">
-                                <h3>소장품 도슨트 아트 투어</h3>
-                                <span>프로그램</span>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork04.jpg" alt="스티커를 들고있는 손">
+                                <div class="overlay">
+                                    <p>태광그룹 세화미술관은 《전시 감상 프로그램: 기억 조각 채집》을 진행합니다. 이번 프로그램은 관람객이 직접 예술 작품과 상호작용하며 체험할 수 있는 기회를 제공합니다.</p>
+                                </div>
                             </div>
-                            <p>2025년 9-12월 예정</p>
-                        </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>소장품 도슨트 아트 투어</h3>
+                                    <span>프로그램</span>
+                                </div>
+                                <p>2025년 9-12월 예정</p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -152,19 +186,19 @@
                     <ul>
                         <li>
                             <h4>작가이름*</h4>
-                            <p>작가님의 이름을 작성해주세요.</p>
+                            <p class="editable">작가님의 이름을 작성해주세요.</p>
                         </li>
                         <li>
                             <h4>지원작품*</h4>
-                            <p>지원작품의 이름을 작성해주세요.</p>
+                            <p class="editable">지원작품의 이름을 작성해주세요.</p>
                         </li>
                         <li>
                             <h4>이메일*</h4>
-                            <p>작가님의 이메일을 작성해주세요.</p>
+                            <p class="editable">작가님의 이메일을 작성해주세요.</p>
                         </li>
                         <li>
                             <h4>전화번호*</h4>
-                            <p>작가님의 전화번호를 작성해주세요.</p>
+                            <p class="editable">작가님의 전화번호를 작성해주세요.</p>
                         </li>
                     </ul>
                 </div>
@@ -173,7 +207,7 @@
     </section>
     <footer>
         <div class="wrapper">
-            <div class="f_tit">
+            <div class="f_info">
                 <ul>
                     <li>
                         <h2>contact us</h2>
@@ -186,8 +220,8 @@
                     <li>
                         <h2>follow us</h2>
                         <div class="sns">
-                            <span>인스타그램</span>
-                            <span>유튜브</span>
+                            <a href="#n" class="insta">인스타그램</a>
+                            <a href="#n" class="youtube">유튜브</a>
                         </div>
                     </li>
                 </ul>

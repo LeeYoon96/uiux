@@ -64,18 +64,31 @@
     text-align: center;
     color: var(--color-black);
 }
-.visual h2 strong {
-    color: var(--color-point);
-}
 .visual h2 .row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .visual h2 .row strong {
-    margin-left: 30px;
+    color: var(--color-point);
+}
+.visual h2 .row strong {
+    margin-left: 15px;
+}
+@media screen and (max-width:1195px){
+    .visual h2 {
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:933px){
+    .visual h2 {
+        font-size: 44px;
+    }
 }
 @media screen and (max-width:768px){
+    .visual h2 {
+        font-size: 32px;
+    }
 }
 
 /******************************************intro 시작***********************************************************/
@@ -113,40 +126,46 @@
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.intro .photo_center {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 50px);
+    opacity: 0;
+    z-index: 10;
+}
+.intro .photo_center img {
+    display: block;
+}
 
 /* .green이 붙으면 애니메이션 시작 */
-.intro.green .photo_left,
-.intro.green .photo_center,
-.intro.green .photo_right {
+.intro.green .photo_left {
+    transition-delay: 0s;
     opacity: 1;
     transform: translateY(0);
 }
-.intro.green .photo_left {
-    transition-delay: 0s;
-}
-
 .intro.green .photo_right {
     transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
 }
 .intro.green .photo_center {
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
-    display: block;
+    transform: translate(-50%, 50%);
+    opacity: 1;
     transition-delay: 0.6s;
 }
-.intro.green .photo .photo_left img {
+.intro.green .photo_left img {
     width: 100%;
-    margin: 221px 0 0 0;
+    margin: 130px 0 0 0;
 }
-.intro.green .photo .photo_right img {
+.intro.green .photo_right img {
     width: 100%;
-    margin: 90px 0 0 0;
+    margin: 10px 0 0 0;
 }
-.intro.green .photo .photo_center img {
+.intro.green .photo_center img {
     width: clamp(195px, 45vw, 729px);
+    display: block;
+    height: auto;
 }
 .intro .txt h2,
 .intro .txt p {
@@ -161,7 +180,7 @@
 }
 .intro.green .txt {
     text-align: center;
-    margin: 147px 0 0 0;
+    margin: 330px 0 0 0;
     padding: 0 0 142px 0;
 }
 .intro.green .txt h2 {
@@ -215,59 +234,35 @@
     padding: 34px 0 34px 0;
     align-items: center;
 }
-.mission .list ul li a.img_popup1 {
-    position: relative;
-}
 .img_open {
     display: none;
-    position: absolute;
-    right: 33%;
-    bottom: 0;
-    z-index: 10;
-    padding: 10px;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+    width: 400px;
+    height: auto;
+}
+.img_open img {
+    width: 200px;
+    height: auto;
+}
+.mission .list ul li a.img_popup1 {
+    position: relative;
 }
 .mission .list ul li a.img_popup1:hover .img_open {
     display: block;
 }
-.img_open img {
-    width: 400px;
-    height: auto;
-}
 .mission .list ul li a.img_popup2 {
     position: relative;
-}
-.img_open {
-    display: none;
-    position: absolute;
-    right: 33%;
-    bottom: 0;
-    z-index: 10;
-    padding: 10px;
 }
 .mission .list ul li a.img_popup2:hover .img_open {
     display: block;
 }
-.img_open img {
-    width: 400px;
-    height: auto;
-}
 .mission .list ul li a.img_popup3 {
     position: relative;
 }
-.img_open {
-    display: none;
-    position: absolute;
-    right: 33%;
-    bottom: 0;
-    z-index: 10;
-    padding: 10px;
-}
 .mission .list ul li a.img_popup3:hover .img_open {
     display: block;
-}
-.img_open img {
-    width: 400px;
-    height: auto;
 }
 .mission .list ul li a h3 {
     font-size: var(--font-size-sub);
@@ -275,9 +270,75 @@
     line-height: var(--line-height-basic);
 }
 .mission .list ul li:last-child a h3 {
-    padding-right: 28px;
+    padding-right: 25px;
 }
 /******************************************artwork 시작***********************************************************/
+.artwork .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 190px; /* 두 열 사이 간격 */
+    margin: 0 0 156px 0;
+}
+
+.artwork .list ul li {
+    width: calc((100% - 190px) / 2); /* 2열 계산 */
+    margin-top: 0;
+}
+
+.artwork .list ul li:nth-child(2),
+.artwork .list ul li:nth-child(4) {
+    margin-top: 120px; /* 기존 offset 유지 */
+}
+
+.artwork .list ul li a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.artwork .photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.artwork .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.artwork .photo:hover img {
+    transform: scale(1.05);
+}
+
+.artwork .photo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DA081E;
+    color: #ffffff;
+    opacity: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--font-size-sub);
+    line-height: 1.5;
+    transition: opacity 0.3s ease;
+}
+
+.artwork .photo:hover .overlay {
+    opacity: 1;
+}
+
+/* 텍스트 영역 */
 .artwork h2{
     display: inline-block;
     font-size: var(--font-size-tit);
@@ -298,39 +359,24 @@
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 25' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.21875 25L0 22.7813L10.2813 12.5L0 2.21875L2.21875 0L14.7188 12.5L2.21875 25Z' /%3E%3C/svg%3E%0A");
 }
-.artwork .list ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 0 156px 0;
-}
-.artwork .list ul li {
-    width: calc(50% - 95px);
-}
-.artwork .list ul li:nth-child(2),
-.artwork .list ul li:nth-child(4) {
-    margin-top: 120px;
-}
-.artwork .list .photo {
-    height: 569px;
-}
-.artwork .list .photo img {
-    border-radius: 10px;
-}
-.artwork .list .txt{
+.artwork .txt {
     font-size: var(--font-size-sub);
+    padding: 10px 0;
 }
+
 .artwork .txt .tit_wrap {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
+
 .artwork .list .txt h3 {
     margin: 36px 0 0 0;
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-black);
 }
+
 .artwork .list .txt span {
     display: inline-block;
     background-color: var(--color-point);
@@ -340,6 +386,7 @@
     font-size: var(--font-size-basic);
     line-height: var(--line-height-basic);
 }
+
 /******************************************contact 시작***********************************************************/
 .contact {
     height: 700px;
@@ -347,7 +394,7 @@
 }
 .contact h2{
     display: inline-block;
-    font-size: var(--font-size-tit);
+    font-size: clamp(20px, 3vw, 40px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-white);
@@ -357,10 +404,10 @@
 .contact h2::before {
     position: absolute;
     content: "";
-    right: -31px;
-    top: 11px;
-    width: 14.72px;
-    height: 25px;
+    right: -0.775em;
+    top: 0.275em;
+    width: 0.368em;
+    height: 0.625em;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 25' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.21875 25L0 22.7813L10.2813 12.5L0 2.21875L2.21875 0L14.7188 12.5L2.21875 25Z' /%3E%3C/svg%3E%0A");
@@ -371,10 +418,14 @@
     justify-content: space-between;
 }
 .contact .index .tit {
-    font-size: 60px;
+    /* font-size: 60px; */
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-white);
+}
+.contact .index .tit h3 {
+    font-size: clamp(24px, 4vw, 60px); /* 최소24px, 최대60px, 화면비율에 따라 변화 */
+    line-height: 1.2;
 }
 .contact .index .tit h3 span {
     color: var(--color-point2);
@@ -404,7 +455,7 @@
     border-top: none;
 }
 .contact .index .list ul li h4 {
-    font-size: var(--font-size-sub);
+    font-size: clamp(17px, 1.5vw, 24px);
     font-weight: var(--font-weight-basic);
     line-height: var(--line-height-basic);
     color: var(--color-white);
@@ -414,6 +465,33 @@
     margin-top: 0;
 }
 .contact .index .list ul li p {
+    font-size: clamp(16px, 1vw, 17px);
     color: rgba(255, 255, 255, 0.5);
     margin: 0 0 21px 0;
+    box-sizing: border-box;
+}
+.contact .index .list ul li input,
+.contact .index .list ul li input[type="text"] {
+    width: 100%;
+    margin: 0 0 21px 0;
+    font-size: clamp(16px, 1vw, 17px);
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+/***************.editable 클래스가 추가되었을때**********************/
+.contact .index .list ul li .editable {
+    cursor: text;
+    color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width:1280px){
+    .contact .index .list {
+        width: 50%; /* 반응형에서 공간 확보 */
+        padding-right: 10px; /* 내부 여백 줄이기 */
+    }
+    .contact .index .list ul li h4,
+    .contact .index .list ul li p {
+        margin-right: 0; /* 텍스트 오른쪽 여백 줄이기 */
+    }
 }

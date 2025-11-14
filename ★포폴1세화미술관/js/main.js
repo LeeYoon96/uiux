@@ -95,4 +95,84 @@ $(document).ready(function () {
     $(window).resize(function(){
         scale_img()
     })
+
+    document.querySelectorAll('.mission .list ul li a').forEach(item => {
+        const imgPopup = item.querySelector('.img_open');
+    
+        item.addEventListener('mouseenter', function() {
+            imgPopup.style.display = 'block';
+        });
+    
+        item.addEventListener('mousemove', function(event) {
+            const mouseX = event.clientX; // 화면 기준 좌표
+            const mouseY = event.clientY;
+            imgPopup.style.left = mouseX + 100 + 'px'; // 마우스 오른쪽으로 100px
+            imgPopup.style.top = mouseY + -200 + 'px';  // 마우스 위로 -200px
+        });
+    
+        item.addEventListener('mouseleave', function() {
+            imgPopup.style.display = 'none';
+        });
+    });
+    
+    document.querySelectorAll('.contact .list .editable').forEach(p => {
+    p.addEventListener('click', function() {
+        // 원래 p 요소의 텍스트를 저장합니다.
+        const originalText = p.textContent;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        // 클릭 시 input의 초기값은 원래 p 요소의 텍스트로 설정합니다.
+        input.value = ""; 
+        p.replaceWith(input);
+        input.focus();
+
+        input.addEventListener('blur', function() {
+            // 입력된 값의 앞뒤 공백을 제거합니다.
+            const value = input.value.trim();
+
+            if (value === '') {
+                // 값이 공란이면, p 요소의 텍스트 내용을 원래 텍스트로 업데이트하고
+                // input을 p 요소로 교체합니다.
+                p.textContent = originalText;
+                input.replaceWith(p);
+            } else {
+                // 값이 있다면, p 요소의 텍스트 내용을 업데이트하고
+                // input을 p 요소로 교체합니다.
+                p.textContent = value;
+                input.replaceWith(p);
+            }
+        });
+    });
+});
+    // document.querySelectorAll('.contact .list .editable').forEach(p => {
+    //     p.addEventListener('click', function() {
+    //         const input = document.createElement('input');
+    //         input.type = 'text';
+    //         // 클릭 시 input의 초기값은 원래 p 요소의 텍스트로 설정합니다.
+    //         input.value = ''; 
+    //         p.replaceWith(input);
+    //         input.focus();
+
+    //         input.addEventListener('blur', function() {
+    //             // 입력된 값의 앞뒤 공백을 제거합니다.
+    //             const value = input.value.trim();
+
+    //             if (value === '') {
+    //                 // 값이 공란이면, 텍스트 박스를 p 요소로 교체하지 않고
+    //                 // 다시 포커스를 시도합니다.
+    //                 // setTimeout을 사용하여 브라우저가 포커스 아웃 이벤트를
+    //                 // 처리할 시간을 확보합니다.
+    //                 setTimeout(() => {
+    //                     input.focus();
+    //                 }, 10); // 짧은 지연 시간을 줍니다.
+    //             } else {
+    //                 // 값이 있다면, p 요소의 텍스트 내용을 업데이트하고
+    //                 // input을 p 요소로 교체합니다.
+    //                 p.textContent = value;
+    //                 input.replaceWith(p);
+    //             }
+    //         });
+    //     });
+    // });
 });
