@@ -75,22 +75,77 @@
 .visual h2 .row strong {
     margin-left: 15px;
 }
-@media screen and (max-width:1195px){
+/**************************************1280************************************************************/
+@media screen and (max-width:1280px) {
     .visual h2 {
-        font-size: 60px;
+        font-size: 54px;
+    }
+    .visual .row {
+        gap: 0 8px;
+    }
+    /* 사진이 너무 작아 보이는 구간 → 조금 키움 */
+    .visual .row .photo_wrap {
+        width: 3.5em;
+        height: 1.2em;
     }
 }
-@media screen and (max-width:933px){
+/**************************************1024************************************************************/
+@media screen and (max-width:1024px) {
     .visual h2 {
         font-size: 44px;
     }
+    /* row 간격 줄임 */
+    .visual .row {
+        gap: 0 6px;
+    }
+    /* 사진 크기 재조정 */
+    .visual .row .photo_wrap {
+        width: 3.4em;
+        height: 1.1em;
+    }
 }
-@media screen and (max-width:768px){
+/**************************************1024************************************************************/
+@media screen and (max-width:768px) {
+    .visual {
+        height: 80dvh; /* 타블렛은 너무 높으면 과함 */
+    }
     .visual h2 {
         font-size: 32px;
+        line-height: 1.2;
+    }
+    /* row는 그대로 1줄 유지 */
+    .visual .row {
+        gap: 0 5px;
+    }
+    /* 사진 크기 줄임 */
+    .visual .row .photo_wrap {
+        width: 3em;
+        height: 1em;
+    }
+}
+/* @media screen and (max-width:480px) {
+    .visual {
+        height: 70dvh;
+    }
+    .visual h2 {
+        font-size: 26px;
+    }
+    /* 모바일에서는 photo_wrap 너무 작아짐 → 최소 값 보장 *
+    .visual .row .photo_wrap {
+        width: 2.6em;
+        height: 0.9em;
     }
 }
 
+@media screen and (max-width:360px) {
+    .visual h2 {
+        font-size: 22px;
+    }
+    .visual .row .photo_wrap {
+        width: 2.4em;
+        height: 0.8em;
+    }
+} */
 /******************************************intro 시작***********************************************************/
 .intro {
     position: relative;
@@ -180,8 +235,8 @@
 }
 .intro.green .txt {
     text-align: center;
-    margin: 330px 0 0 0;
-    padding: 0 0 142px 0;
+    margin-top: clamp(150px, 20vw, 330px);
+    padding-bottom: clamp(60px, 10vw, 142px);
 }
 .intro.green .txt h2 {
     font-size: var(--font-size-tit);
@@ -196,10 +251,45 @@
 .intro.green .txt p {
     transition-delay: 1.2s;
 }
-@media screen and (max-width:768px){
-
+/*****************************************1024********************************************************/
+@media screen and (max-width:1024px) {
+    /* photo wrapper 간격 축소 */
+    .intro .photo {
+        gap: 0 40px;
+        transform: translateY(50px);
+    }
+    /* 좌우 사진 위치 동일하게 조정 */
+    .intro.green .photo_left img,
+    .intro.green .photo_right img {
+        margin-top: 60px;
+    }
+    /* 가운데 사진은 내려주기 */
+    .intro.green .photo_center {
+        transform: translate(-50%, 45%);
+    }
+    /* 텍스트 영역 상단 간격 축소 */
+    .intro.green .txt {
+        margin-top: 220px;
+        padding-bottom: 100px;
+    }
 }
-
+/*****************************************768********************************************************/
+@media screen and (max-width:768px) {
+    .intro .photo {
+        gap: 0 20px;
+    }
+    .intro.green .photo_left img,
+    .intro.green .photo_right img {
+        margin-top: 40px;
+    }
+    .intro.green .photo_center {
+        transform: translate(-50%, 80%);
+    }
+    .intro.green .txt {
+        margin-top: 150px;
+        padding-bottom: 60px;
+    }
+}
 /******************************************mission 시작***********************************************************/
 .mission {
     background-color: var(--color-main);
@@ -272,18 +362,58 @@
 .mission .list ul li:last-child a h3 {
     padding-right: 25px;
 }
+/************************************1024~900********************************************************/
+@media screen and (max-width: 1091px) {
+    .mission .list ul li a {
+        gap: 180px; /* 315px → 180px 정도로 자연스럽게 압축 */
+    }
+}
+@media screen and (max-width: 900px) {
+    .mission .list ul li a {
+        gap: 120px; 
+    }
+}
+/************************************768********************************************************/
+@media screen and (max-width: 768px) {
+    .mission .list ul li a {
+        flex-direction: row;    
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px 0;
+    }
+    .mission .list ul li a h3 {
+        font-size: 20px;
+        line-height: 1.3;
+        max-width: 110px; 
+        /* heck */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: keep-all;
+    }
+    .mission .list ul li a p {
+        font-size: 14px;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
 /******************************************artwork 시작***********************************************************/
 .artwork .list ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 190px; /* 두 열 사이 간격 */
+    /* 기존 column-gap: 190px; → 반응형 */
+    column-gap: clamp(40px, 10vw, 120px);
+    /* 세로 갭은 필요하면 유지 */
+    row-gap: 120px;
     margin: 0 0 156px 0;
 }
 
 .artwork .list ul li {
-    width: calc((100% - 190px) / 2); /* 2열 계산 */
-    margin-top: 0;
+    width: calc((100% - clamp(40px, 10vw, 120px)) / 2);
 }
 
 .artwork .list ul li:nth-child(2),
@@ -360,8 +490,8 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 25' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.21875 25L0 22.7813L10.2813 12.5L0 2.21875L2.21875 0L14.7188 12.5L2.21875 25Z' /%3E%3C/svg%3E%0A");
 }
 .artwork .txt {
-    font-size: var(--font-size-sub);
     padding: 10px 0;
+    font-size: clamp(14px, 1.2vw, var(--font-size-sub));
 }
 
 .artwork .txt .tit_wrap {
@@ -373,6 +503,7 @@
 .artwork .list .txt h3 {
     margin: 36px 0 0 0;
     font-weight: var(--font-weight-bold);
+    font-size: clamp(18px, 1.6vw, var(--font-size-tit));
     line-height: var(--line-height-tit);
     color: var(--color-black);
 }
@@ -380,13 +511,60 @@
 .artwork .list .txt span {
     display: inline-block;
     background-color: var(--color-point);
-    padding: 6px 20px 6px 19px;
+    padding: clamp(4px, 0.5vw, 6px) clamp(14px, 1.5vw, 20px);
     border-radius: 10px;
     color: var(--color-white);
-    font-size: var(--font-size-basic);
+    font-size: clamp(12px, 1vw, var(--font-size-basic));
     line-height: var(--line-height-basic);
 }
-
+/************************************768********************************************************/
+@media screen and (max-width: 768px) {
+    .artwork .list ul {
+        flex-direction: column;
+        column-gap: 0;  
+        gap: 60px;
+    }
+    .artwork .list ul li {
+        width: 100%;
+    }
+    .artwork .list ul li a {
+        display: block;
+        width: 100%;
+    }
+    /* offset 제거 */
+    .artwork .list ul li:nth-child(2),
+    .artwork .list ul li:nth-child(4) {
+        margin-top: 0;
+    }
+    .artwork .photo {
+        width: 100%;
+    }
+    /* 이미지 100% 자연 반응형 */
+    .artwork .photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    /* 텍스트 사이즈 좀 더 안정화 */
+    .artwork .txt {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /* 텍스트 내부 정렬 안정화 */
+    .artwork .txt .tit_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .artwork .list .txt h3 {
+        font-size: clamp(18px, 4vw, 22px);
+        line-height: 1.3;
+    }
+    .artwork .list .txt span {
+        font-size: clamp(11px, 3vw, 13px);
+        padding: 6px 14px;
+    }
+}
 /******************************************contact 시작***********************************************************/
 .contact {
     height: 700px;
