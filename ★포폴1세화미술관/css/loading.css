@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 .loader {
     display: flex;
     justify-content: center;
@@ -86,15 +82,5 @@
     100% {
         opacity: 1;
         transform: scale(1);
-    }
-}
-
-.disppear {
-    animation: vanish 1s forwards;
-}
-@keyframes vanish {
-    100% {
-        opacity: 0;
-        visibility: hidden;
     }
 }
