@@ -110,7 +110,7 @@
         height: 80dvh; /* 타블렛은 너무 높으면 과함 */
     }
     .visual h2 {
-        font-size: 32px;
+        font-size: 28px;
         line-height: 1.2;
     }
     /* row는 그대로 1줄 유지 */
@@ -123,23 +123,23 @@
         height: 1em;
     }
 }
-/* @media screen and (max-width:480px) {
+@media screen and (max-width:480px) {
     .visual {
         height: 70dvh;
     }
     .visual h2 {
-        font-size: 26px;
+        font-size: 22px;
     }
-    /* 모바일에서는 photo_wrap 너무 작아짐 → 최소 값 보장 *
+    /* 모바일에서는 photo_wrap 너무 작아짐 → 최소 값 보장 */
     .visual .row .photo_wrap {
         width: 2.6em;
         height: 0.9em;
     }
 }
 
-@media screen and (max-width:360px) {
+@media screen and (max-width:368px) {
     .visual h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
     .visual .row .photo_wrap {
         width: 2.4em;
@@ -567,16 +567,16 @@
 }
 /******************************************contact 시작***********************************************************/
 .contact {
-    height: 700px;
+    min-height: 700px;
     background: url(../images/contact01.jpg) no-repeat center center / cover;
 }
-.contact h2{
+.contact h2 {
     display: inline-block;
     font-size: clamp(20px, 3vw, 40px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     color: var(--color-white);
-    margin: 156px 0 51px 0;
+    margin: clamp(60px, 15vw, 156px) 0 clamp(20px, 5vw, 51px) 0;
     position: relative;
 }
 .contact h2::before {
@@ -590,16 +590,22 @@
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 25' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.21875 25L0 22.7813L10.2813 12.5L0 2.21875L2.21875 0L14.7188 12.5L2.21875 25Z' /%3E%3C/svg%3E%0A");
 }
-.contact .index {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.contact .index { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
 }
 .contact .index .tit {
-    /* font-size: 60px; */
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tit);
+    font-weight: var(--font-weight-bold); 
+    line-height: var(--line-height-tit); 
     color: var(--color-white);
+}
+.contact .index .list {
+    width: auto;
+    flex: 1 1 260px;         /* 최소 260px 확보 */
+    min-width: 260px;
+    margin-top: -100px;
+    max-width: 100%;
 }
 .contact .index .tit h3 {
     font-size: clamp(24px, 4vw, 60px); /* 최소24px, 최대60px, 화면비율에 따라 변화 */
@@ -610,12 +616,9 @@
 }
 .contact .index .tit a strong {
     display: inline-block;
-    font-size: 20px;
-    font-weight: var(--line-height-basic);
-    line-height: var(--line-height-basic);
+    font-size: clamp(14px, 3vw, 20px);           /* 글자도 줄어들도록 */
+    padding: clamp(6px, 1.5vw, 11px) clamp(20px, 4vw, 42px); /* 버튼 폭도 함께 축소 */
     background-color: var(--color-basic);
-    margin: 46px 0 0 0;
-    padding: 11px 42px;
     border-radius: 10px;
     transition: background-color 0.3s ease;
 }
@@ -623,8 +626,9 @@
     background-color: var(--color-point);
 }
 .contact .index .list {
-    width: calc(50% - 12px);
-    margin-top: -100px;
+    flex: 1 1 350px;  /* 최소 350px까지 버티도록 설정 → 368px 목표 충족 */
+    max-width: 500px;
+    margin-top: clamp(-40px, -8vw, -100px); /* 화면에 맞춰 자연스럽게 위 이동 */
 }
 .contact .index .list ul li {
     border-top: 1px solid var(--color-white);
@@ -633,7 +637,7 @@
     border-top: none;
 }
 .contact .index .list ul li h4 {
-    font-size: clamp(17px, 1.5vw, 24px);
+    font-size: clamp(14px, 2.5vw, 24px);
     font-weight: var(--font-weight-basic);
     line-height: var(--line-height-basic);
     color: var(--color-white);
@@ -643,7 +647,7 @@
     margin-top: 0;
 }
 .contact .index .list ul li p {
-    font-size: clamp(16px, 1vw, 17px);
+    font-size: clamp(13px, 2vw, 17px);
     color: rgba(255, 255, 255, 0.5);
     margin: 0 0 21px 0;
     box-sizing: border-box;
@@ -663,13 +667,45 @@
     cursor: text;
     color: rgba(255, 255, 255, 0.5);
 }
+/********************************************1280*************************************************/
 @media screen and (max-width:1280px){
     .contact .index .list {
-        width: 50%; /* 반응형에서 공간 확보 */
         padding-right: 10px; /* 내부 여백 줄이기 */
     }
     .contact .index .list ul li h4,
     .contact .index .list ul li p {
         margin-right: 0; /* 텍스트 오른쪽 여백 줄이기 */
+    }
+}
+/******************************************520****************************************************/
+@media screen and (max-width:520px) {
+
+    .contact .index {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .contact .index .tit,
+    .contact .index .list {
+        flex: 1 1 100%;
+        min-width: auto;
+        margin-top: 0;
+    }
+
+    .contact .index .tit h3 {
+        font-size: clamp(20px, 6vw, 40px);
+        line-height: 1.25;
+    }
+
+    .contact .index .tit a strong {
+        font-size: clamp(12px, 3vw, 18px);
+        padding: clamp(6px, 2vw, 10px) clamp(20px, 6vw, 32px);
+    }
+
+    .contact .index .list ul li h4 {
+        font-size: clamp(13px, 3vw, 18px);
+    }
+    .contact .index .list ul li p {
+        font-size: clamp(12px, 2.5vw, 16px);
     }
 }
