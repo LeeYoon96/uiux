@@ -51,7 +51,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: 'NexonLv1Gothic', 'SUIT', sans-serif;
+  font-family: 'SUIT', sans-serif;
   /* 프리텐다드를 적용하는데 만약 안되면 다음에 맑은고딕 서체를 적용하고 안되면 다음서체 적용
     sans-serif 다 없으면 고딕체 아무거나 가지고와 / serif는 명조체 */
   font-size: 1.7rem;
@@ -60,6 +60,10 @@ body {
   color: var(--color-basic);
   word-break: keep-all;
   word-wrap: break-word;
+}
+/* 영어만 NexonLv1Gothic 적용 */
+body [lang="en"] {
+  font-family: 'NexonLv1Gothic', sans-serif;
 }
 @media screen and (max-width:768px){
   body {

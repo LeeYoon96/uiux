@@ -15,44 +15,57 @@
     <header>
         <h1 class="logo"><a href="index.html"><span class="blind">sehwamuseum of art</span></a></h1>
         <nav class="gnb">
+            <!-- 모바일 / 태블릿 메뉴 열기 버튼 -->
+            <button class="gnb_open">
+                <span class="blind">메뉴 열기</span>
+                <i>
+                    <svg viewBox="0 0 12 10" fill="#1d1d1d" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1.33333V0H12V1.33333H0ZM0 9.33333V8H12V9.33333H0ZM0 5.33333V4H12V5.33333H0Z" />
+                        </svg>
+                </i>
+            </button>
             <div class="gnb_wrap">
+                <div class="gnb_logo"><span class="blind">SEHWA</span></div>
                 <ul>
-                    <li><a href="#n"><span>Why SEHWA</span></a></li>
-                    <li><a href="#n"><span>Our MISSION</span></a></li>
-                    <li><a href="#n"><span>ARTWORK</span></a></li>
-                    <li><a href="#n"><span>CONTACT</span></a></li>
+                    <li><a href="#n"><span lang="en">Why SEHWA</span></a></li>
+                    <li><a href="#n"><span lang="en">Our MISSION</span></a></li>
+                    <li><a href="#n"><span lang="en">ARTWORK</span></a></li>
+                    <li><a href="#n"><span lang="en">CONTACT</span></a></li>
                 </ul>
+                <!-- ★ 모바일 전용 APPLY 버튼 -->
+                <div class="apply_mo">
+                    <a href="#n"><span>Apply</span></a>
+                </div>
+                <!-- 메뉴 닫기 버튼 -->
+                <button class="gnb_close">
+                    <span class="blind">메뉴 닫기</span>
+                    <i>
+                        <svg viewBox="0 0 10 10" fill="#1d1d1d" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.933333 9.33333L0 8.4L3.73333 4.66667L0 0.933333L0.933333 0L4.66667 3.73333L8.4 0L9.33333 0.933333L5.6 4.66667L9.33333 8.4L8.4 9.33333L4.66667 5.6L0.933333 9.33333Z" />
+                            </svg>
+                    </i>
+                </button>
             </div>
+            <div class="gnb_bg"></div>
         </nav>
         <div class="util">
             <div class="apply"><a href="#n">Apply</a></div>
             <button class="lang"><span class="blind">언어선택</span></button>
-            <!--모바일에서만 나옴-->
-            <div class="mo_menu">
-            <input type="checkbox" id="trigger" />
-            <label for="trigger" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-        </div>
-    </div>
-</header>
         </div>
     </header>
     <section class="visual">
         <div class="wrapper">
             <h2>
-                <div class="row">A <strong>New Wave</strong>
+                <div class="row" lang="en">A <strong lang="en">New Wave</strong>
                     <div class="photo_wrap"><!-- 안움직임 position:relative; 주기 -->
                         <div class="photo_move"><!-- 이게 실제 움직음 position:absolute -->
                             <div class="photo_bg"></div><!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
                             <img src="images/visual01.jpg" alt="파도 이미지"><!-- 이미지는 1920 * 1080 정도의 큰 이미지 사용 -->
                         </div>
                     </div>
-                    <span>Begins at</span>
+                    <span lang="en">Begins at</span>
                 </div>
-                <div class="row">Sehwa Museum.</div>
+                <div class="row" lang="en">Sehwa Museum.</div>
             </h2>
         </div>
     </section><!--visual-->
@@ -71,7 +84,7 @@
     </section><!--intro-->
     <section class="mission">
         <div class="wrapper">
-            <h2><a href="#n">Our MISSION</a></h2>
+            <h2><a href="#n" lang="en">Our MISSION</a></h2>
             <div class="list">
                 <ul>
                     <li>
@@ -107,7 +120,7 @@
     </section><!--mission-->
     <section class="artwork">
         <div class="wrapper">
-            <h2><a href="#n">ARTWORK</a></h2>
+            <h2><a href="#n" lang="en">ARTWORK</a></h2>
             <div class="list">
                 <ul>
                     <li>
@@ -147,14 +160,14 @@
                     <li>
                         <a href="#n">
                             <div class="photo">
-                                <img src="images/artwork02.jpg" alt="스티커를 들고있는 손">
+                                <img src="images/artwork02.jpg" alt="NONOTAK">
                                 <div class="overlay">
                                     <p>태광그룹 세화예술문화재단 세화미술관은 ‘도심 속 열린 미술관’이라는 슬로건 아래 광화문의 랜드마크 〈해머링 맨〉을 비롯한 소장품 해설 프로그램을 기획 및 운영하고 있습니다.</p>
                                 </div>
                             </div>
                             <div class="txt">
                                 <div class="tit_wrap">
-                                    <h3>노노탁 : NONOTAK</h3>
+                                    <h3 >노노탁 : NONOTAK</h3>
                                     <span>현재전시</span>
                                 </div>
                                 <p>2025. 08. 30. — 12. 31.</p>
@@ -164,7 +177,7 @@
                     <li>
                         <a href="#n">
                             <div class="photo">
-                                <img src="images/artwork04.jpg" alt="스티커를 들고있는 손">
+                                <img src="images/artwork04.jpg" alt="작품을 감상하는 사람들">
                                 <div class="overlay">
                                     <p>태광그룹 세화미술관은 《전시 감상 프로그램: 기억 조각 채집》을 진행합니다. 이번 프로그램은 관람객이 직접 예술 작품과 상호작용하며 체험할 수 있는 기회를 제공합니다.</p>
                                 </div>
@@ -184,7 +197,7 @@
     </section><!--artwork-->
     <section class="contact">
         <div class="wrapper">
-            <h2>CONTACT</h2>
+            <h2 lang="en">CONTACT</h2>
             <div class="index">
                 <div class="tit">
                     <h3>세화미술관과 함께 <br> 작가님의 <span>숨겨진 가치</span>를 <br> 보여주세요.</h3>
@@ -211,6 +224,9 @@
                     </ul>
                 </div>
             </div>
+            <div class="apply_mo">
+                <a href="#n"><strong>제출하기</strong></a>
+            </div>
         </div>
     </section><!--contact-->
     <footer>
@@ -218,15 +234,15 @@
             <div class="f_info">
                 <ul>
                     <li>
-                        <h2>contact us</h2>
-                        <p>sehwaart@contact.us</p>
+                        <h2 lang="en">contact us</h2>
+                        <p lang="en">sehwaart@contact.us</p>
                     </li>
                     <li>
-                        <h2>visit us</h2>
+                        <h2 lang="en">visit us</h2>
                         <p>세화미술관 서울특별시 종로구 <br> 새문안로 68 흥국생명빌딩 2층</p>
                     </li>
                     <li>
-                        <h2>follow us</h2>
+                        <h2 lang="en">follow us</h2>
                         <div class="sns">
                             <a href="#n" class="insta">인스타그램</a>
                             <a href="#n" class="youtube">유튜브</a>

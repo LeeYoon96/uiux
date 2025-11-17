@@ -594,6 +594,7 @@
     display: flex; 
     flex-wrap: wrap; 
     justify-content: space-between; 
+    gap: 0 clamp(20px, 4vw, 87px);
 }
 .contact .index .tit {
     font-weight: var(--font-weight-bold); 
@@ -618,6 +619,7 @@
     display: inline-block;
     font-size: clamp(14px, 3vw, 20px);           /* 글자도 줄어들도록 */
     padding: clamp(6px, 1.5vw, 11px) clamp(20px, 4vw, 42px); /* 버튼 폭도 함께 축소 */
+    margin: clamp(20px, 3vw, 46px) 0 0 0;
     background-color: var(--color-basic);
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -628,7 +630,7 @@
 .contact .index .list {
     flex: 1 1 350px;  /* 최소 350px까지 버티도록 설정 → 368px 목표 충족 */
     max-width: 500px;
-    margin-top: clamp(-40px, -8vw, -100px); /* 화면에 맞춰 자연스럽게 위 이동 */
+    /* margin-top: clamp(-40px, -8vw, -100px); 화면에 맞춰 자연스럽게 위 이동 */
 }
 .contact .index .list ul li {
     border-top: 1px solid var(--color-white);
@@ -641,7 +643,7 @@
     font-weight: var(--font-weight-basic);
     line-height: var(--line-height-basic);
     color: var(--color-white);
-    margin: 29px 0 15px 0;
+    margin: clamp(15px, 2.5vw, 29px) 0 clamp(7px, 1.4vw, 15px) 0;
 }
 .contact .index .list ul li:first-child h4 {
     margin-top: 0;
@@ -676,6 +678,45 @@
     .contact .index .list ul li p {
         margin-right: 0; /* 텍스트 오른쪽 여백 줄이기 */
     }
+}
+/**************************************645 제출하기 버튼 이동 ********************************************************/
+@media screen and (min-width:769px) {
+    .contact .apply_mo {
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+    .contact {
+        min-height: clamp(550px, 140vw, 850px);
+    }
+    .contact .index {
+        display: flex;
+        flex-direction: column;
+        gap: 150px 0;
+    }
+    .contact .index .tit a {
+        display: none;
+    }
+    .contact .index .list {
+        max-width: none;
+    }
+    .contact .apply_mo {
+        text-align: center;
+    }
+    .contact .apply_mo a strong {
+        display: inline-block;
+        font-size: clamp(14px, 3vw, 20px);           /* 글자도 줄어들도록 */
+        padding: clamp(6px, 1.5vw, 11px) clamp(20px, 4vw, 42px); /* 버튼 폭도 함께 축소 */
+        margin: clamp(20px, 3vw, 46px) 0 clamp(7px, 1.3vw, 15px) 0;
+        background-color: var(--color-basic);
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+        color: var(--color-white);
+    }
+    .contact .apply_mo a:hover strong {
+        background-color: var(--color-point);
+    }
+
 }
 /******************************************520****************************************************/
 @media screen and (max-width:520px) {

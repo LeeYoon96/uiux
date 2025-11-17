@@ -6,6 +6,44 @@
 **********************************************************/
     //visual 섹션 인터렉티브
 $(document).ready(function () {
+
+/********************** 시작 : 지금 pc버전인지 모바일인지 체크 (메뉴상태)**************************************** */
+let mobile_size = 768
+let window_w
+let device_status // pc, mobile
+
+function device_chk(){ //함수를 정의한다 (선언)
+    window_w = $(window).width()
+    if(window_w > mobile_size){ //브라우저 넓이가 768보다 클때
+        device_status = 'pc'
+    }else{
+        device_status = 'mobile'
+    }
+    console.log(device_status)
+}
+
+device_chk() //html의 로딩이 완료된 이후 단 1번 실행
+$(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
+    device_chk()
+})
+/**************** 끝 : 지금 pc버전인지 모바일인지 체크 (메뉴상태) ******************** */
+
+/*********************************** 시작 : mobile 버전 메뉴 열기 ********************************** 
+ * 열기를 클릭하면 header에 menu_mo 클래스 추가
+ *  header .gnb .gnb_open
+ * 닫기를 클릭하면 header에 menu_mo 클래스 삭제
+ * header .gnb .gnb_wrap .gnb_close
+*/
+
+$('header .gnb .gnb_open').on('click', function(){
+    $('header').addClass('menu_mo')
+})
+$('header .gnb .gnb_wrap .gnb_close').on('click', function(){
+    $('header').removeClass('menu_mo')
+})
+/*********************************** 끝 : mobile 버전 메뉴 닫기 ********************************** */
+
+
     let ani_start_ratio = 0.8  // 움직일 요소가 브라우저 하단에서 몇%정도 올라왔을때 애니메이션을 시작할지 정하는 비율
     let ani_end_ratio = 0.6  // 종료 요소가 브라우저 하단에서 몇%정도 올라왔을때 애니메이션을 시작할지 정하는 비율
     let obj_wrap = $('.visual .photo_wrap')  // 움직일 요소를 감싸는 요소
