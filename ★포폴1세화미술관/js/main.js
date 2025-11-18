@@ -46,6 +46,9 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
 
     let ani_start_ratio = 0.8  // 움직일 요소가 브라우저 하단에서 몇%정도 올라왔을때 애니메이션을 시작할지 정하는 비율
     let ani_end_ratio = 0.6  // 종료 요소가 브라우저 하단에서 몇%정도 올라왔을때 애니메이션을 시작할지 정하는 비율
+    let obj_wrap = $('.visual .photo_wrap')  // 움직일 요소를 감싸는 요소
+    let obj_name = $('.visual .photo_wrap .photo_move')  // 실제 움직일 요소
+    let obj_bg = $('.visual .photo_wrap .photo_move .photo_bg')  // 움직일 요소를 덮을 요소 (before/after로 대체 불가)
     let end_obj = $('.intro')   // 애니메이션 종료 요소
     let end_class = 'green'  // 애니메이션 종료 요소에 애니메이션 종료 시 추가될 class명
 
@@ -65,24 +68,15 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
     let obj_y
 
     function scale_img() {
+        scrolling = $(window).scrollTop()
         win_h = $(window).height()
         win_w = $(window).width()
-
-        // PC와 모바일 자동 분리
-        let section = (win_w <= 768) ? $('.visual_mo') : $('.visual')
-
-        // 선택자: 현재 섹션에서 다시 찾기
-        let obj_wrap = section.find('.photo_wrap')  
-        let obj_name = section.find('.photo_move')  
-        let obj_bg   = section.find('.photo_bg')  
-
-        scrolling = $(window).scrollTop()
-
-        // 요소의 현재 위치 및 크기
         obj_start_w = obj_wrap.width()
         obj_start_h = obj_wrap.height()
         obj_start_x = obj_wrap.offset().left
         obj_start_y = obj_wrap.offset().top
+
+        
 
         // 스크롤 구간 정의
         ani_start = obj_wrap.offset().top - win_h * (1 - ani_start_ratio)
@@ -116,14 +110,14 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
             obj_w = win_w
             obj_h = win_h
             obj_x = end_x
-            obj_y = end_y
+            obj_y = end_y * ani_ratio + ani_end
             end_obj.addClass(end_class)
         }else{
             console.log('진행중')
             obj_w = obj_start_w + (end_w - obj_start_w) * ani_ratio
             obj_h = obj_start_h + (end_h - obj_start_h) * ani_ratio
             obj_x = end_x * ani_ratio
-            obj_y = end_y * ani_ratio 
+            obj_y = end_y * ani_ratio + (scrolling - ani_start*(1-ani_ratio))
             end_obj.removeClass(end_class)
         }
         
@@ -135,8 +129,12 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
         obj_bg.css('opacity', ani_ratio)
     }
     scale_img()
-    $(window).scroll(scale_img)
-    $(window).resize(scale_img)
+    $(window).scroll(function(){
+        scale_img()
+    })
+    $(window).resize(function(){
+        scale_img()
+    })
     // 마우스 오버시 이미지 팝업
     document.querySelectorAll('.mission .list ul li a').forEach(item => {
         const imgPopup = item.querySelector('.img_open');
