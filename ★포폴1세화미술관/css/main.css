@@ -22,23 +22,21 @@
     justify-content: center;
 }
 .visual h2 {
-    font-size: clamp(100px, 8vw, 140px);
+    font-size: clamp(80px, 8vw, 140px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    text-align: center;
     color: var(--color-black);
 }
 .visual h2 .row {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 .visual h2 .row strong {
     color: var(--color-point);
 }
 .visual h2 .row strong {
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .visual .row {
     display: flex;
@@ -82,33 +80,12 @@
         display: none;
     }
 }
-/**************************************1280************************************************************/
-@media screen and (max-width:1280px) {
+@media screen and (min-width:769px) and (max-width:1024px){
     .visual h2 {
-        /* font-size: 54px; */
+    font-size: clamp(90px, 10vw, 150px);
     }
-    .visual .row {
-        gap: 0 8px;
-    }
-    /* 사진이 너무 작아 보이는 구간 → 조금 키움 */
-    .visual .row .photo_wrap {
-        width: 3.5em;
-        height: 1.2em;
-    }
-}
-/**************************************1024************************************************************/
-@media screen and (max-width:1024px) {
-    .visual h2 {
-        /* font-size: 44px; */
-    }
-    /* row 간격 줄임 */
-    .visual .row {
-        gap: 0 6px;
-    }
-    /* 사진 크기 재조정 */
-    .visual .row .photo_wrap {
-        width: 3.4em;
-        height: 1.1em;
+    .visual .row#line {
+        flex-direction: column;
     }
 }
 /**************************************768************************************************************/
@@ -117,10 +94,16 @@
         display: none;
     }
     .visual_mo {
-        height: 50dvh;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .visual_mo h2 {
         font-size: 80px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-tit);
+        color: var(--color-black);
     }
     .visual_mo h2 .row {
     display: flex;
@@ -200,11 +183,17 @@
     opacity: 1;
 }
 .intro .photo_left,
-.intro .photo_center,
-.intro .photo_right {
+.intro .photo_right, 
+.intro .photo_center {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    width: calc(100% / 2);
+}
+.intro .photo_left img,
+.intro .photo_right img,
+.intro .photo_center img {
+    width: 100%;
 }
 .intro .photo_center {
     position: absolute;

@@ -220,6 +220,7 @@ footer .f_info ul li h2 {
     font-size: clamp(20px, 2vw, var(--font-size-tit));
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
+    padding: 0 0 10px 0;
 }
 footer .f_info ul li p {
     font-size: clamp(14px, 1.2vw, var(--font-size-sub));
