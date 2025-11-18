@@ -220,7 +220,7 @@ footer .f_info ul li h2 {
     font-size: clamp(20px, 2vw, var(--font-size-tit));
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    padding: 0 0 10px 0;
+    padding: 10px 0 10px 0;
 }
 footer .f_info ul li p {
     font-size: clamp(14px, 1.2vw, var(--font-size-sub));
@@ -290,13 +290,15 @@ footer .f_logo a {
 }
 @media screen and (max-width: 768px) {
     footer .f_info ul {
-        display: flex;
+        display: block;
         text-align: center;
-        padding: 49px 0 0 0;
+        padding: 0;
     }
     footer .f_info ul li .sns {
         margin-left: auto;
         margin-right: auto;
+        flex-direction: row;
+        gap : 0 1em;
     }
 }
 @media screen and (max-width: 484px) {
@@ -321,7 +323,7 @@ footer .f_logo a {
     /* sns 컨테이너 최소폭 조절해 줄어들게 */
     footer .f_info ul li .sns {
         width: 95px;          /* 기존보다 더 줄어듦 */
-        gap: 6px 0;
+        gap: 0 6px;
     }
     /* 버튼 크기 줄이기 */
     footer .f_info ul li .sns a {

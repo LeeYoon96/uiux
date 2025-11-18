@@ -20,7 +20,7 @@
     height: 100dvh;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 .visual .row {
     display: flex;
@@ -341,10 +341,12 @@
     font-size: var(--font-size-sub);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-basic);
+    width: 140px;
 }
-.mission .list ul li:last-child a h3 {
-    padding-right: 25px;
+.mission .list ul li a p {
+    width: 520px;
 }
+
 /************************************1024~900********************************************************/
 @media screen and (max-width: 1091px) {
     .mission .list ul li a {
@@ -374,6 +376,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         word-break: keep-all;
+        width: 110px;
     }
     .mission .list ul li a p {
         font-size: 14px;
@@ -480,11 +483,11 @@
 .artwork .txt .tit_wrap {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    margin: 36px 0 0 0;
 }
 
 .artwork .list .txt h3 {
-    margin: 36px 0 0 0;
     font-weight: var(--font-weight-bold);
     font-size: clamp(18px, 1.6vw, var(--font-size-tit));
     line-height: var(--line-height-tit);
