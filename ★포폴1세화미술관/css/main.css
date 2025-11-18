@@ -550,7 +550,7 @@
 }
 /******************************************contact 시작***********************************************************/
 .contact {
-    min-height: 700px;
+    min-height: clamp(500px, 80vw, 800px);
     color: var(--color-white);
     background: url(../images/contact01.jpg) no-repeat center center / cover;
 }
@@ -636,7 +636,7 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-.contact .apply_pc a strong {
+.contact .apply_pc button strong {
     content: "";
     position: absolute;
     left: 0;
@@ -648,7 +648,7 @@
     border-radius: 10px;
     transition: background-color 0.3s ease;
 }
-.contact .apply_pc a:hover strong {
+.contact .apply_pc button:hover strong {
     background-color: var(--color-point);
 }
 /********************************************1280*************************************************/
@@ -671,7 +671,7 @@
         display: none;
     }
     .contact {
-        min-height: clamp(550px, 140vw, 850px);
+        height: clamp(750px, 120vw, 850px);
     }
     .contact .index {
         display: flex;
@@ -684,7 +684,7 @@
     .contact .apply_mo {
         text-align: center;
     }
-    .contact .apply_mo a {
+    .contact .apply_mo button {
         display: inline-block;
         font-size: clamp(14px, 3vw, 20px);           /* 글자도 줄어들도록 */
         padding: clamp(6px, 0.8vw, 11px) clamp(20px, 3vw, 42px); /* 버튼 폭도 함께 축소 */
@@ -692,13 +692,21 @@
         border-radius: 10px;
         transition: background-color 0.3s ease;
     }
-    .contact .apply_mo a:hover {
+    .contact .apply_mo button:hover {
     background-color: var(--color-point);
 }
 }
+/******************************************640****************************************************/
+@media screen and (max-width:640px) {
+    .contact {
+        height: clamp(680px, 120vw, 750px);
+    }
+}
 /******************************************520****************************************************/
 @media screen and (max-width:520px) {
-
+    .contact {
+        height: clamp(600px, 140vw, 700px);;
+    }
     .contact .index {
         flex-wrap: wrap;
         gap: 25px;
