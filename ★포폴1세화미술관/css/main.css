@@ -614,34 +614,35 @@
 .contact .index .list ul li:first-child h4 {
     margin-top: 0;
 }
-.contact .index .list ul li p {
-    font-size: clamp(13px, 2vw, 17px);
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 0 21px 0;
-    box-sizing: border-box;
-}
-.contact .index .list ul li input,
-.contact .index .list ul li input[type="text"] {
+.contact .index .list ul li input {
     width: 100%;
     margin: 0 0 21px 0;
+    padding: 0;
+    height: auto;
+    line-height: 1.4;
     font-size: clamp(16px, 1vw, 17px);
     background: transparent;
     border: none;
     color: #fff;
     outline: none;
 }
+.contact .index .list ul li input::placeholder {
+    line-height: 1.4;
+    color: rgba(255,255,255,0.5);
+}
 /***************.editable 클래스가 추가되었을때**********************/
-.contact .index .list ul li .editable {
+.contact .index .list ul li input.editable {
     cursor: text;
     color: rgba(255, 255, 255, 0.5);
 }
-
-.contact .apply_pc button strong {
+.contact .apply_pc {
     content: "";
     position: absolute;
     left: 0;
     bottom: 2.4em;
-    display: inline-block;
+    z-index: 11;
+}
+.contact .apply_pc button strong {
     font-size: clamp(14px, 3vw, 20px);           /* 글자도 줄어들도록 */
     padding: clamp(6px, 0.8vw, 11px) clamp(20px, 3vw, 42px); /* 버튼 폭도 함께 축소 */
     background-color: var(--color-basic);
@@ -657,7 +658,7 @@
         padding-right: 10px; /* 내부 여백 줄이기 */
     }
     .contact .index .list ul li h4,
-    .contact .index .list ul li p {
+    .contact .index .list ul li input {
         margin-right: 0; /* 텍스트 오른쪽 여백 줄이기 */
     }
 }
@@ -724,7 +725,7 @@
     .contact .index .list ul li h4 {
         font-size: clamp(13px, 3vw, 18px);
     }
-    .contact .index .list ul li p {
+    .contact .index .list ul li input {
         font-size: clamp(12px, 2.5vw, 16px);
     }
 }

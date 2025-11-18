@@ -155,34 +155,20 @@ $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
         });
     });
     //텍스트 창 클릭시  
-    document.querySelectorAll('.contact .list .editable').forEach(p => {
-        p.addEventListener('click', function() {
-            // 원래 p 요소의 텍스트를 저장합니다.
-            const originalText = p.textContent;
+    // 모든 editable input을 가져오기
+    document.querySelectorAll('.contact .list .editable').forEach(input => {
 
-            const input = document.createElement('input');
-            input.type = 'text';
-            // 클릭 시 input의 초기값은 원래 p 요소의 텍스트로 설정합니다.
-            input.value = ""; 
-            p.replaceWith(input);
-            input.focus();
+        // 클릭하면 placeholder 제거
+        input.addEventListener('focus', function () {
+            this.dataset.placeholder = this.placeholder; // 기존 placeholder 저장
+            this.placeholder = ''; // placeholder 숨기기
+        });
 
-            input.addEventListener('blur', function() {
-                // 입력된 값의 앞뒤 공백을 제거합니다.
-                const value = input.value.trim();
-
-                if (value === '') {
-                    // 값이 공란이면, p 요소의 텍스트 내용을 원래 텍스트로 업데이트하고
-                    // input을 p 요소로 교체합니다.
-                    p.textContent = originalText;
-                    input.replaceWith(p);
-                } else {
-                    // 값이 있다면, p 요소의 텍스트 내용을 업데이트하고
-                    // input을 p 요소로 교체합니다.
-                    p.textContent = value;
-                    input.replaceWith(p);
-                }
-            });
+        // 포커스 잃으면, 값이 없으면 다시 placeholder 복귀
+        input.addEventListener('blur', function () {
+            if (this.value.trim() === '') {
+                this.placeholder = this.dataset.placeholder;
+            }
         });
     });
 });
