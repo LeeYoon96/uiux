@@ -343,3 +343,8 @@ footer .f_logo a {
         min-width: 0; /* flex 강제폭 최소화 */
     }
 }
+@media screen and (min-width: 320px) {
+    footer .f_info ul li p {
+        white-space: wrap;
+    }
+}
