@@ -593,28 +593,29 @@
 .contact .index .tit h3 span {
     color: var(--color-point2);
 }
-.contact .index .list {
+.contact .list {
     flex: 1 1 350px;  /* 최소 350px까지 버티도록 설정 → 368px 목표 충족 */
     max-width: 500px;
     margin-top: -100px;
 }
-.contact .index .list ul li {
+.contact .list ul li {
     border-top: 1px solid var(--color-white);
 }
-.contact .index .list ul li:first-child {
+.contact .list ul li:first-child {
     border-top: none;
 }
-.contact .index .list ul li h4 {
+.contact .list ul li label {
+    display: block;
     font-size: clamp(14px, 2.5vw, 24px);
     font-weight: var(--font-weight-basic);
     line-height: var(--line-height-basic);
     color: var(--color-white);
     margin: clamp(15px, 2.5vw, 29px) 0 clamp(7px, 1.4vw, 15px) 0;
 }
-.contact .index .list ul li:first-child h4 {
+.contact .list ul li:first-child label {
     margin-top: 0;
 }
-.contact .index .list ul li input {
+.contact .list ul li input {
     width: 100%;
     margin: 0 0 21px 0;
     padding: 0;
@@ -626,12 +627,12 @@
     color: #fff;
     outline: none;
 }
-.contact .index .list ul li input::placeholder {
+.contact .list ul li input::placeholder {
     line-height: 1.4;
     color: rgba(255,255,255,0.5);
 }
 /***************.editable 클래스가 추가되었을때**********************/
-.contact .index .list ul li input.editable {
+.contact .list ul li input.editable {
     cursor: text;
     color: rgba(255, 255, 255, 0.5);
 }
@@ -654,11 +655,11 @@
 }
 /********************************************1280*************************************************/
 @media screen and (max-width:1280px){
-    .contact .index .list {
+    .contact .list {
         padding-right: 10px; /* 내부 여백 줄이기 */
     }
-    .contact .index .list ul li h4,
-    .contact .index .list ul li input {
+    .contact .list ul li label,
+    .contact .list ul li input {
         margin-right: 0; /* 텍스트 오른쪽 여백 줄이기 */
     }
 }
@@ -679,7 +680,7 @@
         flex-direction: column;
         gap: 150px 0;
     }
-    .contact .index .list {
+    .contact .list {
         max-width: none;
     }
     .contact .apply_mo {
@@ -712,20 +713,20 @@
         flex-wrap: wrap;
         gap: 25px;
     }
-    .contact .index .tit,
-    .contact .index .list {
+    .contact .tit,
+    .contact .list {
         flex: 1 1 100%;
         min-width: auto;
         margin-top: 0;
     }
-    .contact .index .tit h3 {
+    .contact .tit h3 {
         font-size: clamp(20px, 6vw, 40px);
         line-height: 1.25;
     }
-    .contact .index .list ul li h4 {
+    .contact .list ul li label {
         font-size: clamp(13px, 3vw, 18px);
     }
-    .contact .index .list ul li input {
+    .contact .list ul li input {
         font-size: clamp(12px, 2.5vw, 16px);
     }
 }
