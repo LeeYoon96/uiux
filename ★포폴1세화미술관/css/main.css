@@ -17,10 +17,10 @@
 
 /********pc********/
 .visual {
-    height: 95dvh;
+    height: 100dvh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .visual .row {
     display: flex;
