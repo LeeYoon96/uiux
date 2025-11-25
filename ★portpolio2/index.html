@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!--내가만든파일-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>한국기업지식연구원</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html"><span class="blind">한국기업지식연구원 korea enterprise institute</span></a></h1>
+        <nav class="gnb">
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+            <div class="gnb_wrap">
+                <div class="gnb_logo"><span class="blind">한국기업지식연구원 korea enterprise institute</span></div>
+                <ul class="depth1">
+                    <li>
+                        <a href="#n"><span>About KEI</span></a>
+                        <ul class="depth2">
+                            <li><a href="#n"><span>KEI 소개</span></a></li>
+                            <li><a href="#n"><span>연혁</span></a></li>
+                            <li><a href="#n"><span>조직도</span></a></li>
+                            <li><a href="#n"><span>오시는길</span></a></li>
+                            <li><a href="#n"><span>CI</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n"><span>Vission</span></a>
+                        <ul class="depth2">
+                            <li><a href="#n"><span>Mission</span></a></li>
+                            <li><a href="#n"><span>Core value</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n"><span>Business</span></a>
+                        <ul class="depth2">
+                            <li><a href="#n"><span>정책연구자문</span></a></li>
+                            <li><a href="#n"><span>기업컨설팅</span></a></li>
+                            <li><a href="#n"><span>교육세미나</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n"><span>Value</span></a>
+                        <ul class="depth2">
+                            <li><a href="#n"><span>Expertise</span></a></li>
+                            <li><a href="#n"><span>Innovation</span></a></li>
+                            <li><a href="#n"><span>Responsibility</span></a></li>
+                            <li><a href="#n"><span>Trust</span></a></li>
+                            <li><a href="#n"><span>Sustainability</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#n"><span>Partnership</span></a>
+                        <ul class="depth2">
+                            <li><a href="#n"><span>고객 및 파트너사</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+            </div><!--gnb_wrap-->
+            <div class="gnb_bg"></div><!--메뉴변경-->
+        </nav><!--gnb-->
+        <button class="menu"><span class="blind">메뉴버튼</span></button>
+    </header>
+    <div class="container">
+        <section class="visual">
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide popup1">
+                        <div class="wrapper">
+                            <h3>혁신을 설계하고 실행하는 KEI, <br>
+                                산업·기술·정책의 내일을 <br>
+                                새롭게 정의합니다</h3>
+                        </div>
+                    </li>
+                    <li class="swiper-slide popup2">
+                        <div class="wrapper">
+                            <h3>지식과 데이터를 연결해 ICT·정보화 <br>
+                                ·조직전략을 완성하는 통합형 <br>
+                                컨설팅을 제공합니다</h3>
+                        </div>
+                    </li>
+                    <li class="swiper-slide popup3">
+                        <div class="wrapper">
+                            <h3>글로벌 관점의 전략과 협업으로 <br>
+                                시장을 넘어서는 지속가능한 <br>
+                                성장 해답을 제시합니다</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div><!--swiper-->
+            <div class="ctrl_btn">
+                <div class="paging"></div>
+                <div class="bar"><span class="blind">막대기</span></div>
+                <button class="btn_prev"><span class="blind">이전</span></button>
+                <button class="btn_stop"><span class="blind">일시정지</span></button>
+                <button class="btn_play"><span class="blind">재생</span></button>
+                <button class="btn_next"><span class="blind">다음</span></button>
+            </div>
+        </section><!--visual-->
+        <section class="mission"></section><!--mission-->
+        <section class="business"></section><!--business-->
+        <section class="value"></section><!--value-->
+        <section class="partner"></section><!--partner-->
+        <section class="contact"></section><!--contact-->
+    </div>
+    <footer></footer>
+</body>
+</html>
