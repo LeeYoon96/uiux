@@ -22,7 +22,7 @@
     position: relative;
     margin: 0 30px;
     border-radius: 60px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .visual .swiper-slide {
     height: 836px;
