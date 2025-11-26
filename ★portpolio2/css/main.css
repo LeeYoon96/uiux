@@ -22,7 +22,7 @@
     position: relative;
     margin: 0 30px;
     border-radius: 60px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .visual .swiper-slide {
     height: 836px;
@@ -166,3 +166,242 @@
     }
 }
 /***************************************visual 끝**************************************************/
+.vission .wrapper {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.vission .row {
+    display:flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+.vission .row p {
+    position: relative;
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    color: var(--color-basic);
+    white-space: nowrap;
+}
+.vission .row p span {
+    position: absolute; 
+    left: 0; 
+    top: 0;
+    overflow: hidden;
+    width: 0; 
+    height: 100%;
+    color: var(--color-black);
+    }
+@media screen and (max-width:768px){
+    .vission .wrapper {
+        height: 50dvh;
+    }
+    .vission .row p {
+        font-size: var(--font-size-header);
+    }
+}
+.business {
+    height: 821px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+}
+.business h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    padding: 134px 0 0 0;
+}
+.business .list ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px 0 0 0;
+}
+.business .list ul li {
+    width: calc(33.33% - 16px);
+    position: relative;
+    perspective: 1000px; /* 플립을 위한 3D 원근감 */
+}
+.business .list ul li .card {
+    position: relative;
+    width: 100%;
+    height: 464px;
+    border-radius: 20px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+.business .list ul li:hover .card {
+    transform: rotateY(180deg);
+}
+.business .list ul li .card .front {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.business .list ul li .card .front .photo {
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2));
+}
+.business .list ul li .card .front .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.business .list ul li .card .front .txt {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+    white-space: nowrap;
+    text-align: center;
+}
+.business .list ul li .card .front .txt strong {
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-basic);
+}
+.business .list ul li .card .front .txt h3 {
+    font-size: var(--font-size-sub);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-basic);
+}
+.business .list ul li .card .back {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+/* 뒷면 이미지 (앞면과 동일한 이미지 로드) */
+.business .list ul li .card .back .photo {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.business .list ul li .card .back .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 뒷면 오버레이 */
+.business .list ul li .card .back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 45, 124, 0.8); /* #042D7C 80% */
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* 뒷면 텍스트 */
+.business .list ul li .card .back p {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    padding: 40px 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+@media screen and (max-width:768px){
+    .business {
+        height: 1249px;
+    }
+    .business h2 {
+        font-size: var(--font-size-tit);
+        padding: 83px 0 0 0;
+    }
+    .business .list ul {
+        flex-direction: column;
+        gap: 24px 0;
+        padding: 20px 0 0 0;
+    }
+    .business .list ul li {
+        width: auto;
+    }
+    .business .list ul li .card {
+        height: 326px;
+    }
+    .business .list ul li .card .front .txt {
+        bottom: 52px;
+    }
+    .business .list ul li .card .front .txt h3 {
+        font-size: var(--font-size-visual);
+    }
+    
+    /* 뒷면 텍스트 */
+    .business .list ul li .card .back p {
+        font-size: 20px;
+    }
+}
+.value {
+    height: 1049px;
+    background-color: var(--color-point);
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-basic);
+}
+.value .right_slide {
+    display: flex;
+    justify-content: space-between;
+    padding: 129px 0 0 0;
+}
+.value .right_slide h2 {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-basic);
+    color: var(--color-black);
+}
+.value .right_slide .list ul,
+.value .left_slide .list ul {
+    display: flex;
+    gap : 0 24px;
+    justify-content: flex-end;
+}
+.value .right_slide .list ul li {
+    position: relative;
+}
+.value .right_slide .list ul li p {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+.value .right_slide .list ul li .photo,
+.value .left_slide .list ul li .photo {
+    height: 404px;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2));
+}
+.value .right_slide .list ul li .photo#l_top {
+    border-radius: 50px 10px 10px 10px;
+}
+.value .right_slide .list ul li .photo img,
+.value .left_slide .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.value .left_slide .list ul {
+    justify-content: flex-start;
+}
+.value .left_slide .list ul li .photo#r_bottom {
+    border-radius: 10px 10px 50px 10px;
+}

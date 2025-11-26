@@ -113,7 +113,18 @@ header .gnb_bg.on {
     height: 350px; /* 원하는 드롭다운 높이 */
 }
 @media screen and (max-width:768px){
-    
+    header .logo a {
+        width: 98px;
+        height: 16px;
+        background: url(../images/logo.svg) no-repeat center center / contain;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: none;
+    }
+    header .menu {
+        width: 15px;
+        height: 15px;
+    }
 }
 
 

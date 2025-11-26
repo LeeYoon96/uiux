@@ -33,14 +33,14 @@ $(document).ready(function(){
     // 기본 상태: autoplay 켜짐
     visual_swiper.autoplay.start();
 
-    // ⭐ STOP 버튼 클릭
+    //  STOP 버튼 클릭
     $('.visual .btn_stop').on('click', function(){
         visual_swiper.autoplay.stop();   // 슬라이드 멈춤
         $('.visual .btn_stop').hide();   // stop 숨김
         $('.visual .btn_play').show();   // play 표시
     });
 
-    // ⭐ PLAY 버튼 클릭
+    //  PLAY 버튼 클릭
     $('.visual .btn_play').on('click', function(){
         visual_swiper.autoplay.start();  // 슬라이드 재생
         $('.visual .btn_play').hide();   // play 숨김
@@ -65,6 +65,53 @@ $(document).ready(function(){
     
     });
 
+    let row = $('.row') //글자를 감싸는 영역의 이름
+    let row_obj = $('.row p span') //각 줄안에 나타날 글자
+    let row_rate_s = 0.3 //처음에 애니메이션 시작할때 글씨가 하단에서 몇 %정도 올라왔을때 애니메이션 시작할 것인지 (1이 100%임)
+    let row_rate_e = 0.6 //마지막에 애니메이션이 끝날때 마지막 글자가 하단에서 몇 %정도 올라왔을때 종료할 것인지
+    let row_leng = row_obj.length
+    let row_scroll
+    let row_top
+    let row_start
+    let row_end
+    let row_w
+    let scrolling
+    let win_h
+
+    row_ani()
+    $(window).scroll(function(){
+    //스크롤 할때마다 1번씩
+    row_ani()
+    })
+    $(window).resize(function(){
+    //브라우저가 리사이즈 될때마다 1번씩 실행
+    row_ani()
+    })
+
+    function row_ani(){
+    win_h = $(window).height()
+    scrolling = $(window).scrollTop()
+    row_top = row.offset().top
+    row_start = row_top - win_h + (win_h * row_rate_s)
+    row_end = row_top + row.height() - win_h + (win_h * row_rate_e)
+    row_scroll = (scrolling - row_start) / (row_end - row_start) * 100
+    if(row_start > scrolling) {
+    //console.log('시작 이전')
+    row_obj.width(0)
+    }else if(row_end > scrolling){
+    //console.log('애니메이션중')
+    for(i=0; i<row_leng; i++){
+    row_w = (row_scroll - (100/row_leng)*i) * row_leng
+    if(row_w > 100){
+    row_w = 100
+    }
+    row_obj.eq(i).width(row_w + '%')
+    }
+    }else{
+    //console.log('종료 이후')
+    row_obj.width('100%')
+    }
+    }//row_ani
 
 
 });//맨끝
