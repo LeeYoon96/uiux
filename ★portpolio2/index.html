@@ -7,6 +7,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
     <!--내가만든파일-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
@@ -209,11 +211,14 @@
         </section><!--business-->
         <section class="value">
             <div class="wrapper">
-                <div class="right_slide">
+                <div class="left_slide">
                     <div class="tit">
                         <h2>Value</h2>
+                        <div class="icon">
+                            <a href="#n"><span class="blind">더보기</span></a>
+                        </div>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-left">
                         <ul>
                             <li>
                                 <div class="photo" id="l_top"><img src="images/value1.jpg" alt="그래픽 지도"></div>
@@ -226,8 +231,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="left_slide">
-                    <div class="list">
+                <div class="right_slide">
+                    <div class="list" data-aos="fade-right">
                         <ul>
                             <li>
                                 <div class="photo"><img src="images/value3.jpg" alt="마주보며 얘기하는 두사람"></div>
@@ -239,10 +244,52 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="more">
+                        <a href="#n"><span>더 자세히 보기</span></a>
+                    </div>
                 </div>
             </div>
         </section><!--value-->
-        <section class="partner"></section><!--partner-->
+        <section class="partners">
+            <div class="wrapper">
+                <h2>
+                    국/내외 및 글로벌이 선택한 NO.1 전문기업 <br>
+                    많은 고객과 파트너사들이 한국기업지식연구원의 솔루션과 서비스를 사용하고 있습니다.
+                </h2>
+                <!-- 윗줄 (오른쪽 → 왼쪽) -->
+                <div class="slide-row top-row">
+                    <div class="slide-track">
+                        <img src="images/parter_images/jpg/partner1.jpg" alt="">
+                        <img src="images/logo2.png" alt="">
+                        <img src="images/logo3.png" alt="">
+                        <img src="images/logo4.png" alt="">
+                        <img src="images/logo5.png" alt="">
+                        <!-- 동일 이미지 복사(무한 슬라이드 필수) -->
+                        <img src="images/logo1.png" alt="">
+                        <img src="images/logo2.png" alt="">
+                        <img src="images/logo3.png" alt="">
+                        <img src="images/logo4.png" alt="">
+                        <img src="images/logo5.png" alt="">
+                    </div>
+                </div>
+                <!-- 아랫줄 (왼쪽 → 오른쪽) -->
+                <div class="slide-row bottom-row">
+                    <div class="slide-track">
+                        <img src="images/logo6.png" alt="">
+                        <img src="images/logo7.png" alt="">
+                        <img src="images/logo8.png" alt="">
+                        <img src="images/logo9.png" alt="">
+                        <img src="images/logo10.png" alt="">
+                        <!-- 동일 이미지 복사 -->
+                        <img src="images/logo6.png" alt="">
+                        <img src="images/logo7.png" alt="">
+                        <img src="images/logo8.png" alt="">
+                        <img src="images/logo9.png" alt="">
+                        <img src="images/logo10.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section><!--partner-->
         <section class="contact"></section><!--contact-->
     </div>
     <footer></footer>
