@@ -47,45 +47,6 @@ $(document).ready(function(){
         $('.visual .btn_stop').show();   // stop 표시
     });
 
-    $(function(){
-
-        const header = $('header');
-        const depth1 = $('header .gnb .gnb_wrap ul.depth1 > li');
-        const menuOpenBtn = $('header .menu'); 
-        const menuCloseBtn = $('header .gnb .gnb_wrap .gnb_close');
-
-        menuOpenBtn.on('click', function(){
-            header.addClass('open'); // header에 클래스를 추가하여 전체 메뉴를 띄움
-            $('body').css('overflow', 'hidden'); // 본문 스크롤 방지
-            });
-        menuCloseBtn.on('click', function(){
-            header.removeClass('open'); // header 클래스를 제거하여 전체 메뉴를 닫음
-            $('body').css('overflow', ''); // 본문 스크롤 복원
-            });
-        depth1.on('click', function(e){
-            if (header.hasClass('open') && $(this).find('.depth2').length > 0) {
-            // depth1 클릭 시 링크 이동 대신 depth2 토글
-            e.preventDefault(); 
-            $(this).toggleClass('on'); 
-            $(this).find('.depth2').slideToggle(300);
-            }
-        });
-        // const depth1 = $('header .gnb .gnb_wrap ul.depth1 > li');
-        // const bg = $('header .gnb_bg');
-    
-        // depth1.on('mouseenter', function(){
-        //     depth1.removeClass('on');      // 모두 초기화
-        //     $(this).addClass('on');        // 현재 li 활성화
-        //     bg.addClass('on');             // 배경 열기
-        // });
-    
-        // $('header').on('mouseleave', function(){
-        //     depth1.removeClass('on');     // depth1 전체 비활성화
-        //     bg.removeClass('on');         // 배경 닫기
-        // });
-    
-    });
-
     let row = $('.row') //글자를 감싸는 영역의 이름
     let row_obj = $('.row p span') //각 줄안에 나타날 글자
     let row_rate_s = 0.3 //처음에 애니메이션 시작할때 글씨가 하단에서 몇 %정도 올라왔을때 애니메이션 시작할 것인지 (1이 100%임)
@@ -146,5 +107,84 @@ $(document).ready(function(){
             behavior: 'smooth'
         });
     });
+
+    (function(){
+        // jQuery ready 내부이므로 DOM은 이미 준비된 상태임
+        const menuOpen = document.querySelector(".menu_open");
+        const menuClose = document.querySelector(".menu_close");
+        const gnbDrop = document.querySelector(".gnb_drop");
+
+        // 디버그: 요소 존재 확인 로그
+        console.log('debug: menuOpen ->', menuOpen);
+        console.log('debug: menuClose ->', menuClose);
+        console.log('debug: gnbDrop ->', gnbDrop);
+    
+        if (!menuOpen) console.error("menu_open 요소를 찾을 수 없습니다: document.querySelector('.menu_open') -> null");
+        if (!gnbDrop) console.error("gnb_drop 요소를 찾을 수 없습니다: document.querySelector('.gnb_drop') -> null");
+    
+        function openMenu() {
+            if (!gnbDrop) return;
+            gnbDrop.classList.add("show");
+            console.log("gnb_drop: show 추가됨");
+            if (menuOpen) menuOpen.style.display = "none";
+            if (menuClose) menuClose.style.display = "block";
+        }
+    
+        function closeMenu() {
+            if (!gnbDrop) return;
+            gnbDrop.classList.remove("show");
+            console.log("gnb_drop: show 제거됨");
+            if (menuClose) menuClose.style.display = "none";
+            if (menuOpen) menuOpen.style.display = "block";
+        }
+    
+        if (menuOpen) {
+        menuOpen.addEventListener("click", function(e){
+            e.preventDefault();
+            console.log("menu_open 클릭 감지");
+            openMenu();
+        });
+        }
+    
+        if (menuClose) {
+        menuClose.addEventListener("click", function(e){
+            e.preventDefault();
+            console.log("menu_close 클릭 감지");
+            closeMenu();
+        });
+        }
+    
+        // (선택) 바깥영역 클릭으로 닫기 원하면 아래 주석 해제
+        /*
+        document.addEventListener("click", function(e){
+            if (!gnbDrop || !gnbDrop.classList.contains('show')) return;
+            if (!e.target.closest(".gnb_drop") && !e.target.closest(".menu_open") && !e.target.closest(".menu_close")) {
+            closeMenu();
+        }
+        });
+        */
+    })();
+    // console.log('연결됨')
+    const gnb_drop_swiper = new Swiper('.gnb_drop .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+
+        //effect: "fade", /* fade 효과 */
+
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+            el: '.gnb_drop .paging', /* 해당 요소의 class명 */
+            type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+            renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
+                return '<span class="' + className + '">' + (index + 1) + "</span>";
+            },
+        },
+    });
+    // 기본 상태: autoplay 켜짐
+    gnb_drop_swiper.autoplay.start();
 
 });//맨끝
