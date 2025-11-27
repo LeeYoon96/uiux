@@ -50,7 +50,7 @@ header .gnb .gnb_wrap ul.depth1 > li > a span::before {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -20px;
+    bottom: -30px;
     transform: translateX(-50%);
     width: 0;
     height: 4px;
@@ -63,7 +63,7 @@ header .gnb .gnb_wrap ul.depth1 > li:hover > a span::before {
 header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
     position: absolute;
     left: 50%;
-    top: 69px;
+    top: 60px;
     transform: translateX(-50%);
     align-items: center;
     display: flex;
@@ -73,10 +73,16 @@ header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
     line-height: 2.0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s;
+    transition: 0.5s;
     z-index: 20;
+    background-color: var(--color-white);
+    min-width: 150px;
+    min-height: 178px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    padding: 10px 0;
 }
-header .gnb:hover .gnb_wrap ul.depth1 > li > ul.depth2 {
+header .gnb .gnb_wrap ul.depth1 > li:hover > ul.depth2 {
     opacity: 1;
     visibility: visible;
 }
@@ -90,16 +96,6 @@ header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 li a:hover {
     color: #042D7C;
     font-weight: 700;
 }
-header .gnb_bg {
-    position: absolute;
-    left: 0;
-    top: var(--header-h); /* header 높이 바로 아래 */
-    width: 100%;
-    height: 0;
-    background-color: #fff;
-    transition: height 0.3s ease;
-    z-index: 5;
-}
 header .menu {
     display: block;
     width: 22.5px;
@@ -108,10 +104,65 @@ header .menu {
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 23 23' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 22.5V20H22.5V22.5H0ZM0 12.5V10H22.5V12.5H0ZM0 2.5V0H22.5V2.5H0Z' /%3E%3C/svg%3E%0A");
 }
-/*******************************header에 on 클래스 추가 *********************/
-header .gnb_bg.on {
-    height: 350px; /* 원하는 드롭다운 높이 */
+header .gnb {
+    /* 모바일 메뉴 닫힌 상태 (기본) */
+    position: static; /* 데스크탑에서 depth1을 위한 설정 */
 }
+.header.menu.open .gnb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 배경 오버레이 */
+    z-index: 50;
+}
+.header.menu.open .gnb .gnb_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%; /* 메뉴 패널 너비 */
+    max-width: 350px;
+    height: 100%;
+    background-color: var(--color-white);
+    padding: 60px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.header.menu.open .gnb .gnb_wrap ul.depth1 {
+    display: block; /* 세로로 변경 */
+}
+.header.menu.open .gnb .gnb_wrap ul.depth1 > li {
+    border-bottom: 1px solid #eee;
+}
+.header.menu.open .gnb .gnb_wrap ul.depth1 > li > a {
+    padding: 15px 0;
+    font-weight: 700;
+}
+.header.menu.open .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+    position: static; /* 위치 고정 해제 */
+    transform: none;
+    padding: 0 0 10px 10px;
+    opacity: 1; /* 항상 보이게 */
+    visibility: visible; /* 항상 보이게 */
+    background-color: transparent;
+    box-shadow: none;
+    display: none; /* 초기에는 숨김 */
+}
+.header.menu.open .gnb .gnb_wrap ul.depth1 > li.on > ul.depth2 {
+    display: block; /* 클릭/토글 시 보이게 */
+}
+.header.menu.open .gnb .gnb_close {
+    display: block; /* 닫기 버튼 보이게 */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 60;
+}
+/*******************************header에 on 클래스 추가 *********************/
+/* header .gnb_bg.on {
+    height: 350px; 
+} */
 @media screen and (max-width:768px){
     header .logo a {
         width: 98px;
@@ -125,23 +176,76 @@ header .gnb_bg.on {
         width: 15px;
         height: 15px;
     }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer {
-    margin: 1000px 0 0 0;
+    background-color: var(--color-black);       
+    padding: 56px 0 57px 0;
+    color: var(--color-white2);
+    height: 218px;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0 137px;
+    white-space: nowrap;
+    position: relative;
+}
+footer .f_logo img {
+    width: 119px;
+}
+footer .f_info p {
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-basic);
+    line-height: var(--line-height-basic);
+}
+footer .btn_top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    padding: 16px 9px 8px 8px;
+    border-radius: 10px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+}
+footer .btn_top span {
+    position: relative;
+}
+footer .btn_top span::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: -5px;
+    width: 14px;
+    height: 8.4px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.4 8.4L0 7L7 0L14 7L12.6 8.4L7 2.825L1.4 8.4Z' /%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 35px 0 50px 0;
+        height: auto;
+    }
+    footer .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 39px 0;
+        align-items: center;
+        white-space: wrap;
+        position: relative;
+    }
+    footer .btn_top {
+        top: -58px;
+    }
 }

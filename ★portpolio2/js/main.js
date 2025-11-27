@@ -49,19 +49,40 @@ $(document).ready(function(){
 
     $(function(){
 
+        const header = $('header');
         const depth1 = $('header .gnb .gnb_wrap ul.depth1 > li');
-        const bg = $('header .gnb_bg');
-    
-        depth1.on('mouseenter', function(){
-            depth1.removeClass('on');      // 모두 초기화
-            $(this).addClass('on');        // 현재 li 활성화
-            bg.addClass('on');             // 배경 열기
+        const menuOpenBtn = $('header .menu'); 
+        const menuCloseBtn = $('header .gnb .gnb_wrap .gnb_close');
+
+        menuOpenBtn.on('click', function(){
+            header.addClass('open'); // header에 클래스를 추가하여 전체 메뉴를 띄움
+            $('body').css('overflow', 'hidden'); // 본문 스크롤 방지
+            });
+        menuCloseBtn.on('click', function(){
+            header.removeClass('open'); // header 클래스를 제거하여 전체 메뉴를 닫음
+            $('body').css('overflow', ''); // 본문 스크롤 복원
+            });
+        depth1.on('click', function(e){
+            if (header.hasClass('open') && $(this).find('.depth2').length > 0) {
+            // depth1 클릭 시 링크 이동 대신 depth2 토글
+            e.preventDefault(); 
+            $(this).toggleClass('on'); 
+            $(this).find('.depth2').slideToggle(300);
+            }
         });
+        // const depth1 = $('header .gnb .gnb_wrap ul.depth1 > li');
+        // const bg = $('header .gnb_bg');
     
-        $('header').on('mouseleave', function(){
-            depth1.removeClass('on');     // depth1 전체 비활성화
-            bg.removeClass('on');         // 배경 닫기
-        });
+        // depth1.on('mouseenter', function(){
+        //     depth1.removeClass('on');      // 모두 초기화
+        //     $(this).addClass('on');        // 현재 li 활성화
+        //     bg.addClass('on');             // 배경 열기
+        // });
+    
+        // $('header').on('mouseleave', function(){
+        //     depth1.removeClass('on');     // depth1 전체 비활성화
+        //     bg.removeClass('on');         // 배경 닫기
+        // });
     
     });
 
@@ -118,4 +139,12 @@ $(document).ready(function(){
         duration: 500, // 애니메이션 효과가 작동되는 시간
         easing: 'ease', // 가속도
         });
+    
+    document.querySelector('.btn_top').addEventListener('click', function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
 });//맨끝
