@@ -114,6 +114,12 @@ header .menu_open {
     header .logo a {
         width: 130px;
     }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        top: 48px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a span::before {
+        bottom: -22px;
+    }
 }
 @media screen and (max-width:860px){
     header .gnb .gnb_wrap ul.depth1 {
@@ -124,6 +130,12 @@ header .menu_open {
     }
     header .logo a {
         width: 100px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        top: 46px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a span::before {
+        bottom: -24px;
     }
 }
 
@@ -269,8 +281,6 @@ header .menu_close {
 }
 .menu_mo ul.depth1 > li > a:focus {
     color: var(--color-main);
-    outline: 2px solid var(--color-main);
-    outline-offset: -2px;
 }
 .menu_mo ul.depth1 > li:first-child {
     margin-top: 20px;
