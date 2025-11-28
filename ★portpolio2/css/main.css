@@ -138,6 +138,9 @@
         margin: 0 16px;
         border-radius: 30px;
     }
+    .visual .swiper {
+    border-radius: 30px;
+    }
     .visual .swiper-slide {
         height: 424px;
     }
@@ -169,6 +172,12 @@
         width: 10px;
         height: 10.29px;
     }
+    .visual .ctrl_btn::before {
+    right: -1px;
+    }
+    .visual .ctrl_btn::after {
+    left: 1px;
+    }
     .visual .ctrl_btn::before,
     .visual .ctrl_btn::after {
         width: 30px;
@@ -198,7 +207,7 @@
     font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
-    color: var(--color-basic);
+    color: var(--color-gray2);
     white-space: nowrap;
     
 }
@@ -558,6 +567,12 @@
         background-repeat: no-repeat;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='14.5' stroke='%231D1D1D'/%3E%3C/svg%3E%0A");
     }
+    .value .left_slide .icon a {
+        display: block; 
+        position: absolute; 
+        inset: 0; 
+        z-index: 10;
+    }
     .value .left_slide .list ul,
     .value .right_slide .list ul {
         gap : 0 16px;
@@ -674,6 +689,9 @@
         line-height: var(--line-height-basic);
         margin: 60px 0 42px 0;
     }
+    .slide-row img {
+    height: 30px;
+}
 }
 .contact {
     position: relative;
