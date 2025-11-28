@@ -21,6 +21,8 @@
 .visual {
     position: relative;
     margin: 0 30px;
+}
+.visual .swiper {
     border-radius: 60px;
     overflow: hidden;
 }
@@ -126,6 +128,11 @@
     transform: translateX(-100%);
     background-position: right bottom;
 }
+@media screen and (max-width:970px){
+    .visual .swiper-slide h3 {
+        font-size: var(--font-size-sub);
+    }
+}
 @media screen and (max-width:768px){
     .visual {
         margin: 0 16px;
@@ -133,6 +140,9 @@
     }
     .visual .swiper-slide {
         height: 424px;
+    }
+    .visual .swiper-slide h3 {
+        font-size: 30px;
     }
     .visual .ctrl_btn {
         border-radius: 15px 0 0 0;
@@ -165,6 +175,11 @@
         height: 30px;
     }
 }
+@media screen and (max-width:460px){
+    .visual .swiper-slide h3 {
+        font-size: 17px;
+    }
+}
 /***************************************visual 끝**************************************************/
 .vission .wrapper {
     height: 100dvh;
@@ -185,6 +200,12 @@
     line-height: var(--line-height-tit);
     color: var(--color-basic);
     white-space: nowrap;
+    
+}
+.vission .row p:focus {
+    outline: none; /* 기본 포커스 아웃라인 제거 */
+    /* 포커스 시 메인 색상으로 테두리 강조 */
+    box-shadow: 0 0 0 3px var(--color-black); 
 }
 .vission .row p span {
     position: absolute; 
@@ -194,13 +215,23 @@
     width: 0; 
     height: 100%;
     color: var(--color-black);
+}
+@media screen and (max-width:970px){
+    .vission .row p {
+        font-size: var(--font-size-sub);
     }
+}
 @media screen and (max-width:768px){
     .vission .wrapper {
         height: 50dvh;
     }
     .vission .row p {
-        font-size: var(--font-size-header);
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:460px){
+    .vission .row p {
+        font-size: 20px;
     }
 }
 .business {
@@ -232,8 +263,13 @@
     transition: transform 0.6s ease;
     transform-style: preserve-3d;
 }
-.business .list ul li:hover .card {
-    transform: rotateY(180deg);
+.business .list ul li:hover .card,
+.business .list ul li:focus-within .card { /* focus-within: 내부 요소 포커스 시 부모 상태 유지 */
+        transform: rotateY(180deg);
+    }
+.business .list ul li:focus-within {
+    
+    z-index: 10; /* 포커스 시 다른 카드 위에 겹쳐 보이도록 z-index 높임 */
 }
 .business .list ul li .card .front {
     position: absolute;
