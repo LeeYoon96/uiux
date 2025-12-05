@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
+    <!--내가만든파일-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>한국폴리텍대학 청주캠퍼스</title>
+</head>
+<body>
+    <div id="fullpage">
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">한국폴리텍대학 청주캠퍼스</span></a></h1>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>대학소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>학장 인사말</span></a></li>
+                                <li><a href="#n"><span>폴리텍대학 안내</span></a></li>
+                                <li><a href="#n"><span>캠퍼스 안내</span></a></li>
+                                <li><a href="#n"><span>홍보관</span></a></li>
+                                <li><a href="#n"><span>찾아오시는 길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>입학안내</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>모집요강</span></a></li>
+                                <li><a href="#n"><span>원서접수</span></a></li>
+                                <li><a href="#n"><span>입학상담</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>학과안내</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>학위(학력)과정</span></a></li>
+                                <li><a href="#n"><span>비학위직업훈련과정</span></a></li>
+                                <li><a href="#n"><span>실업자과정</span></a></li>
+                                <li><a href="#n"><span>재직자과정</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>취업정보</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>채용정보</span></a></li>
+                                <li><a href="#n"><span>취업자료</span></a></li>
+                                <li><a href="#n"><span>졸업생취업현황</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>학사정보</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>학사안내</span></a></li>
+                                <li><a href="#n"><span>학사FAQ</span></a></li>
+                                <li><a href="#n"><span>정보서비스</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>커뮤니티</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>공지사항</span></a></li>
+                                <li><a href="#n"><span>문의게시판</span></a></li>
+                                <li><a href="#n"><span>안전제안센터</span></a></li>
+                                <li><a href="#n"><span>인권침해센터</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--gnb_wrap-->
+            </nav><!--gnb-->
+            <div class="util">
+                <button class="search"><span class="blind">검색버튼</span></button>
+                <button class="menu"><span class="blind">메뉴버튼</span></button>
+            </div>
+        </header>
+        <!-- ▶ 왼쪽 섹션 이동 네비게이션 -->
+        <div class="fp-nav">
+            <ul>
+                <li class="active"><button data-target="visual"></button></li>
+                <li><button data-target="department"></button></li>
+                <li><button data-target="campus"></button></li>
+                <li><button data-target="news"></button></li>
+                <li><button data-target="sns"></button></li>
+            </ul>
+        </div>
+        <!-- ▶ 오른쪽 aside 메뉴 -->
+        <aside class="right_menu">
+            <ul>
+                <li><a href="#n" class="fresh">예비신입생</a></li>
+                <li><a href="#n" class="student">재학생</a></li>
+                <li><a href="#n" class="staff">교직원</a></li>
+            </ul>
+            <button class="btn_top">TOP</button>
+        </aside>
+            <div class="container">
+                <section class="visual">
+                    <h2 class="blind">팝업</h2>
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide popup1">
+                                <div class="wrapper">
+                                    <h3 lang="en">Tech Your Future</h3>
+                                    <p>기술을 내 것으로 만드는 청주폴리텍</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide popup2">
+                                <div class="wrapper">
+                                    <h3 lang="en">Future Starts Here</h3>
+                                    <p>4차 산업 기술로 시작하는 새로운 진로</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide popup3">
+                                <div class="wrapper">
+                                    <h3 lang="en">From Skills to Career</h3>
+                                    <p>입학이 곧 취업이 되는 실무 중심 교육</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!--swiper-->
+                    <div class="ctrl_btn">
+                        <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                        <button class="btn_stop"><span class="blind">일시정지</span></button>
+                        <button class="btn_play"><span class="blind">재생버튼</span></button>
+                    </div>
+                    <div class="quick">
+                        <div class="quick_inner">
+                            <div class="tit">
+                                <h3 lang="en">Quick Menu</h3>
+                                <p>빠른메뉴</p>
+                            </div>
+                            <div class="list">
+                                <ul>
+                                    <li><a href="#n" class="inquiry">입학문의</a></li>
+                                    <li><a href="#n" class="find">학과찾기</a></li>
+                                    <li><a href="#n" class="homepage">입시홈페이지</a></li>
+                                    <li><a href="#n" class="info">학사정보<br>시스템</a></li>
+                                    <li><a href="#n" class="print">인터넷<br>증명발급</a></li>
+                                    <li><a href="#n" class="publish">합격자<br>발표</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="department">
+                    <div class="wrapper">
+                        <!-- LEFT: Title / Tabs -->
+                        <div class="tit">
+                            <h2>학과소개</h2>
+                            <ul class="tab">
+                                <li class="active" data-target="degree">학위과정</li>
+                                <li data-target="voc">직업교육과정</li>
+                            </ul>
+                        </div>
+                        <div class="dep_cont">
+                            <!-- 학위과정(Swiper1) -->
+                            <div class="dep_swiper degree active">
+                                <div class="swiper depSwiper1">
+                                    <div class="swiper-wrapper">
+                                        <!-- 카드 1 -->
+                                        <div class="swiper-slide">
+                                            <a href="#">
+                                                <div class="img"><img src="images/img01.jpg" alt=""></div>
+                                                <strong>디지털기계시스템</strong>
+                                                <p>기계·전기 융합 공정 설계 인재양성</p>
+                                            </a>
+                                        </div>
+                                        <!-- 카드 계속 ... -->
+                                    </div>
+                                </div>
+                
+                                <!-- 슬라이드 바 -->
+                                <div class="slide_bar">
+                                    <div class="bar_inner"></div>
+                                </div>
+                            </div>
+                </section>
+                <section class="campus"></section>
+                <section class="news"></section>
+                <section class="sns"></section>
+            </div>
+        <footer></footer>
+    </div><!--wrap-->
+    
+
+</body>
+</html>

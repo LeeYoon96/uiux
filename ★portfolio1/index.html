@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>세화미술관</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="index.html"><span class="blind">sehwamuseum of art</span></a></h1>
+        <nav class="gnb">
+            <!-- 모바일 / 태블릿 메뉴 열기 버튼 -->
+            <button class="gnb_open">
+                <span class="blind">메뉴 열기</span>
+                <i>
+                    <svg viewBox="0 0 12 10" fill="#1d1d1d" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1.33333V0H12V1.33333H0ZM0 9.33333V8H12V9.33333H0ZM0 5.33333V4H12V5.33333H0Z" />
+                        </svg>
+                </i>
+            </button>
+            <div class="gnb_wrap">
+                <div class="gnb_logo"><span class="blind">SEHWA</span></div>
+                <ul>
+                    <li><a href="#n"><span lang="en">Why SEHWA</span></a></li>
+                    <li><a href="#n"><span lang="en">Our MISSION</span></a></li>
+                    <li><a href="#n"><span lang="en">ARTWORK</span></a></li>
+                    <li><a href="#n"><span lang="en">CONTACT</span></a></li>
+                </ul>
+                <!-- ★ 모바일 전용 APPLY 버튼 -->
+                <div class="apply_mo">
+                    <a href="#n"><span>Apply</span></a>
+                </div>
+                <!-- 메뉴 닫기 버튼 -->
+                <button class="gnb_close">
+                    <span class="blind">메뉴 닫기</span>
+                    <i>
+                        <svg viewBox="0 0 10 10" fill="#1d1d1d" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.933333 9.33333L0 8.4L3.73333 4.66667L0 0.933333L0.933333 0L4.66667 3.73333L8.4 0L9.33333 0.933333L5.6 4.66667L9.33333 8.4L8.4 9.33333L4.66667 5.6L0.933333 9.33333Z" />
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="gnb_bg"></div>
+        </nav>
+        <div class="util">
+            <div class="apply"><a href="#n">Apply</a></div>
+            <button class="lang"><span class="blind">언어선택</span></button>
+        </div>
+    </header>
+    <section class="visual">
+        <div class="wrapper">
+            <h2 class="blind">visual start</h2>
+            <div class="row" lang="en">A <strong lang="en">New</strong><strong>Wave</strong></div>
+            <div class="row" id="line" lang="en">Begins
+                <div class="photo_wrap"><!-- 안움직임 position:relative; 주기 -->
+                    <div class="photo_move"><!-- 이게 실제 움직음 position:absolute -->
+                        <div class="photo_bg"></div><!-- 스크롤되면서 이미지를 덮을 요소 (절대 before/after로 대체금지) -->
+                        <!--pc-->
+                        <img src="images/visual01.jpg" alt="파도 이미지"><!-- 이미지는 1920 * 1080 정도의 큰 이미지 사용 -->
+                        <!--mobile-->
+                        <img class="mo_img" src="images/visual01_m.jpg" alt="파도 이미지 모바일">
+                    </div>
+                </div>
+                <div>at</div>
+            </div>
+            <div class="row" lang="en">Sehwa<div>Museum.</div></div>
+        </div>
+    </section><!--visual-->
+    <section class="intro"> <!-- 이 요소가 애니메이션의 종료시점이다. 애니메이션 끝나면 green 이라는 클래스가 추가될 예정  -->
+        <div class="wrapper">
+            <div class="photo">
+                <div class="photo_left"><img src="images/intro01.jpg" alt="사진찍는 남자"></div>
+                <div class="photo_right"><img src="images/intro02.jpg" alt="그림 그리는 여자"></div>
+                <div class="photo_center"><img src="images/intro03.jpg" alt="물감묻은 손"></div>
+            </div><!--photo_wrap-->
+            <div class="txt">
+                <h2>끊임없는 신진작가 <strong>발굴과 지원</strong>으로 예술의 <strong>새로운 흐름</strong>을 만들어갑니다.</h2>
+                <p>세화미술관은 젊은 창작자들의 가능성을 발견하고, 예술을 통해 사회와 소통하는 문화를 확산합니다.</p>
+            </div><!--txt-->
+        </div><!--wrapper-->
+    </section><!--intro-->
+    <section class="mission">
+        <div class="wrapper">
+            <h2><a href="#n" lang="en">Our MISSION</a></h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <a href="#n" class="img_popup1">
+                            <div class="img_open">
+                                <img src="images/find.jpg" alt="">
+                            </div>
+                            <h3>신진작가 발굴</h3>
+                            <p>새로운 시각과 가능성을 지닌 신진작가를 발굴하고 예술의 미래를 제시합니다.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n" class="img_popup2">
+                            <div class="img_open">
+                                <img src="images/place.jpg" alt="">
+                            </div>
+                            <h3>예술과의 소통</h3>
+                            <p>누구나 예술을 가까이에서 경험하며 공감할 수 있는 열린 공간을 만듭니다.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n" class="img_popup3">
+                            <div class="img_open">
+                                <img src="images/expand.jpg" alt="">
+                            </div>
+                            <h3>문화의 확장</h3>
+                            <p>전시와 교육을 통해 예술의 다양성을 넓히고, 문화적 가치를 사회로 확산합니다.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section><!--mission-->
+    <section class="artwork">
+        <div class="wrapper">
+            <h2><a href="#n" lang="en">ARTWORK</a></h2>
+            <div class="list">
+                <ul>
+                    <li>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork01.jpg" alt="guidepost to the new world">
+                                <div class="overlay">
+                                    <p>태광그룹 세화미술관은 《세화 컬렉션: 새로운 세계를 향한 이정표》 전시를 개최합니다. 이번 컬렉션 전시는 야요이 쿠사마의 설치 작업을 만날 수 있는 특별한 기회를 선사합니다.</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>세화 컬렉션: 새로운 세계를 향한 이정표</h3>
+                                    <span>현재전시</span>
+                                </div>
+                                <p>2025. 08. 30. —</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork03.jpg" alt="스티커를 들고있는 손">
+                                <div class="overlay">
+                                    <p>《노노탁 NONOTAK》과 연계한 전시 감상 프로그램을 운영합니다. 노노탁 스튜디오는 빛이 다양한 매체와 만나, 반사되고 투과하며 만들어내는 새로운 감각에 주목합니다. 강렬한 빛의 세계를 감상한 후, 기억에 남는 이미지를 여러 가지 재료로 표현해 보세요.</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>전시 감상 프로그램: 기억 조각 채집</h3>
+                                    <span>프로그램</span>
+                                </div>
+                                <p>2025. 11. 7. ~ 12. 31.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork02.jpg" alt="NONOTAK">
+                                <div class="overlay">
+                                    <p>태광그룹 세화예술문화재단 세화미술관은 ‘도심 속 열린 미술관’이라는 슬로건 아래 광화문의 랜드마크 〈해머링 맨〉을 비롯한 소장품 해설 프로그램을 기획 및 운영하고 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3 >노노탁 : NONOTAK</h3>
+                                    <span>현재전시</span>
+                                </div>
+                                <p>2025. 08. 30. — 12. 31.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <div class="photo">
+                                <img src="images/artwork04.jpg" alt="작품을 감상하는 사람들">
+                                <div class="overlay">
+                                    <p>태광그룹 세화미술관은 《전시 감상 프로그램: 기억 조각 채집》을 진행합니다. 이번 프로그램은 관람객이 직접 예술 작품과 상호작용하며 체험할 수 있는 기회를 제공합니다.</p>
+                                </div>
+                            </div>
+                            <div class="txt">
+                                <div class="tit_wrap">
+                                    <h3>소장품 도슨트 아트 투어</h3>
+                                    <span>프로그램</span>
+                                </div>
+                                <p>2025년 9-12월 예정</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section><!--artwork-->
+    <section class="contact">
+        <div class="wrapper">
+            <h2 lang="en">CONTACT</h2>
+            <div class="index">
+                <div class="tit">
+                    <h3>세화미술관과 함께 <br> 작가님의 <span>숨겨진 가치</span>를 <br> 보여주세요.</h3>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <label for="artist_name">작가이름</label>
+                            <input id="artist_name" class="editable" placeholder="작가님의 이름을 작성해주세요.">
+                        </li>
+                        <li>
+                            <label for="artwork_title">지원작품</label>
+                            <input id="artwork_title" class="editable" placeholder="지원작품의 이름을 작성해주세요.">
+                        </li>
+                        <li>
+                            <label for="email">이메일</label>
+                            <input id="email" class="editable" placeholder="작가님의 이메일을 작성해주세요.">
+                        </li>
+                        <li>
+                            <label for="phone_number">전화번호</label>
+                            <input id="phone_number" class="editable" placeholder="작가님의 전화번호를 작성해주세요.">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="apply_pc">
+                <button tabindex="0"><strong>제출하기</strong></button>
+            </div>
+            <div class="apply_mo">
+                <button tabindex="0"><strong>제출하기</strong></button>
+            </div>
+        </div>
+    </section><!--contact-->
+    <footer>
+        <div class="wrapper">
+            <div class="f_info">
+                <ul>
+                    <li>
+                        <h2 lang="en">contact us</h2>
+                        <p lang="en">sehwaart@contact.us</p>
+                    </li>
+                    <li>
+                        <h2 lang="en">visit us</h2>
+                        <p>세화미술관 서울특별시 종로구 <br> 새문안로 68 흥국생명빌딩 2층</p>
+                    </li>
+                    <li>
+                        <h2 lang="en">follow us</h2>
+                        <div class="sns">
+                            <a href="#n" class="insta">인스타그램</a>
+                            <a href="#n" class="youtube">유튜브</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="f_logo"><a href="index.html"><span class="blind">sehwamuseum of art</span></a></div>
+        </div>
+    </footer>
+</body>
+
+</html>
