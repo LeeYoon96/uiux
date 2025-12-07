@@ -1,0 +1,148 @@
+/* *******************************************************
+* 파일명 : main.css
+* 작성자 : 이윤
+* 작성일 : 25-12-07
+* 설  명 : index파일 (메인페이지에서만 호출하는 css
+           메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer)
+           default.css (태그의 초기화 - 브라우저 스타일 제거)
+           common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 - 변수도 여기서 선언)
+           - 변수도 여기서 선언, 변수가 너무 많으면 var이라는 파일을 분리하기도 함
+           layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+**********************************************************/
+
+@import url(default.css);
+@import url(font.css); /* cdn 방식은 외부에서 가져오는 방식이기 때문에 없어지면 연결 안됨 */
+@import url(common.css);
+@import url(layout.css);
+
+/* Fullpage Section */
+.section {
+    height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* MAIN */
+.main h1 {
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.main_txt {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* ABOUT */
+.about h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.about_wrap {
+    display: flex;
+    gap: 80px;
+}
+
+.info_tit {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.info_txt {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.sub_tit {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.skills {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* PROJECT COMMON */
+.project h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.project h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn_pf {
+    display: inline-block;
+    margin: 25px 0;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid #bfbfbf;
+    color: #555;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn_pf:hover {
+    background: #4000FF;
+    color: #fff;
+}
+
+.prj_sub {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.prj_desc {
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 900px;
+}
+
+.prj_info {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.prj_info b {
+    font-weight: 700;
+}
+
+/* CONTACT */
+.contact h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.contact .email {
+    font-size: 100px;
+    font-weight: 700;
+    margin: 30px 0;
+}
+
+.contact .ct_txt {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.btn_mail {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: 12px 25px;
+    color: #000;
+}

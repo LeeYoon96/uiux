@@ -1,0 +1,38 @@
+/* *******************************************************
+* 파일명 : layout.css
+* 작성자 : 이윤
+* 작성일 : 25-12-07
+* 설  명 : header/footer 스타일 선언
+**********************************************************/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+}
+
+header .logo a {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+}
+
+header .gnb {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+header .gnb li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
