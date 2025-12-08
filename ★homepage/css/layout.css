@@ -32,16 +32,24 @@ header .logo a {
 header .gnb {
     display: flex;
     list-style: none;
+    gap: 47px;
+    align-items: center;
 }
 
 header .gnb li a {
+    display: inline-block;
     text-decoration: none;
     color: #3B2F2F;
     font-size: 20px;
-    padding: 35px 47px;
-    transition: 0.5s;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 11px 24px 9px 24px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
-header .gnb li a:hover {
-    color: #4000FF;
+header .gnb li a:hover,
+header .gnb li a.active-link { 
+    color: #fff ;
+    background-color: #4000FF;
 }
