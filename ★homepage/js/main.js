@@ -2,7 +2,8 @@ $(document).ready(function(){
 
     new fullpage('#fullpage', {
         autoScrolling: true,
-        navigation: true,
+        fitToSection: false,
+        navigation: false,
         navigationPosition: 'right',
         anchors: ['home', 'about', 'project1', 'project2', 'contact'],
         menu: '.gnb',

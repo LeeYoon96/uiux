@@ -10,29 +10,38 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 40px;
+    height: 90px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+header .wrapper {
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
+    align-items: center;
+    height: var(--header-h);
 }
 
 header .logo a {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
-    color: #000;
+    color: #3B2F2F;
 }
 
 header .gnb {
     display: flex;
-    gap: 30px;
     list-style: none;
 }
 
 header .gnb li a {
     text-decoration: none;
-    color: #000;
-    font-size: 16px;
+    color: #3B2F2F;
+    font-size: 20px;
+    padding: 35px 47px;
+    transition: 0.5s;
+}
+
+header .gnb li a:hover {
+    color: #4000FF;
 }

@@ -14,116 +14,226 @@
 </head>
 <body>
     <header>
-        <div class="logo"><a href="#home">LeeYoon’s Web Portfolio</a></div>
-        <ul class="gnb">
-            <li><a data-menuanchor="about" href="#about">ABOUT ME</a></li>
-            <li><a data-menuanchor="project1" href="#project1">PROJECT1</a></li>
-            <li><a data-menuanchor="project2" href="#project2">PROJECT2</a></li>
-            <li><a data-menuanchor="contact" href="#contact">CONTACT</a></li>
-        </ul>
+        <div class="wrapper">
+            <div class="logo" lang="en"><a href="#home">LeeYoon’s Web Portfolio</a></div>
+            <ul class="gnb">
+                <li><a data-menuanchor="about" href="#about">ABOUT ME</a></li>
+                <li><a data-menuanchor="project1" href="#project1">PROJECT1</a></li>
+                <li><a data-menuanchor="project2" href="#project2">PROJECT2</a></li>
+                <li><a data-menuanchor="contact" href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
     </header>
     <div id="fullpage">
 
         <!-- MAIN -->
         <section class="section main" data-anchor="home">
-            <h1>YOON’S PORTFOLIO</h1>
-            <p class="main_txt">
-                안녕하세요. 저는 UIUX 디자인, 퍼블리싱 하는 신입 웹 퍼블리셔 이윤입니다.<br>
-                저는 니즈를 파악하여 주제에 맞는 디자인을 하고 어떠한 사용자에게든 편리하고 좋은 웹 페이지를 만듭니다.
-            </p>
+            <div class="wrapper">
+                <h1 lang="en">YOON’S <br> PORTFOLIO</h1>
+                <p class="main_txt">
+                    안녕하세요. 저는 UIUX 디자인, 퍼블리싱 하는 신입 웹 퍼블리셔 이윤입니다. <br>
+                    저는 니즈를 파악하여 주제에 맞는 디자인을 하고 어떠한 사용자에게든 편리하고 좋은 웹 페이지를 만듭니다.
+                </p>
+            </div>
         </section>
 
         <!-- ABOUT -->
         <section class="section about" data-anchor="about">
-            <h2>ABOUT ME</h2>
-
-            <div class="about_wrap">
-                <div class="info_box">
-                    <p class="info_tit">Name</p>
-                    <p class="info_txt">LEEYOON</p>
-
-                    <p class="info_tit">Birth</p>
-                    <p class="info_txt">1996.09.03</p>
-
-                    <p class="info_tit">Email</p>
-                    <p class="info_txt">tjth3803@naver.com</p>
-
-                    <p class="info_tit">Phone</p>
-                    <p class="info_txt">010-2832-3803</p>
-                </div>
-
-                <div class="edu_box">
-                    <p class="sub_tit">EDUCATION</p>
-                    <p>2015. 02 순천매산고등학교 졸업</p>
-                    <p>2025. 12 이지디자인 컴퓨터학원<br>UI/UX 웹디자인 & 웹퍼블리셔 과정 수료</p>
-
-                    <p class="sub_tit mt40">WORK EXPERIENCE</p>
-                    <p>2019. 03 ~ 2020. 06 WHOSEEK</p>
-                    <p>2020. 12 ~ 2021. 12 (주) 블루포트</p>
-                    <p>2023. 03 ~ 2025. 03 (주) 스타벅스 코리아</p>
-
-                    <p class="sub_tit mt40">SKILLS</p>
-                    <p class="skills">Figma, VSCode, Photoshop, Illustrator, HTML, CSS, JS, Github</p>
+            <div class="wrapper">
+                
+                <h2>ABOUT ME</h2>
+                <div class="about_wrap">
+                    <!-- 왼쪽 프로필 영역 -->
+                    <div class="left_area">
+                        <div class="profile_img"></div>
+                        <div class="info_box">
+                            <ul>
+                                <li>
+                                    <strong>Name</strong>
+                                    <p>LEEYOON</p>
+                                </li>
+                                <li>
+                                    <strong>Birth</strong>
+                                    <p>1996.09.03</p>
+                                </li>
+                                <li>
+                                    <strong>Email</strong>
+                                    <p>tjth380312@gmail.com</p>
+                                </li>
+                                <li>
+                                    <strong>Phone</strong>
+                                    <p>010-2832-3803</p>
+                                </li>
+                            </ul>
+                        </div>
+            
+                        <a href="#" class="about_more">자기소개서 더보기</a>
+                    </div>
+            
+                    <!-- 오른쪽 텍스트 영역 -->
+                    <div class="right_area">
+                        <div class="edu_box">
+                            <div class="sub_tit">EDUCATION</div>
+                            <div class="row">
+                                <span class="date">2015. 02</span>
+                                <span class="text">순천매산고등학교 졸업</span>
+                            </div>
+                            <div class="row">
+                                <span class="date">2025. 12</span>
+                                <span class="text">이지디자인 컴퓨터학원</span>
+                            </div>
+                            <div class="row indent_row">
+                                <span class="date"></span>
+                                <span class="text">UI/UX 웹디자인 & 웹퍼블리셔 과정 수료</span>
+                            </div>
+                        </div>
+                        <div class="work_box mt40">
+                            <div class="sub_tit">WORK EXPERIENCE</div>
+                        
+                            <div class="row">
+                                <span class="date">2019. 03 ~ 2020. 06</span>
+                                <span class="text">WHOSEEK</span>
+                            </div>
+                        
+                            <div class="row">
+                                <span class="date">2020. 12 ~ 2021. 12</span>
+                                <span class="text">(주) 블루포트</span>
+                            </div>
+                        
+                            <div class="row">
+                                <span class="date">2023. 03 ~ 2025. 03</span>
+                                <span class="text">(주) 스타벅스 코리아</span>
+                            </div>
+                        </div>
+                        <div class="skill_box mt40">
+                            <div class="sub_tit">SKILL</div>
+                            <ul class="skill_list">
+                                <li>
+                                    <img src="images/figma.svg" alt="figma">
+                                    <span>Figma</span>
+                                </li>
+                                <li>
+                                    <img src="images/vscode.svg" alt="vscode">
+                                    <span>VSCode</span>
+                                </li>
+                                <li>
+                                    <img src="images/photoshop.svg" alt="photoshop">
+                                    <span>Photoshop</span>
+                                </li>
+                                <li>
+                                    <img src="images/illustrator.svg" alt="illustrator">
+                                    <span>Illustrator</span>
+                                </li>
+                                <li>
+                                    <img src="images/html.svg" alt="html">
+                                    <span>HTML</span>
+                                </li>
+                                <li>
+                                    <img src="images/css.svg" alt="css">
+                                    <span>CSS</span>
+                                </li>
+                                <li>
+                                    <img src="images/js.svg" alt="js">
+                                    <span>JS</span>
+                                </li>
+                                <li>
+                                    <img src="images/github.svg" alt="github">
+                                    <span>github</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- PROJECT 01 -->
         <section class="section project" data-anchor="project1">
-            <h2>Project01</h2>
-            <h3>세화미술관</h3>
-
-            <a href="#" class="btn_pf">포트폴리오 보러가기</a>
-
-            <h4 class="prj_sub">세화미술관 반응형 웹 디자인</h4>
-
-            <p class="prj_desc">
-                세화미술관의 새로운 랜딩페이지는 신진작가들이 가장 먼저 찾아오고,
-                가장 오래 머무는 공간을 목표로 설계하였습니다. 기존의 미술관 웹사이트들이
-                지니는 정형적인 정보 구조를 벗어나, 작가가 “지원하기까지”의 여정을 자연스럽게
-                안내하는 데 집중했습니다.
-            </p>
-
-            <div class="prj_info">
-                <p><b>작업기한</b> 약 9일</p>
-                <p><b>기여도</b> 100% 개인작업</p>
-                <p><b>SKILLS</b> Figma, HTML5, CSS, Jquery</p>
-            </div>
+            <div class="wrapper">
+                <div class="project_inner">
+                    <!-- 왼쪽 텍스트 영역 -->
+                    <div class="left_area">
+                        <h2>Project01</h2>
+                        <h3>세화미술관</h3>
+                        <a href="#n" class="btn_pf">포트폴리오 보러가기</a>
+                        <h4 class="prj_sub">세화미술관 반응형 웹 디자인</h4>
+                        <p class="prj_desc">
+                            세화미술관의 새로운 랜딩페이지는 신진작가들이 가장 먼저 찾아오고,
+                            가장 오래 머무는 공간을 목표로 설계하였습니다. 기존의 미술관 웹사이트들이
+                            지니는 정형적인 정보 구조를 벗어나, 작가가 “지원하기까지”의 여정을 자연스럽게
+                            안내하는 데 집중했습니다.
+                        </p>
+                        <ul class="prj_info">
+                            <li>
+                                <strong>작업기한</strong>
+                                <span>약 9일</span>
+                            </li>
+                            <li>
+                                <strong>기여도</strong>
+                                <span>100% 개인작업</span>
+                            </li>
+                            <li>
+                                <strong>SKILLS</strong>
+                                <span>Figma, HTML5, CSS, Jquery</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 오른쪽 이미지 영역 -->
+                    <div class="right_area">
+                        <div class="img_big">
+                            <img src="images/sehwa.jpg" alt="세화미술관 큰 이미지">
+                        </div>
+                    </div>
+                </div>
+            </div>    
         </section>
 
         <!-- PROJECT 02 -->
         <section class="section project" data-anchor="project2">
-            <h2>Project02</h2>
-            <h3>한국기업지식연구원</h3>
-
-            <a href="#" class="btn_pf">포트폴리오 보러가기</a>
-
-            <h4 class="prj_sub">한국기업지식연구원 반응형 웹 디자인</h4>
-
-            <p class="prj_desc">
-                한국기업지식연구원의 핵심 연구정보를 전문 교육 콘텐츠로 명확하고
-                직관적으로 전달하기 위해, 웹사이트 전체 구조를 재정비하고 전문 매뉴얼을 적용해
-                안정적이면서도 현대적인 디자인으로 완성했습니다.
-            </p>
-
-            <div class="prj_info">
-                <p><b>작업기한</b> 약 9일</p>
-                <p><b>기여도</b> 100% 개인작업</p>
-                <p><b>SKILLS</b> Figma, HTML5, CSS, Jquery</p>
+            <div class="wrapper">
+                <!-- 왼쪽 이미지 영역 -->
+                <div class="left_area">
+                    <div class="img_big">
+                        <img src="images/KEI.jpg" alt="한국기업지식연구원 큰 이미지">
+                    </div>
+                </div>
+                <div class="right_area">
+                    <h2>Project02</h2>
+                    <h3>한국기업지식연구원</h3>
+                    <a href="#" class="btn_pf">포트폴리오 보러가기</a>
+                    <h4 class="prj_sub">한국기업지식연구원 반응형 웹 디자인</h4>
+                    <p class="prj_desc">
+                        한국기업지식연구원의 핵심 연구정보를 전문 교육 콘텐츠로 명확하고
+                        직관적으로 전달하기 위해, 웹사이트 전체 구조를 재정비하고 전문 매뉴얼을 적용해
+                        안정적이면서도 현대적인 디자인으로 완성했습니다.
+                    </p>
+                    <ul class="prj_info">
+                        <li>
+                            <strong>작업기한</strong>
+                            <span>약 9일</span>
+                        </li>
+                        <li>
+                            <strong>기여도</strong>
+                            <span>100% 개인작업</span>
+                        </li>
+                        <li>
+                            <strong>SKILLS</strong>
+                            <span>Figma, HTML5, CSS, Jquery</span>
+                        </li>
+                    </ul>
+                </div>    
             </div>
         </section>
 
         <!-- CONTACT -->
         <section class="section contact" data-anchor="contact">
-            <h2>함께 일할 웹 퍼블리셔를 찾고 계신가요?</h2>
-
-            <p class="email">tjth380312@gmail.com</p>
-
-            <p class="ct_txt">
-                저에게 궁금한 점이 있으시다면 연락해주세요. 빠르게 답장 드리겠습니다!
-            </p>
-
-            <a class="btn_mail" href="mailto:tjth380312@gmail.com">메일보내기</a>
+            <div class="wrapper">
+                <h2 class="email">Thank you for watching</h2>
+                <p class="ct_txt">
+                    저에게 궁금한 점이 있으시다면 연락해주세요. 빠르게 답장 드리겠습니다!
+                </p>
+                <a class="btn_mail" href="mailto:tjth380312@gmail.com">메일보내기</a>
+            </div>
         </section>
 
     </div>
