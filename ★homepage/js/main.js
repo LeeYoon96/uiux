@@ -11,7 +11,6 @@ $(document).ready(function(){
         scrollingSpeed: 800,
         fixedElements: "header",
 
-        // 👈 이 부분이 추가/수정되었습니다.
         onLeave: function(origin, destination, direction){
             // 모든 내비게이션 링크에서 'active-link' 클래스 제거
             $('.gnb a').removeClass('active-link');
@@ -21,7 +20,6 @@ $(document).ready(function(){
             // data-menuanchor 속성이 현재 섹션의 anchor와 일치하는 a 태그를 선택합니다.
             $(`.gnb a[data-menuanchor="${destination.anchor}"]`).addClass('active-link');
         }
-        // 👆 이 부분이 추가/수정되었습니다.
     });
 
     // 초기 로드 시 'home' 섹션에 해당하는 링크 활성화

@@ -69,7 +69,10 @@
 .profile_img {
     width: 321px;
     height: 404px;
-    background: #d9d9d9;
+    background-image: url(../images/취업사진2.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     margin-bottom: 31px;
 }
 
