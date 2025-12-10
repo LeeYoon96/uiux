@@ -10,11 +10,11 @@
     margin: 100px 0 0 0;
 }
 .btn1 button {
-    background-color: #0ADAFF;
+    background-color: #ff0a84;
     color: #fff;
     fill: #fff;
     display: flex;
-    gap: 0 7px;
+    gap: 0 5px;
     padding: 8px 18px 8px 17px;
     border-radius: 30px;
 }
@@ -25,15 +25,15 @@
 .btn2 {
     margin: 100px 0 0 0;
 }
-.btn2 button { /* 글자크기 17px , 여백은 em*/
+.btn2 button { /* 글자크기 17px */
     font-size: 25px;
     background-color: #eb0aff;
     color: #fff;
     fill: #fff;
     display: flex;
     gap: 0 0.2941em;
-    padding: 0.4706em 1.0588em 0.4706em 1em;
-    border-radius: 31.7647em;
+    padding:0.4706em 1.0588em 0.4706em 1em;
+    border-radius: 1.7647em;
 }
 .btn2 button i {
     display: block;
