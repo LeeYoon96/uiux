@@ -35,11 +35,6 @@
   --wrapper-m : 30px;
   }
 
-@media screen and (max-width:1024px){
-  :root {
-    --header-h: 70px;
-  }
-}
 @media screen and (max-width:768px){
   :root {
     --font-size-visual : 40px;

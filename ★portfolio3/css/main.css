@@ -38,7 +38,7 @@
     background-image: url(../images/visual03.jpg);
 }
 .visual .swiper-slide h3 {
-    font-size: var(--font-size-visual);
+    font-size: clamp(40px, 6vw, 80px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
 }

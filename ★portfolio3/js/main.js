@@ -5,7 +5,29 @@
 * 설  명 : 메인페이지에서만 적용되는 js를 저장 (header/footer 제외)
 **********************************************************/
 $(document).ready(function(){
-    // console.log('연결됨')
+    
+/**************** 시작 : 지금 pc버전인지 모바일인지 체크 (메뉴상태) ******************** */
+
+    let mobile_size = 1024
+    let window_w
+    let device_status // pc, mobile
+
+    function device_chk(){ //함수를 정의한다 (선언)
+        window_w = $(window).width()
+        if(window_w > mobile_size){ //브라우저 넓이가 1024보다 클때
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+
+    device_chk() //html의 로딩이 완료된 이후 단 1번 실행
+    $(window).resize(function(){ //브라우저가 리사이즈 될때마다 실행
+        device_chk()
+    })
+/**************** 끝 : 지금 pc버전인지 모바일인지 체크 (메뉴상태) ******************** */
+
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: { /* 팝업 자동 실행 */
@@ -74,4 +96,33 @@ $(document).ready(function(){
             behavior: 'smooth'
         });
     });
+
+    /************************ 시작 : pc버전 메뉴 오버 **************************** */
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){//pc일때만 동작
+            // console.log('오버됨')
+            $('header').addClass('menu_pc')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+            $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
+        }
+    })
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over')
+        $(this).find('.depth2').slideUp()
+    })
+    
+    $('header').on('mouseleave focusout', function(){
+        $(this).removeClass('menu_pc')
+    })
+
+    $('header .util .search .sch_open').on('focusin', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+
+    /************************ 끝 : pc버전 메뉴 오버 **************************** */
 });//맨끝

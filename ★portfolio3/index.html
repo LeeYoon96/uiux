@@ -14,12 +14,25 @@
     <title>한국폴리텍대학 청주캠퍼스</title>
 </head>
 <body>
-    <div id="fullpage">
-        <header>
+    <div id="wrap">
+        <!-- pc버전에서 메뉴에 오버하면 menu_pc 클래스 추가
+            mobile버전에서 메뉴에 오버하면 menu_mo 클래스 추가-->
+        <header class="menu_mo">
             <h1 class="logo"><a href="index.html"><span class="blind">한국폴리텍대학 청주캠퍼스</span></a></h1>
             <nav class="gnb">
+                <button class="gnb_open">
+                    <span class="blind">메뉴열기</span>
+                    <i>
+                        <svg viewBox="0 0 18 14" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z" />
+                        </svg>
+                    </i>
+                </button>
                 <div class="gnb_wrap">
+                    <div class="gnb_logo"><span class="blind">한국폴리텍대학 청주캠퍼스</span></div>
                     <ul class="depth1">
+                        <!-- pc버전 : 오버한 li에 over를 추가 -->
+                        <!-- mo버전 : 메뉴 열리면 li에 open을 추가 -->
                         <li>
                             <a href="#n"><span>대학소개</span></a>
                             <ul class="depth2">
@@ -73,6 +86,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </div><!--gnb_wrap-->
             </nav><!--gnb-->
             <div class="util">
@@ -166,7 +180,7 @@
                                         <!-- 카드 1 -->
                                         <div class="swiper-slide">
                                             <a href="#">
-                                                <div class="img"><img src="images/img01.jpg" alt=""></div>
+                                                <div class="img"><img src="" alt=""></div>
                                                 <strong>디지털기계시스템</strong>
                                                 <p>기계·전기 융합 공정 설계 인재양성</p>
                                             </a>
