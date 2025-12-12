@@ -17,7 +17,7 @@
     <div id="wrap">
         <!-- pc버전에서 메뉴에 오버하면 menu_pc 클래스 추가
             mobile버전에서 메뉴에 오버하면 menu_mo 클래스 추가-->
-        <header class="menu_mo">
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">한국폴리텍대학 청주캠퍼스</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -86,16 +86,23 @@
                             </ul>
                         </li>
                     </ul>
-                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                    <button class="gnb_close">
+                        <span class="blind">메뉴닫기</span>
+                        <i>
+                            <svg viewBox="0 0 14 14" fill="#1D1D1D" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" />
+                            </svg>
+                        </i>
+                    </button>
                 </div><!--gnb_wrap-->
             </nav><!--gnb-->
             <div class="util">
                 <button class="search"><span class="blind">검색버튼</span></button>
-                <button class="menu"><span class="blind">메뉴버튼</span></button>
+                <button class="login"><span class="blind">로그인버튼</span></button>
             </div>
         </header>
         <!-- ▶ 왼쪽 섹션 이동 네비게이션 -->
-        <div class="fp-nav">
+        <div class="fp_nav">
             <ul>
                 <li class="active"><button data-target="visual"></button></li>
                 <li><button data-target="department"></button></li>

@@ -123,6 +123,59 @@ $(document).ready(function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
 
-
     /************************ 끝 : pc버전 메뉴 오버 **************************** */
+    /************************ 시작 : mo버전 메뉴  **************************** */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();		
+            if($(this).parent().hasClass('open') == true){ //열려있는 메뉴는 다시 클릭했을때
+                // colsole.log('열림')
+                $(this).parent().removeClass('open') // li open클래스 삭제
+                $(this).next().slideUp() //2차메뉴를 슬라이드로 닫기
+            }else{ //열려있는 메뉴가 아닌 다른 메뉴를 여는거
+                // colsole.log('닫힘')
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') // 모든 li의 open을 삭제
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() //모든 2차메뉴 닫기
+                $(this).parent().addClass('open')
+                $(this).next().slideDown() //2차메뉴를 슬라이드로 열기
+            }
+        }
+    })
+
+    /************************ 끝 : mo버전 메뉴  **************************** */
+    /*********************************** 시작 : mobile 버전 메뉴 열기 ********************/
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_mo')
+
+        $('.right_menu').hide() //right_menu 숨김.
+    })
+
+    $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
+        $('header').removeClass('menu_mo')
+
+        $('.right_menu').show() //right_menu 보임.
+    })
+/*********************************** 끝 : mobile 버전 메뉴 닫기 ********************** */
+
+/*********************************** 시작 : 스크롤 시 header에 fixed 추가 ********************/
+
+let scrolling //스크롤된 값 저장
+
+function scroll_chk(){
+    scrolling = $(window).scrollTop() //스크롤값 입력
+    if(scrolling > 0){
+        $('header').addClass('fixed')
+    }else{
+        $('header').removeClass('fixed')
+    }
+}
+
+scroll_chk() // 문서가 로딩되고 단 1번 실행
+$(window).scroll(function(){
+    scroll_chk() // 스크롤 될때마다 1번씩 실행
+})
+
+
+/*********************************** 끝 : 스크롤 시 header에 fixed 삭제 ***************************** */
 });//맨끝
