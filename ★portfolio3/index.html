@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta study="viewport" content="width=device-width, initial-scale=1.0">
     <!--라이브러리 파일-->
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
@@ -171,37 +171,369 @@
                 </section>
                 <section class="department">
                     <div class="wrapper">
-                        <!-- LEFT: Title / Tabs -->
-                        <div class="tit">
-                            <h2>학과소개</h2>
-                            <ul class="tab">
-                                <li class="active" data-target="degree">학위과정</li>
-                                <li data-target="voc">직업교육과정</li>
-                            </ul>
-                        </div>
-                        <div class="dep_cont">
-                            <!-- 학위과정(Swiper1) -->
-                            <div class="dep_swiper degree active">
-                                <div class="swiper depSwiper1">
-                                    <div class="swiper-wrapper">
-                                        <!-- 카드 1 -->
-                                        <div class="swiper-slide">
-                                            <a href="#">
-                                                <div class="img"><img src="" alt=""></div>
-                                                <strong>디지털기계시스템</strong>
-                                                <p>기계·전기 융합 공정 설계 인재양성</p>
-                                            </a>
+                        <h2>학과소개</h2>
+                        <div class="dep_layout">
+                            <div class="tab_list">
+                                <ul>
+                                    <!-- 선택됨 탭 active 클래스 추가 -->
+                                    <!-- span 태그에 '선택됨' -->
+                                    <li class="item1 active"><button>학위과정 <span class="blind">선택됨</span></button></li>
+                                    <li class="item2"><button>직업교육과정 <span class="blind"></span></button></li>
+                                </ul>
+                            </div><!--tab_list-->
+                            <div class="tab_cont">
+                                <!-- 선택된 tab_item에 active 클래스 추가 title에 선택됨 -->
+                                <div class="tab_item item1 active" title="선택됨">
+                                    <h3 class="blind">학위과정</h3>
+                                    <div class="list">
+                                        <div class="swiper">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/디지털기계시스템.jpg" alt="디지털기계시스템과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>디지털기계시스템</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>기계 설계·가공·제어 실무 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>기계설계, 자동화장비, CNC·가공</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/스마트팩토리.jpg" alt="스마트팩토리과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>스마트팩토리</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>자동화·데이터 기반 제조 운영 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>스마트팩토리 운영, 자동화·생산관리</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/메카트로닉스.jpg" alt="메카트로닉스과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>디지털기계시스템</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>기계+전기+제어 융합 로봇기술 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>로봇제어, 자동화설비, 제어기술</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/반도체시스템.jpg" alt="반도체시스템과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>반도체시스템</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>반도체 장비·시스템 운용 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>장비엔지니어, 유지보수, 공정운영</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/전기에너지.jpg" alt="전기에너지과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>전기에너지</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>전기 설비·전력 운용 기술 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>전기설비, 전력운영, 전기안전</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/반도체공정.jpg" alt="반도체공정과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>반도체공정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>반도체 제조 공정 실무 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>공정엔지니어, 웨이퍼공정, 품질</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/교양영어.jpg" alt="교양영어과 이미지">
+                                                        <div class="study">P-TECH</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>교양영어</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>글로벌 소통·비즈니스 영어 역량 학과</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">취업분야</strong>
+                                                                    <span>사무·행정, 서비스직,글로벌 업무지원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <!-- 카드 계속 ... -->
                                     </div>
-                                </div>
-                
-                                <!-- 슬라이드 바 -->
-                                <div class="slide_bar">
-                                    <div class="bar_inner"></div>
-                                </div>
-                            </div>
-                </section>
+                                    <div class="slide_bar"></div>
+                                </div><!--tab_item item1-->
+                                <div class="tab_item item2" title="선택됨">
+                                    <h3 class="blind">직업교육과정</h3>
+                                    <div class="list">
+                                        <div class="swiper">
+                                            <ul class="swiper-wrapper">
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/전기시스템.jpg" alt="전기시스템과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>전기시스템</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>전기설비·전력 운용 실무 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>전기설비, 전력운영, 배전·설비유지보수</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/빅데이터공정분석.jpg" alt="빅데이터 공정분석과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>빅데이터 공정분석</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>공정·데이터 분석기초 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>공정데이터, 품질관리, 제조AI</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/지능형반도체.jpg" alt="지능형 반도체과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>지능형 반도체</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>시스템·센서 기반 지능형 반도체 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>반도체회로, 센서기술, 테스트</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/산업용로봇 모빌리티.jpg" alt="산업용로봇·모빌리티과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>산업용로봇·모빌리티</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>로봇·모빌리티 기초 실습 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>로봇운용, 자동화기기, 현장지원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/디지털기계시스템.590Z.png" alt="여성재취업과정과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>여성재취업과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>여성 대상 직무역량 재취업 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>사무·행정, 서비스, 생산·품질 보조</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="swiper-slide">
+                                                    <a href="#n">
+                                                        <div class="photo"><img src="images/디지털기계시스템.590Z.png" alt="중장년특화과정과 이미지">
+                                                        <div class="study">2년제 학위</div>
+                                                        </div><!--photo-->
+                                                        <div class="txt">
+                                                            <ul>
+                                                                <li>
+                                                                    <strong class="pc_only">학과명</strong>
+                                                                    <strong class="mo_only">학과</strong>
+                                                                    <span>중장년특화과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong class="pc_only">학과소개</strong>
+                                                                    <strong class="mo_only">소개</strong>
+                                                                    <span>중장년 대상 직무전환 단기 과정</span>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>취업분야</strong>
+                                                                    <span>생산관리, 설비보조, 사무지원</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div><!--swiper-->
+                                    </div>
+                                    <div class="slide_bar">
+                                        <div class="bar_inner"></div>
+                                    </div>
+                                </div><!--tab_item item2-->                         
+                            </div><!--dep_cont-->
+                        </div>
+                    </div><!--wrapper-->
+                </section> <!--department-->
                 <section class="campus"></section>
                 <section class="news"></section>
                 <section class="sns"></section>

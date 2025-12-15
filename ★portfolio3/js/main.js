@@ -178,4 +178,61 @@ $(window).scroll(function(){
 
 
 /*********************************** 끝 : 스크롤 시 header에 fixed 삭제 ***************************** */
+
+/*********************************** 시작 : 학과소개 swiper ********************/
+    const department1_swiper = new Swiper('.department .item1 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+
+        loop: true,
+
+    });
+
+    const department2_swiper = new Swiper('.department .item2 .swiper', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+        },
+
+        loop: true,
+
+    });
+/*********************************** 끝 : 학과소개 swiper ********************/
+
+/*********************************** 시작 : 학과소개 tab ********************/
+let tab_name
+$('.department .tab_list ul li').on('click', function(){
+    // 클릭한 li에만 active 클래스 주기
+    $('.department .tab_list ul li').removeClass('active')
+    $(this).addClass('active')
+
+    // 클릭한 li의 button에다가 선택됨이라고 글자쓰기
+    $('.department .tab_list ul li button span').text('')
+    $(this).find('button span').text('선택됨') //태그는 점 안찍음
+    
+    // 클릭한 li와 관련된 tab_content tab_item 에 active 클래스 주기
+    tab_name = $(this).attr('data-tab')
+    console.log(tab_name)
+    $('.department .tab_content .tab_item').removeClass('active')
+
+    //find로 찾을때는 클래스명이면 .추가, 내가 가져온 이름은 .이 없음
+    $('.department .tab_content').find('.' + tab_name).addClass('active')
+
+    //선택됨 tab_item의 title에만 '선택됨'이라고 써주기
+    $('.department .tab_content .tab_item').attr('title', '')
+    $('.department .tab_content').find('.' + tab_name).attr('title', '선택됨')
+})
+/*********************************** 시작 : 학과소개 tab ********************/
 });//맨끝
