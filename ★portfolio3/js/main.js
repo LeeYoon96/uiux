@@ -201,7 +201,7 @@ $(window).scroll(function(){
 
         breakpoints: {
             640: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 24,
             },
         },
@@ -224,15 +224,14 @@ $('.department .tab_list ul li').on('click', function(){
     
     // 클릭한 li와 관련된 tab_content tab_item 에 active 클래스 주기
     tab_name = $(this).attr('data-tab')
-    console.log(tab_name)
-    $('.department .tab_content .tab_item').removeClass('active')
+    $('.department .tab_cont .tab_item').removeClass('active')
 
     //find로 찾을때는 클래스명이면 .추가, 내가 가져온 이름은 .이 없음
-    $('.department .tab_content').find('.' + tab_name).addClass('active')
+    $('.department .tab_cont').find('.' + tab_name).addClass('active')
 
     //선택됨 tab_item의 title에만 '선택됨'이라고 써주기
-    $('.department .tab_content .tab_item').attr('title', '')
-    $('.department .tab_content').find('.' + tab_name).attr('title', '선택됨')
+    $('.department .tab_cont .tab_item').attr('title', '')
+    $('.department .tab_cont').find('.' + tab_name).attr('title', '선택됨')
 })
 /*********************************** 시작 : 학과소개 tab ********************/
 });//맨끝
