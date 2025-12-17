@@ -179,36 +179,83 @@ $(window).scroll(function(){
 
 /*********************************** 끝 : 스크롤 시 header에 fixed 삭제 ***************************** */
 
+
+
 /*********************************** 시작 : 학과소개 swiper ********************/
-    const department1_swiper = new Swiper('.department .item1 .swiper', {
-        slidesPerView: 2,
-        spaceBetween: 16,
+const department1_swiper = new Swiper('.department .item1 .swiper', {
+    slidesPerView: 2,
+    spaceBetween: 16,
 
-        breakpoints: {
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-            },
+    breakpoints: {
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 24,
         },
+    },
 
-        loop: true,
+    loop: false,
+    watchOverflow: true,
+});
 
-    });
+const department2_swiper = new Swiper('.department .item2 .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 16,
 
-    const department2_swiper = new Swiper('.department .item2 .swiper', {
-        slidesPerView: 2,
-        spaceBetween: 16,
-
-        breakpoints: {
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-            },
+    breakpoints: {
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 24,
         },
+    },
 
-        loop: true,
+    loop: false,
+    watchOverflow: true,
+});
 
+/* 🔥 슬라이드 바 연결 */
+initSlideBar(department1_swiper, '.department .item1 .slide_bar');
+initSlideBar(department2_swiper, '.department .item2 .slide_bar');
+
+function initSlideBar(swiper, barSelector) {
+    const totalSlides = swiper.slides.length;
+    const visibleSlides = swiper.params.slidesPerView;
+    const maxIndex = totalSlides - visibleSlides;
+
+    const $barWrap = document.querySelector(barSelector);
+    $barWrap.innerHTML = '';
+
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.width = `${100 / (maxIndex + 1)}%`;
+    $barWrap.appendChild(bar);
+
+    swiper.on('slideChange', function () {
+        const index = Math.min(swiper.activeIndex, maxIndex);
+        bar.style.transform = `translateX(${index * 100}%)`;
     });
+}
+
+$('.tab_list li').on('click', function () {
+    const target = $(this).data('tab');
+
+    // 탭 전환
+    $('.tab_list li').removeClass('active');
+    $(this).addClass('active');
+
+    $('.tab_item').removeClass('active');
+    $('.tab_item.' + target).addClass('active');
+
+    // 🔥 Swiper 업데이트 + slide_bar 재생성
+    if (target === 'item1') {
+        department1_swiper.update();
+        initSlideBar(department1_swiper, '.item1 .slide_bar');
+    }
+
+    if (target === 'item2') {
+        department2_swiper.update();
+        initSlideBar(department2_swiper, '.item2 .slide_bar');
+    }
+});
 /*********************************** 끝 : 학과소개 swiper ********************/
 
 /*********************************** 시작 : 학과소개 tab ********************/
