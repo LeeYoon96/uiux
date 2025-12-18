@@ -562,8 +562,12 @@
         color: var(--color-white);
     }
     .department .mo_only .tab_list ul li.active button {
-    background: var(--color-sub);
-}
+        background: var(--color-sub);
+    }
+    .department .mo_only .tab_list ul li.item2.active button {
+        background: var(--color-point);
+        color: var(--color-black);
+    }
 
     /* 탭 화살표 제거 */
     .department .mo_only .tab_list ul li button::before,
@@ -574,22 +578,29 @@
     /* =========================
     슬라이드 영역
     ========================= */
-    .department .dep_layout {
+    .department .tab_item {
+    display: none;
+    }
+    .department .tab_item.active {
         display: block;
-        margin-top: 0;
     }
 
-    .department .swiper-slide {
+    .department .tab_item .swiper-slide {
         width: 160px;
     }
 
-    .department .photo {
+    .department .tab_item .photo {
         height: 180px;
     }
 
-    .department .txt {
+    .department .tab_item .txt {
         padding: 12px;
         height: auto;
+    }
+
+    .department .tab_item .slide_bar {
+        margin-top: 12px;
+        height: 4px;
     }
 
     /* =========================

@@ -207,7 +207,7 @@ const department1_swiper = new Swiper('.department .item1 .swiper', {
 });
 
 const department2_swiper = new Swiper('.department .item2 .swiper', {
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 16,
 
     breakpoints: {
