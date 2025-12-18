@@ -192,11 +192,16 @@ $(window).scroll(function(){
 
 /*********************************** 시작 : 학과소개 swiper ********************/
 const department1_swiper = new Swiper('.department .item1 .swiper', {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 16,
 
     breakpoints: {
-        1025: {
+        551: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+        },
+
+        1201: {
             slidesPerView: 3,
             spaceBetween: 24,
         },
@@ -207,11 +212,16 @@ const department1_swiper = new Swiper('.department .item1 .swiper', {
 });
 
 const department2_swiper = new Swiper('.department .item2 .swiper', {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 16,
 
     breakpoints: {
-        1025: {
+        551: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+        },
+
+        1201: {
             slidesPerView: 3,
             spaceBetween: 24,
         },
