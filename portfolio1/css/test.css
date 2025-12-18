@@ -1,0 +1,55 @@
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    .container {}
+
+    input[id=trigger]{
+        display: none;
+    }
+    label[for=trigger]{
+        /* border: 1px solid red; */
+        width: 40px;
+        height: 30px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+
+    }
+    label[for=trigger] span {
+        position: absolute;
+        height: 2px;
+        background-color: #000;
+        width: 100%;
+        left: 0;
+        transition: 0.5s;
+    }
+    label[for=trigger] span:nth-child(1){
+        top: 0;
+    }
+    label[for=trigger] span:nth-child(2){
+        top: 50%;
+    }
+    label[for=trigger] span:nth-child(3){
+        top: 100%;
+    }
+    input[id=trigger]:checked + label[for=trigger]
+    span:nth-child(1){
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    input[id=trigger]:checked + label[for=trigger]
+    span:nth-child(2){
+        opacity: 0;
+    }
+    input[id=trigger]:checked + label[for=trigger]
+    span:nth-child(3){
+        top: 50%;
+        transform: rotate(-45deg);
+    }

@@ -1,0 +1,86 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.loader span {
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: loader 1.5s linear 3; /* 이름, 시간, 선형, 반복횟수 */
+    position: relative;
+}
+.loader span:nth-child(1){
+    animation-delay: 0s;
+    width: 93px;
+    height: 43.5px;
+    background-size: 93px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 93 44' fill='%23A19C98' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.5 43.5L0 0L93 21.5L35.5 43.5Z' /%3E%3C/svg%3E%0A");
+    position: absolute;
+    content: "";
+    right: 50%;
+    top: 50%;
+}
+.loader span:nth-child(2){
+    animation-delay: 0.5s;
+    width: 193.5px;
+    height: 49.5px;
+    background-size: 193.5px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 194 50' fill='%23FC0807' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M193.5 0L0 12.5L156 49.5L193.5 0Z' /%3E%3C/svg%3E%0A");
+    position: absolute;
+    content: "";
+    right: calc(50% - 195px);
+    top: calc(50% + 9px);
+}
+.loader span:nth-child(3){
+    animation-delay: 0.6s;
+    width: 158px;
+    height: 36.5px;
+    background-size: 158px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 158 37' fill='%23FEB115' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M158 0L0 36.5L158 29V0Z' /%3E%3C/svg%3E%0A");
+    position: absolute;
+    content: "";
+    right: calc(50% - 159px);
+    top: calc(50% - 15px);
+    z-index: -1;
+}
+.loader span:nth-child(4){
+    animation-delay: 0.7s;
+    width:131.5px;
+    height: 38.5px;
+    background-size: 131.5px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 132 39' fill='black' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M131.5 38.5L0 0L131.5 16.5V38.5Z' fill='black'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    content: "";
+    right: calc(50% - 133px);
+    top: calc(50% + 22px);
+    z-index: -1;
+}
+.loader span:nth-child(5){
+    animation-delay: 0.8s;
+    width: 105px;
+    height: 40.5px;
+    background-size: 105px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 105 41' fill='%2369C6DD' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M95 40.5L0 0L105 32L95 40.5Z' /%3E%3C/svg%3E%0A");
+    position: absolute;
+    content: "";
+    right: calc(50% - 106px);
+    top: calc(50% + 22px);
+    z-index: -1;
+}
+
+@keyframes loader {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

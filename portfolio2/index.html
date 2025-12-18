@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
+    <!--내가만든파일-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <title>한국기업지식연구원</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">한국기업지식연구원 korea enterprise institute</span></a></h1>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>About KEI</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>KEI 소개</span></a></li>
+                                <li><a href="#n"><span>연혁</span></a></li>
+                                <li><a href="#n"><span>조직도</span></a></li>
+                                <li><a href="#n"><span>오시는길</span></a></li>
+                                <li><a href="#n"><span>CI</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Vission</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>Mission</span></a></li>
+                                <li><a href="#n"><span>Core value</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Business</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>정책연구자문</span></a></li>
+                                <li><a href="#n"><span>기업컨설팅</span></a></li>
+                                <li><a href="#n"><span>교육세미나</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Value</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>Expertise</span></a></li>
+                                <li><a href="#n"><span>Innovation</span></a></li>
+                                <li><a href="#n"><span>Responsibility</span></a></li>
+                                <li><a href="#n"><span>Trust</span></a></li>
+                                <li><a href="#n"><span>Sustainability</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Partnership</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>고객 및 파트너사</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--gnb_wrap-->
+            </nav><!--gnb-->
+            <button class="menu_open"><span class="blind">메뉴버튼</span></button>
+            <div class="gnb_drop">
+                <div class="drop_inner">
+                    <div class="drop_main">
+                        <div class="drop_menu_wrap">
+                            <ul class="depth1">
+                                <li>
+                                    <span tabindex="0">About KEI</span>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>KEI 소개</span></a></li>
+                                        <li><a href="#n"><span>연혁</span></a></li>
+                                        <li><a href="#n"><span>조직도</span></a></li>
+                                        <li><a href="#n"><span>오시는길</span></a></li>
+                                        <li><a href="#n"><span>CI</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span tabindex="0">Vission</span>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>Mission</span></a></li>
+                                        <li><a href="#n"><span>Core value</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span tabindex="0">Business</span>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>정책연구자문</span></a></li>
+                                        <li><a href="#n"><span>기업컨설팅</span></a></li>
+                                        <li><a href="#n"><span>교육세미나</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span tabindex="0">Value</span>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>Expertise</span></a></li>
+                                        <li><a href="#n"><span>Innovation</span></a></li>
+                                        <li><a href="#n"><span>Responsibility</span></a></li>
+                                        <li><a href="#n"><span>Trust</span></a></li>
+                                        <li><a href="#n"><span>Sustainability</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span tabindex="0">Partnership</span>
+                                    <ul class="depth2">
+                                        <li><a href="#n"><span>고객 및 파트너사</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide popup1"></li>
+                                <li class="swiper-slide popup2"></li>
+                                <li class="swiper-slide popup3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="menu_close"><span class="blind">메뉴닫기</span></button>
+            <div class="menu_mo">
+                <div class="wrapper">
+                    <div class="gnb_mo">
+                        <h1 class="menu_logo"><a href="#n"><span class="blind">한국기업지식연구원</span></a></h1>
+                        <button class="close_mo"><span class="blind">메뉴닫기</span></button>
+                    </div>
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>About KEI</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>KEI 소개</span></a></li>
+                                <li><a href="#n"><span>연혁</span></a></li>
+                                <li><a href="#n"><span>조직도</span></a></li>
+                                <li><a href="#n"><span>오시는길</span></a></li>
+                                <li><a href="#n"><span>CI</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Vission</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>Mission</span></a></li>
+                                <li><a href="#n"><span>Core value</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Business</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>정책연구자문</span></a></li>
+                                <li><a href="#n"><span>기업컨설팅</span></a></li>
+                                <li><a href="#n"><span>교육세미나</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Value</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>Expertise</span></a></li>
+                                <li><a href="#n"><span>Innovation</span></a></li>
+                                <li><a href="#n"><span>Responsibility</span></a></li>
+                                <li><a href="#n"><span>Trust</span></a></li>
+                                <li><a href="#n"><span>Sustainability</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>Partnership</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>고객 및 파트너사</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup1">
+                            <div class="wrapper">
+                                <h3 tabindex="0">혁신을 설계하고 실행하는 KEI, <br>
+                                    산업·기술·정책의 내일을 <br>
+                                    새롭게 정의합니다</h3>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup2">
+                            <div class="wrapper">
+                                <h3 tabindex="0">지식과 데이터를 연결해 ICT·정보화 <br>
+                                    ·조직전략을 완성하는 통합형 <br>
+                                    컨설팅을 제공합니다</h3>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup3">
+                            <div class="wrapper">
+                                <h3 tabindex="0">글로벌 관점의 전략과 협업으로 <br>
+                                    시장을 넘어서는 지속가능한 <br>
+                                    성장 해답을 제시합니다</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--swiper-->
+                <div class="ctrl_btn">
+                    <div class="paging"></div>
+                    <div class="bar"><span class="blind">막대기</span></div>
+                    <button class="btn_prev"><span class="blind">이전</span></button>
+                    <button class="btn_stop"><span class="blind">일시정지</span></button>
+                    <button class="btn_play"><span class="blind">재생</span></button>
+                    <button class="btn_next"><span class="blind">다음</span></button>
+                </div>
+            </section><!--visual-->
+            <section class="vission">
+                <h2 class="blind">vission</h2>
+                <div class="wrapper">
+                    <div class="row">
+                        <p tabindex="0">한국기업지식연구원은 15년간의
+                        <span>한국기업지식연구원은 15년간의</span>
+                        </p>
+                        <p tabindex="0">산업기술정책과 컨설팅 분야의
+                        <span>산업기술정책과 컨설팅 분야의</span>
+                        </p>
+                        <p tabindex="0">깊은 경험을 바탕으로 최고의
+                        <span>깊은 경험을 바탕으로 최고의</span>
+                        </p>
+                        <p tabindex="0">비즈니스 지식을 제공합니다.
+                        <span>비즈니스 지식을 제공합니다.</span>
+                        </p>
+                    </div>
+                </div>
+            </section><!--vission-->
+            <section class="business">
+                <div class="wrapper">
+                    <h2 tabindex="0">Business</h2>
+                    <div class="list">
+                        <ul>
+                            <li tabindex="0">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="photo">
+                                            <img src="images/business1.jpg" alt="대형스크린에 데이터">
+                                            <div class="overlay"></div>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>Tecknology, industry & Policy</strong>
+                                            <h3>산업기술정책</h3>
+                                        </div>
+                                    </div>
+                                    <div class="back">
+                                        <div class="photo">
+                                            <img src="images/business1.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            시장 기반 혁신정책과<br>
+                                            기술·산업 분석을 바탕으로<br>
+                                            실행 가능한 대안전략을<br>
+                                            제시합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li tabindex="0">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="photo">
+                                            <img src="images/business2.jpg" alt="뇌 홀로그램과 차트그래프">
+                                            <div class="overlay"></div>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>ICT&Knowledge</strong>
+                                            <h3>ICT&지식</h3>
+                                        </div>
+                                    </div>
+                                    <div class="back">
+                                        <div class="photo">
+                                            <img src="images/business2.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            조직 전략과 미래 변화에 맞 <br>
+                                            춘 정보화·IT 혁신 구조를 설 <br>
+                                            계해 실효성 높은 지식경영 <br>
+                                            해법을 제공합니다
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li tabindex="0">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="photo">
+                                            <img src="images/business3.jpg" alt="우주에서 본 지구">
+                                            <div class="overlay"></div>
+                                        </div>
+                                        <div class="txt">
+                                            <strong>Global Business & Strategy</strong>
+                                            <h3>글로벌 비즈니스 전략</h3>
+                                        </div>
+                                    </div>
+                                    <div class="back">
+                                        <div class="photo">
+                                            <img src="images/business3.jpg" alt="">
+                                        </div>
+                                        <p>
+                                            경험 기반 글로벌 역량 개발 <br>
+                                            과 협력 전략으로 시장을 확 <br>
+                                            장하며 지속 가능한 글로벌 <br>
+                                            경영 해법을 제공합니다
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--business-->
+            <section class="value">
+                <div class="wrapper">
+                    <div class="left_slide">
+                        <div class="tit">
+                            <h2 tabindex="0">Value</h2>
+                            <div class="icon">
+                                <a href="#n"><span class="blind">더보기</span></a>
+                            </div>
+                        </div>
+                        <div class="list" data-aos="fade-left">
+                            <ul>
+                                <li tabindex="0">
+                                    <div class="photo" id="l_top"><img src="images/value1.jpg" alt="그래픽 지도"></div>
+                                    <p>미국, 일본 유럽 동남아 등의 <br> 네트워크를 통한 지원</p>
+                                </li>
+                                <li tabindex="0">
+                                    <div class="photo"><img src="images/value2.jpg" alt="금발 외국인 전문가"></div>
+                                    <p>최고 수준의 <br> 전문인력 지원</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right_slide">
+                        <div class="list" data-aos="fade-right">
+                            <ul>
+                                <li tabindex="0">
+                                    <div class="photo"><img src="images/value3.jpg" alt="마주보며 얘기하는 두사람"></div>
+                                    <p>검증된 방법론을 통한 <br> 프로젝트 관리</p>
+                                </li>
+                                <li tabindex="0">
+                                    <div class="photo" id="r_bottom"><img src="images/value4.jpg" alt="정장입고 펜들고 있는 남자"></div>
+                                    <p>고객의 니즈에 대한 <br> 정확한 이해</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more">
+                            <a href="#n"><span>더 자세히 보기</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section><!--value-->
+            <section class="partners">
+                <div class="wrapper">
+                    <h2 tabindex="0">
+                        국/내외 및 글로벌이 선택한 NO.1 전문기업 <br>
+                        많은 고객과 파트너사들이 한국기업지식연구원의 솔루션과 서비스를 사용하고 있습니다.
+                    </h2>
+                    <!-- 윗줄 (오른쪽 → 왼쪽) -->
+                    <div class="slide-row top-row" tabindex="0">
+                        <div class="slide-track">
+                            <img src="images/parter_images/jpg/partner1.jpg" alt="etri">
+                            <img src="images/parter_images/jpg/partner2.jpg" alt="kifa">
+                            <img src="images/parter_images/jpg/partner3.jpg" alt="gangwon">
+                            <img src="images/parter_images/jpg/partner4.jpg" alt="gwtech">
+                            <img src="images/parter_images/jpg/partner5.jpg" alt="keit">
+                            <!-- 동일 이미지 복사(무한 슬라이드 필수) -->
+                            <img src="images/parter_images/jpg/partner6.jpg" alt="ketep">
+                            <img src="images/parter_images/jpg/partner7.jpg" alt="khidi">
+                            <img src="images/parter_images/jpg/partner8.jpg" alt="kimm">
+                            <img src="images/parter_images/jpg/partner9.jpg" alt="kita">
+                            <img src="images/parter_images/jpg/partner10.jpg" alt="kjcf">
+                        </div>
+                    </div>
+                    <!-- 아랫줄 (왼쪽 → 오른쪽) -->
+                    <div class="slide-row bottom-row" tabindex="0">
+                        <div class="slide-track">
+                            <img src="images/parter_images/jpg/partner11.jpg" alt="clid">
+                            <img src="images/parter_images/jpg/partner12.jpg" alt="kcca">
+                            <img src="images/parter_images/jpg/partner13.jpg" alt="kosme">
+                            <img src="images/parter_images/jpg/partner14.jpg" alt="kotra">
+                            <img src="images/parter_images/jpg/partner15.jpg" alt="krict">
+                            <!-- 동일 이미지 복사 -->
+                            <img src="images/parter_images/jpg/partner16.jpg" alt="konkuk">
+                            <img src="images/parter_images/jpg/partner17.jpg" alt="nia">
+                            <img src="images/parter_images/jpg/partner18.jpg" alt="nipa">
+                            <img src="images/parter_images/jpg/partner19.jpg" alt="kicc">
+                        </div>
+                    </div>
+                </div>
+            </section><!--partner-->
+            <section class="contact">
+                <div class="bg"></div>
+                <div class="inner">
+                    <h2 tabindex="0">한국기업지식연구원과 함께<br>새로운 컨설팅을 경험해보세요</h2>
+                    <a href="#n" class="btn"><span>문의하기</span></a>
+                </div>
+            </section><!--contact-->
+        </div>
+        <footer>
+            <div class="wrapper">
+            <div class="f_logo">
+                <img src="images/f_logo.svg" alt="한국기업지식연구원 로고">
+            </div>
+                <div class="f_info">
+                    <p>한국기업지식연구원 KOREA ENTERPRISE INSTITUTE</p>
+                    <p>주소 | 서울특별시 서초구 양재천로 19길 26 동동빌딩 4~6층 대표전화 | 822)866-9187 FAX | 822)866-9186</p>
+                    <p>사업자 등록번호 | 119-86-38429 대표이사 | 정우식</p>
+                    <p>Copyright Koreaei Co.,Ltd. Inc. All rights reserved.</p>
+                </div>
+                <button class="btn_top"><span>TOP</span></button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

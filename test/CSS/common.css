@@ -19,7 +19,7 @@
 /* body에 기본 글자 스타일(본문 스타일) 적용 */
 html, body {
     font-family: 'Pretendard';
-    font-size: var(--base-font-size);
+    font-size: var(--base-font-size); /* 16px 임*/
     line-height: 1.5;
     font-weight: 400;
     color: #555; /* 6자리가 같으면 3자리로 줄여써도 됨 */

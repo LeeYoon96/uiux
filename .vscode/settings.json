@@ -1,7 +1,7 @@
 {
     
     // 이 프로젝트에서만 hover 기능을 활성화
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     "css.hover.references": true,
     "less.hover.references": true,
     "scss.hover.references": true,

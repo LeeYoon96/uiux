@@ -1,0 +1,12 @@
+비주얼 오른쪽 하단 라운드
+-overflow hidden 해제하면 라운드가 사라지는데
+.visual .swiper {
+    border-radius: 60px;
+    overflow: hidden;
+} 새로 만들어서 옮겨야 됨.
+
+모바일 메뉴 상태에서 btn이 사라지지않음
+header의 z-index가 100; 높아야됨.
+
+모바일 가로 스크롤바 생김.
+body 다음 div id wrap으로 감쌈
