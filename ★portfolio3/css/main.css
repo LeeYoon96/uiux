@@ -199,7 +199,7 @@
     text-align: center;
     cursor: pointer;
 }
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 768px) {
     .fp_nav,
     .right_menu {
         display: none !important;
@@ -517,39 +517,68 @@
 
 @media screen and (max-width:768px){
 
-    .department .wrapper > h2 {
-        display: inline-block;
-        font-size: 18px;
-        width: auto;
-        margin: 0;
+    /* =========================
+    PC 요소 완전 차단
+    ========================= */
+    .department .pc_only {
+        display: none !important;
     }
 
-    .department .dep_layout {
-        display: block; /* 기존 flex 해제 */
-        margin-top: 12px;
+    /* =========================
+    모바일 헤드 영역 (h2 + tab)
+    ========================= */
+    .department .mo_only {
+        display: block;
     }
 
-    .department .tab_list {
-        margin-top: 8px;
+    .department .mo_only .dept_head {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    .department .tab_list ul {
+    .department .mo_only .dept_head h2 {
+        font-size: 24px;
+        font-weight: var(--font-weight-bold);
+    }
+
+    /* =========================
+    모바일 탭
+    ========================= */
+    .department .mo_only .tab_list {
+        flex: 0;
+    }
+
+    .department .mo_only .tab_list ul {
+        gap: 0 8px;
         flex-direction: row;
-        gap: 8px;
     }
 
-    .department .tab_list ul li button {
+    .department .mo_only .tab_list ul li button {
         width: auto;
-        padding: 6px 14px;
-        font-size: 14px;
+        padding: 0.25em 1.3333em;
+        font-size: 12px;
+        background: var(--color-basic);
+        color: var(--color-white);
     }
+    .department .mo_only .tab_list ul li.active button {
+    background: var(--color-sub);
+}
 
-    /* 화살표 제거 (모바일에서는 불필요) */
-    .department .tab_list ul li button::before,
-    .department .tab_list ul li button::after {
+    /* 탭 화살표 제거 */
+    .department .mo_only .tab_list ul li button::before,
+    .department .mo_only .tab_list ul li button::after {
         display: none;
     }
-    
+
+    /* =========================
+    슬라이드 영역
+    ========================= */
+    .department .dep_layout {
+        display: block;
+        margin-top: 0;
+    }
+
     .department .swiper-slide {
         width: 160px;
     }
@@ -563,6 +592,22 @@
         height: auto;
     }
 
+    /* =========================
+    텍스트 정보 정리
+    ========================= */
+    /* 취업분야 제거 */
+    .department .txt ul li:nth-child(3) {
+        display: none;
+    }
+
+    /* strong 라벨 축약 */
+    .department .txt strong.pc_only {
+        display: none;
+    }
+
+    /* =========================
+    슬라이드 바
+    ========================= */
     .department .slide_bar {
         margin-top: 12px;
         height: 4px;

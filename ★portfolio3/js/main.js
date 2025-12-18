@@ -66,6 +66,7 @@ $(document).ready(function(){
         btn.addEventListener('click', () => {
             const target = btn.dataset.target;
             const sec = document.querySelector(`.${target}`);
+            if (!sec) return;
 
             window.scrollTo({
                 top: sec.offsetTop,
@@ -83,19 +84,27 @@ $(document).ready(function(){
 
         sections.forEach((sec, i) => {
             if (scrollPos >= sec.offsetTop - 200) {
+
                 navDots.forEach(dot => dot.classList.remove('active'));
-                navDots[i].classList.add('active');
+
+                // 🔥 존재할 때만 class 추가
+                if (navDots[i]) {
+                    navDots[i].classList.add('active');
+                }
             }
         });
     });
 
     // TOP 버튼
-    document.querySelector('.btn_top').addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    const btnTop = document.querySelector('.btn_top');
+    if (btnTop) {
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
 
     /************************ 시작 : pc버전 메뉴 오버 **************************** */
 
