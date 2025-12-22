@@ -59,7 +59,7 @@ body {
   word-break: keep-all;
   word-wrap: break-word;
 }
-/* 영어만 NexonLv1Gothic 적용 */
+
 body [lang="en"] {
   font-family: 'Pretendard', sans-serif;
 }
