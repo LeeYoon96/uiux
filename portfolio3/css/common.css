@@ -102,6 +102,10 @@ body [lang="en"] {
     width: auto;
     margin: 0 var(--wrapper-m); 
   }
+  .campus .wrapper {
+    width: auto;
+    margin: 0 var(--wrapper-m); 
+  }
 }
 
 .mo_only {
