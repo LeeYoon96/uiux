@@ -1,0 +1,80 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    font-weight: 300;
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+}
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.card:nth-child(1) .content {
+    background: linear-gradient(to top, crimson, transparent);
+}
+.card:nth-child(2) .content {
+    background: linear-gradient(to top, dodgerblue, transparent);
+}
+.card:nth-child(3) .content {
+    background: linear-gradient(to top, yellowgreen, transparent);
+}
+.content {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 100%;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(to top, crimson, transparent);
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.content h2 {
+    font-size: 30px;
+}
+.content h2 span {
+    display: block;
+    font-size: 14px;
+    color: gold;
+    margin-top: 10px;
+}
+.card:hover .content {
+    top: 0;
+}
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.sns a {
+    color: #fff;
+    border: 1px solid #fff;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 13px;
+    text-align: center;
+    line-height: 22px;
+}

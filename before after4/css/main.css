@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+.gnb {}
+.gnb a {
+    position: relative;
+    padding-bottom: 10px;
+}
+.gnb a:before {
+    content: "";
+    position: absolute; /*모든 인라인요소가 크기값을 갖게됨.*/
+    background-color: crimson;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    transition: 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.gnb a:hover:before {
+    width: 100%;
+}

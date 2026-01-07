@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    font-weight: 300;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: #222;
+}
+.custom input[type=checkbox] {
+    display: none;
+}
+.custom label em {
+    /* border: 1px solid red; */
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url(../images/checkbox-02.png) no-repeat;
+    background-position: left center;
+}
+.custom input[type=checkbox]:checked + label em {
+    background-position: right center;
+}
+.grade label {
+    cursor: pointer;
+}
+.grade input[type=radio] {
+    display: none;
+}
+.grade label em {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url(../images/radio-01.png) no-repeat;
+    background-position: left center;
+}
+.grade input[type=radio]:checked + label em {
+    background-position: right center;
+}
+.grade input[type=radio]:checked + label {
+    color: crimson;
+}
