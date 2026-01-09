@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- 내부링크 -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>별점주기 with jquery</title>
+</head>
+<body>
+    <div class="star_ratting">
+        <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <div class="print">
+            별점부탁드립니다.
+        </div>
+    </div>
+    <script>
+        $('.stars .fa').click(function(){
+            $(this).addClass('active')
+            $(this).prevAll().addClass('active')
+            $(this).nextAll().removeClass('active')
+
+            var num = $(this).index()
+            var starRate = num + 1
+            // $('.print').text(starRate)
+    
+            if(starRate == 1) {
+                $('.print').html('<img src="images/star-lv1.png">' + '별로에요')
+            }
+            else if(starRate == 2) {
+                $('.print').html('<img src="images/star-lv2.png">' + '보통 이에요')
+            }
+            else if(starRate == 3) {
+                $('.print').html('<img src="images/star-lv3.png">' + '그냥 그래요')
+            }
+            else if(starRate == 4) {
+                $('.print').html('<img src="images/star-lv4.png">' + '맘에 들어요')
+            }
+            else {
+                $('.print').html('<img src="images/star-lv5.png">' + '아주 좋아요')
+            }
+        })
+
+    </script>
+</body>
+</html>

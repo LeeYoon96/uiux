@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- 내부링크 -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>탭 메뉴 콘텐츠 - 스타일01(with JQUERY)</title>
+</head>
+<body>
+    <div class="testimonial_section">
+        <h1><span>CodingWorks</span> Publishing Online Class with Inflearn</h1>
+        <div class="testimonial_pic">
+            <img class="active" src="images/face-01.jpg" data-alt="tab1">
+            <img src="images/face-02.jpg" data-alt="tab2">
+            <img src="images/face-03.jpg" data-alt="tab3">
+            <img src="images/face-04.jpg" data-alt="tab4">
+        </div>
+        <div class="testimonial ">
+            <div class="content active" id="tab1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nobis delectus incidunt culpa voluptatem animi sint maiores tenetur eveniet fuga consectetur cupiditate saepe distinctio, ab debitis quos repellendus doloribus deleniti mollitia sit quibusdam sunt numquam tempora necessitatibus. Aspernatur ad excepturi minus nesciunt exercitationem deleniti, ut atque expedita quis modi! Quas aliquid deserunt nisi minus officiis quidem voluptates eveniet nostrum dicta repellat, fugit blanditiis incidunt placeat odit tempore qui perferendis explicabo delectus vero optio doloribus quibusdam commodi porro illo? </p>
+                <p>Sally, Web Desginer</p>
+            </div>
+            <div class="content" id="tab2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis id ipsa ducimus nesciunt a minus culpa incidunt eos? Quaerat iure saepe unde quae debitis! Deserunt, ea? Excepturi, iste? Exercitationem atque, inventore natus praesentium corporis nesciunt aperiam numquam culpa voluptatum dolore earum neque vel. Reiciendis quia, dolorem, sunt, facilis laborum quibusdam hic aperiam nobis perspiciatis nam vero? Non, nulla! Minus, ipsa explicabo accusamus laudantium provident repellendus in perferendis quas aut, minima sequi ullam voluptate, possimus error tenetur libero deleniti dignissimos at.</p>
+                <p>Amy, Graphic Designer</p>
+            </div>
+            <div class="content" id="tab3">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores tempora at fugiat ut laborum, explicabo quia provident? Pariatur consequuntur soluta iure dolor delectus, quasi officia eum eaque similique sunt, necessitatibus, vel reiciendis eveniet natus autem nam expedita quaerat! Beatae maiores sequi temporibus deleniti id ad, odio ipsum excepturi. Ex quo libero facere sint, impedit incidunt debitis dignissimos aspernatur veritatis, iusto, omnis eaque! Eos molestiae a quis natus delectus, tempora fuga! Distinctio, iure! Accusantium saepe a at dolor, repudiandae laudantium. Aspernatur?</p>
+                <p>Jung Ho, Developer</p>
+            </div>
+            <div class="content" id="tab4">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum esse, similique facere delectus, distinctio est, minus hic saepe atque suscipit facilis expedita odio. Laborum reiciendis, nostrum aspernatur quis obcaecati quia qui quisquam corporis eos nesciunt accusantium incidunt cum esse omnis ducimus facilis est voluptas vitae. Veniam libero sapiente reiciendis, et nam blanditiis sit iusto adipisci nisi recusandae beatae. Laudantium quod provident minus perferendis! Consequuntur vero molestias sit accusamus temporibus distinctio sunt. Praesentium illum aut minus dolore officia, vero rerum saepe!</p>
+                <p>Chris, Printing Desinger</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.testimonial_pic img').click(function(){
+            $(this).addClass('active')
+            $(this).siblings().removeClass('active') /* .siblings() 인접한 형제들*/
+            
+            $('.testimonial .content').removeClass('active')
+            $('#' + $(this).attr('data-alt')).addClass('active')
+
+            // #tab1 == $(this).attr('data-alt')
+        })
+    </script>
+</body>
+</html>
